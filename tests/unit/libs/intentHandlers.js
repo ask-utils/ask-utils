@@ -45,6 +45,10 @@ describe('libs/intentHandlers.js', () => {
       handlerInput.requestEnvelope.request.type = 'LaunchRequest'
       handlerInput.requestEnvelope.request.intent.name = 'HelloAlexaIntent'
     })
+    it('should return true when given matched request type that is not IntentRequest', () => {
+      const result = utils.canHandle(handlerInput, 'LaunchRequest')
+      assert.equal(result, true)
+    })
     it('should return false when given un-matched request type', () => {
       const result = utils.canHandle(handlerInput, 'IntentRequest', 'HelloAlexaIntent')
       assert.equal(result, false)

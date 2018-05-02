@@ -1,7 +1,7 @@
 {
   "name": "ask-utils",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "utility functions for ask-sdk",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha tests/ -R spec --recursive",

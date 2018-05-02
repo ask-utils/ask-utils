@@ -1,0 +1,9 @@
+extends: standard
+globals:
+  describe: false
+  it: false
+  beforeEach: false
+  afterEach: false
+  beforeAll: false
+  afterAll: false
+  jasmine: false

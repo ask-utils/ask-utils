@@ -9,7 +9,7 @@ $ npm i -S ask-utils
 ## Usage
 
 ```
-const { randomResponse, intentHandlers } = require('ask-utils')
+const { randomResponse, intentHandlers, slotManager } = require('ask-utils')
 ```
 
 ## development

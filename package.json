@@ -1,13 +1,18 @@
 {
   "name": "ask-utils",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "utility functions for ask-sdk",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha tests/ -R spec --recursive",
     "lint": "./node_modules/eslint/bin/eslint.js ./"
   },
-  "keywords": [],
+  "keywords": [
+    "alexa", "ask-sdk", "alexa-skill"
+  ],
+  "bugs": {
+    "url": "https://github.com/hideokamoto/ask-utils/issues"
+  },
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {

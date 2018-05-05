@@ -25,4 +25,11 @@ describe('index.js', () => {
       assert.notEqual(handlerKeys.indexOf('getRandomMessage'), -1)
     })
   })
+  describe('slotManager', () => {
+    const { slotManager } = utils
+    const handlerKeys = Object.keys(slotManager)
+    it('should has getSlotByName() function on slotManager params', () => {
+      assert.notEqual(handlerKeys.indexOf('getSlotByName'), -1)
+    })
+  })
 })

@@ -61,6 +61,24 @@ const HelpIntentHandler = {
 }
 ```
 
+#### functions
+
+```
+const HelpIntentHandler = {
+  canHandle (handlerInput) {
+    return intentHandlers.canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
+  },
+  handle (handlerInput) {
+    // same as const request = handlerInput.requestEnvelope.request
+    const request = getRequest(handlerInput)
+
+    // same as const dialogState = handlerInput.requestEnvelope.request.dialogState
+    const dialogState = getDialogState(handlerInput)
+
+    // same as const intent = handlerInput.requestEnvelope.request.intent
+    const intent = getIntent(handlerInput)
+```
+
 ### slotManager (Beta)
 
 Easy to get intent slot value.

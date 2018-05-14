@@ -65,4 +65,35 @@ describe('libs/intentHandlers.js', () => {
       assert.equal(result, false)
     })
   })
+  describe('#getRequest()', () => {
+    it('should return request object', () => {
+      const request = utils.getRequest(handlerInput)
+      assert.deepEqual(request, handlerInput.requestEnvelope.request)
+    })
+    it('should return empty object when given invalid param', () => {
+      const request = utils.getRequest({})
+      assert.deepEqual(request, {})
+    })
+  })
+  describe('#getDialogState()', () => {
+    it('should return dialogState', () => {
+      handlerInput.requestEnvelope.request.dialogState = 'START'
+      const state = utils.getDialogState(handlerInput)
+      assert.equal(state, 'START')
+    })
+    it('should return dialogState when given invalid param', () => {
+      const state = utils.getDialogState({})
+      assert.equal(state, '')
+    })
+  })
+  describe('#getIntent()', () => {
+    it('should return intent object', () => {
+      const intent = utils.getIntent(handlerInput)
+      assert.deepEqual(intent, handlerInput.requestEnvelope.request.intent)
+    })
+    it('should return intent object when given invalid param', () => {
+      const intent = utils.getIntent({})
+      assert.deepEqual(intent, {})
+    })
+  })
 })

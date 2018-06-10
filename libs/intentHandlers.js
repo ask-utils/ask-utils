@@ -67,6 +67,53 @@ const getIntent = handlerInput => {
   if (request && Object.keys(request).length > 0 && request.intent) return request.intent
   return {}
 }
+
+/**
+ * Is supported display
+ *
+ * @param {object} handlerInput - from ask-sdk
+ * @return {bool} - If supported display interface, return true
+ * @since 0.4.0
+ **/
+const supportsDisplay = handlerInput => {
+  const supportedInterfaces = getSupportedInterfaces(handlerInput)
+  if (supportedInterfaces.Display) return true
+  return false
+}
+/**
+ * Get supported interface object
+ *
+ * @param {object} handlerInput - from ask-sdk
+ * @return {object} - context.System.device.supportedInterfaces
+ * @since 0.4.0
+ **/
+const getSupportedInterfaces = handlerInput => {
+  const context = getContext(handlerInput)
+  if (
+    context.System &&
+    context.System.device &&
+    context.System.device.supportedInterfaces
+  ) {
+    return context.System.device.supportedInterfaces
+  }
+  return {}
+}
+
+/**
+ * Get request context
+ *
+ * @link https://developer.amazon.com/ja/blogs/alexa/post/6839eb1c-f718-41cd-ad0c-6ba59c5360f5/alexa-skill-recipe-making-the-most-of-devices-that-support-display
+ **/
+const getContext = handlerInput => {
+  if (
+    handlerInput &&
+    handlerInput.requestEnvelope &&
+    handlerInput.requestEnvelope.context
+  ) {
+    return handlerInput.requestEnvelope.context
+  }
+  return {}
+}
 module.exports.isHandledIntent = isHandledIntent
 module.exports.isMatchedRequestType = isMatchedRequestType
 module.exports.isIntentRequest = isIntentRequest
@@ -74,3 +121,5 @@ module.exports.canHandle = canHandle
 module.exports.getRequest = getRequest
 module.exports.getDialogState = getDialogState
 module.exports.getIntent = getIntent
+module.exports.supportsDisplay = supportsDisplay
+module.exports.getSupportedInterfaces = getSupportedInterfaces

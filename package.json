@@ -13,6 +13,10 @@
   "bugs": {
     "url": "https://github.com/hideokamoto/ask-utils/issues"
   },
+  "repository" :　{
+    "type" : "git",
+    "url" : "https://github.com/hideokamoto/ask-utils.git"
+  },
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {

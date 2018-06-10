@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "utility functions for ask-sdk",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,9 @@
   "bugs": {
     "url": "https://github.com/hideokamoto/ask-utils/issues"
   },
-  "repository" :　{
-    "type" : "git",
-    "url" : "https://github.com/hideokamoto/ask-utils.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hideokamoto/ask-utils.git"
   },
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",

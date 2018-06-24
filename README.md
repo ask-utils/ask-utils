@@ -14,6 +14,9 @@ $ npm i -S ask-utils
 const { randomResponse, intentHandlers, slotManager, getHandlerInput } = require('ask-utils')
 ```
 
+some function can check example usage at wiki.
+(https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities)[https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities]
+
 ### randomResponse
 
 We can easy create random response in your Alexa skill using ask-sdk.

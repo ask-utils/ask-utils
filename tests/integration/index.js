@@ -32,4 +32,9 @@ describe('index.js', () => {
       assert.notEqual(handlerKeys.indexOf('getSlotByName'), -1)
     })
   })
+  describe('Test Util', () => {
+    it('Should has getHandlerInput() function', () => {
+      assert.notEqual(Object.keys(utils).indexOf('getHandlerInput'), -1)
+    })
+  })
 })

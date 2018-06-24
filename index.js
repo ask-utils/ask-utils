@@ -1,8 +1,11 @@
 const testUtils = require('./libs/testUtils')
+const intentHandlers = require('./libs/intentHandlers')
+const randomResponse = require('./libs/randomResponse')
+const slotManager = require('./libs/slotManager')
 const funcs = {
-  intentHandlers: require('./libs/intentHandlers'),
-  randomResponse: require('./libs/randomResponse'),
-  slotManager: require('./libs/slotManager')
+  intentHandlers,
+  randomResponse,
+  slotManager
 }
 
-module.exports = Object.assign(testUtils, funcs)
+module.exports = Object.assign(testUtils, intentHandlers, randomResponse, slotManager, funcs)

@@ -11,18 +11,18 @@ $ npm i -S ask-utils
 ## Usage
 
 ```
-const { randomResponse, intentHandlers, slotManager, getHandlerInput } = require('ask-utils')
+const { getRandomMessage, canHandle, getHandlerInput } = require('ask-utils')
 ```
 
 some function can check example usage at wiki.
 (https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities)[https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities]
 
-### randomResponse
+### getRandomMessage
 
 We can easy create random response in your Alexa skill using ask-sdk.
 
 ```
-const { randomResponse } = require('ask-utils')
+const { getRandomMessage } = require('ask-utils')
 const errorMessages = [
   'I can not here what you say, please say again.',
   'Please say again.',
@@ -35,7 +35,7 @@ const ErrorHandler = {
   },
   handle (handlerInput, error) {
     console.log(`Error handled: ${error.message}`)
-    const message = randomResponse.getRandomMessage(errorMessages)
+    const message = getRandomMessage(errorMessages)
     return handlerInput.responseBuilder
       .speak(message)
       .reprompt(message)
@@ -45,12 +45,12 @@ const ErrorHandler = {
 ```
 
 ### intentHandlers
-We can easy write `canHandle` function by using `intentHandlers.canHandle` function.
+We can easy write `canHandle` function by using `canHandle` function.
 
 ```
 const HelpIntentHandler = {
   canHandle (handlerInput) {
-    return intentHandlers.canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
+    return canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
   },
   handle (handlerInput) {
     const speechText = 'This is example skill'
@@ -67,9 +67,10 @@ const HelpIntentHandler = {
 #### functions
 
 ```
+const { getRequest canHandle, getDialogState, getIntent } = require('ask-utils')
 const HelpIntentHandler = {
   canHandle (handlerInput) {
-    return intentHandlers.canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
+    return canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
   },
   handle (handlerInput) {
     // same as const request = handlerInput.requestEnvelope.request
@@ -87,12 +88,13 @@ const HelpIntentHandler = {
 Easy to get intent slot value.
 
 ```
+const { canHandle, getSlotValueByName } = require('ask-utils')
 const ExampleIntentHandler = {
   canHandle (handlerInput) {
-    return intentHandlers.canHandle(handlerInput, 'IntentRequest', 'ExampleIntent')
+    return canHandle(handlerInput, 'IntentRequest', 'ExampleIntent')
   },
   handle (handlerInput) {
-    const yourName = slotManager.getSlotValueByName(handlerInput, 'nameSlot')
+    const yourName = getSlotValueByName(handlerInput, 'nameSlot')
     const speechText = `Hello ${yourName} ! Welcome to our skill !`
 
     return handlerInput.responseBuilder

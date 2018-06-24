@@ -1,5 +1,5 @@
 # Utility functions for ask-sdk
-[![Build Status](https://travis-ci.org/hideokamoto/ask-utils.svg?branch=master)](https://travis-ci.org/hideokamoto/ask-utils)
+[![Build Status](https://travis-ci.org/ask-utils/ask-utils.svg?branch=master)](https://travis-ci.org/ask-utils/ask-utils)
 [![npm version](https://badge.fury.io/js/ask-utils.svg)](https://badge.fury.io/js/ask-utils)
 
 ## Getting started

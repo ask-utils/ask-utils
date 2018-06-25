@@ -114,6 +114,25 @@ const getContext = handlerInput => {
   }
   return {}
 }
+
+const getSystem = handlerInput => {
+  const context = getContext(handlerInput)
+  if (context && context.System) return context.System
+  return {}
+}
+
+const getDevice = handlerInput => {
+  const system = getSystem(handlerInput)
+  if (system && system.device) return system.device
+  return {}
+}
+
+const getUser = handlerInput => {
+  const system = getSystem(handlerInput)
+  if (system && system.user) return system.user
+  return {}
+}
+
 module.exports.isHandledIntent = isHandledIntent
 module.exports.isMatchedRequestType = isMatchedRequestType
 module.exports.isIntentRequest = isIntentRequest
@@ -123,3 +142,6 @@ module.exports.getDialogState = getDialogState
 module.exports.getIntent = getIntent
 module.exports.supportsDisplay = supportsDisplay
 module.exports.getSupportedInterfaces = getSupportedInterfaces
+module.exports.getSystem = getSystem
+module.exports.getDevice = getDevice
+module.exports.getUser = getUser

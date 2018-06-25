@@ -70,4 +70,16 @@ describe('index.js', () => {
       assert.notEqual(Object.keys(utils).indexOf('getHandlerInput'), -1)
     })
   })
+  describe('get request param functions', () => {
+    const handlerKeys = Object.keys(utils)
+    it('Should has getDeviceId() function', () => {
+      assert.notEqual(handlerKeys.indexOf('getDeviceId'), -1)
+    })
+    it('Should has supportsDisplay() function', () => {
+      assert.notEqual(handlerKeys.indexOf('supportsDisplay'), -1)
+    })
+    it('Should has getSupportedInterfaces () function', () => {
+      assert.notEqual(handlerKeys.indexOf('getSupportedInterfaces'), -1)
+    })
+  })
 })

@@ -4,6 +4,7 @@ const randomResponse = require('./libs/randomResponse')
 const slotManager = require('./libs/slotManager')
 const systemDevice = require('./libs/system/device')
 const systemUsers = require('./libs/system/users')
+const response = require('./libs/response')
 const deprecated = {
   intentHandlers,
   randomResponse,
@@ -12,7 +13,8 @@ const deprecated = {
 const funcs = Object.assign(
   intentHandlers,
   randomResponse,
-  slotManager
+  slotManager,
+  response
 )
 const systems = Object.assign(systemDevice, systemUsers, {})
 

@@ -82,4 +82,10 @@ describe('index.js', () => {
       assert.notEqual(handlerKeys.indexOf('getSupportedInterfaces'), -1)
     })
   })
+  describe('get response functions', () => {
+    const handlerKeys = Object.keys(utils)
+    it('should has getErrorMessage() function', () => {
+      assert.notEqual(handlerKeys.indexOf('getErrorMessage'), -1)
+    })
+  })
 })

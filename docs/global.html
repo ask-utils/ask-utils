@@ -1121,6 +1121,221 @@ const TestDialogIntentHandler = {
     
 
     
+    <h4 class="name" id="getHandlerInput"><span class="type-signature"></span>getHandlerInput<span class="signature">(requestEnvelope, context<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    get handlerInput object to test your handler function
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>requestEnvelope</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">request object from Alexa Skills Kit</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Lambda's context</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testUtils.js.html">testUtils.js</a>, <a href="testUtils.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - handlerInput Object to prepare test function
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="getIntent"><span class="type-signature"></span>getIntent<span class="signature">(handlerInput)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
@@ -1424,6 +1639,117 @@ const TestDialogIntentHandler = {
     <dd>
         
 <span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getRequestEnvelopeMock"><span class="type-signature"></span>getRequestEnvelopeMock<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    get requestEnvelope object to test your function
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>0.8.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="testUtils.js.html">testUtils.js</a>, <a href="testUtils.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    - mock requestEnvelope object
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1839,7 +2165,7 @@ const TestDialogIntentHandler = {
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
     
 
     
@@ -1865,7 +2191,7 @@ const TestDialogIntentHandler = {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line22">line 22</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -1999,7 +2325,7 @@ const TestDialogIntentHandler = {
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
     
 
     
@@ -2025,7 +2351,7 @@ const TestDialogIntentHandler = {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line78">line 78</a>
+        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -2091,13 +2417,13 @@ const TestDialogIntentHandler = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getHandlerInput">getHandlerInput</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getRequestEnvelopeMock">getRequestEnvelopeMock</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jun 25 2018 12:59:48 GMT+0900 (JST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jul 01 2018 21:37:04 GMT+0900 (JST)
 </footer>
 
 <script> prettyPrint(); </script>

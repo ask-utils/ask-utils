@@ -69,6 +69,9 @@ describe('index.js', () => {
     it('Should has getHandlerInput() function', () => {
       assert.notEqual(Object.keys(utils).indexOf('getHandlerInput'), -1)
     })
+    it('should has getRequestEnvelopeMock() function', () => {
+      assert.notEqual(Object.keys(utils).indexOf('getRequestEnvelopeMock'), -1)
+    })
   })
   describe('get request param functions', () => {
     const handlerKeys = Object.keys(utils)

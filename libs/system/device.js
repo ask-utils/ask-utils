@@ -47,7 +47,7 @@ module.exports.getSupportedInterfaces = getSupportedInterfaces
 
 /**
  * Get device permissions
- *
+ *E982ITVV7EK5U
  * @return {string[]} - lists of permissions
  * @param {string} [type='all'] - permission type
  * @since 0.7.0

@@ -1,7 +1,5 @@
 const { ResponseFactory, AttributesManagerFactory, PersistenceAdapter } = require('ask-sdk-core')
-const { services } = require('ask-sdk-model')
 
-const { ServiceClientFactory, apiClient } = services
 /**
  * get handlerInput object to test your handler function
  *
@@ -19,13 +17,13 @@ const getHandlerInput = (requestEnvelope, context = {}) => {
       persistenceAdapter: PersistenceAdapter
     }),
     responseBuilder: ResponseFactory.init(),
-    serviceClientFactory: apiClient
-      ? new ServiceClientFactory({
-        apiClient: apiClient,
-        apiEndpoint: requestEnvelope.context.System.apiEndpoint,
-        authorizationValue: requestEnvelope.context.System.apiAccessToken
-      })
-      : undefined
+    serviceClientFactory: {
+      getDirectiveServiceClient: () => {
+        return {
+          enqueue: (directive, endpoint, token) => ({directive, endpoint, token})
+        }
+      }
+    }
   }
   return handlerInput
 }
@@ -62,6 +60,8 @@ const getRequestEnvelopeMock = () => {
         playerActivity: 'IDLE'
       },
       System: {
+        apiEndpoint: 'https://api.amazonalexa.com',
+        apiAccessToken: 'exampleAccessToken',
         device: {
           supportedInterfaces: {
             AudioPlayer: {}

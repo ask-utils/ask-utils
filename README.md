@@ -129,3 +129,15 @@ or
 
 $ npm run lint -- --fix
 ```
+
+### History
+v0.9.0 - progressive response support
+v0.8.0 - testing mock function
+v0.6.0 - get all function directly
+v0.5.1 - bug fix
+v0.5.0 - unit test helper
+v0.4.1 - bug fix
+v0.4.0 - some function can get directly
+v0.3.0 - add new helper functions and init jsdoc
+v0.2.0 - add new helper functions
+v0.1.1 - initial

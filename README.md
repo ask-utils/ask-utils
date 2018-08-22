@@ -131,6 +131,7 @@ $ npm run lint -- --fix
 ```
 
 ### History
+v0.9.1 - bug fix
 v0.9.0 - progressive response support
 v0.8.0 - testing mock function
 v0.6.0 - get all function directly

@@ -33,6 +33,22 @@ const getRequest = handlerInput => {
   return {}
 }
 
+
+/**
+ * Get locale that the skill working
+ * @param {object} handlerInput  - from ask-sdk
+ * @param {string} [defaultLocale='en-US'] - default locale
+ * @since 0.10.0
+ * @return {string} locale string
+ * @example
+ * const locale = getLocale(handlerInput)
+ * const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'
+ */
+const getLocale = (handlerInput, defaultLocale = 'en-US') => {
+  const request = getRequest(handlerInput)
+  return request.locale || defaultLocale
+}
+
 /**
  * get dialog state from handlerInput param
  *
@@ -133,15 +149,18 @@ const getUser = handlerInput => {
   return {}
 }
 
-module.exports.isHandledIntent = isHandledIntent
-module.exports.isMatchedRequestType = isMatchedRequestType
-module.exports.isIntentRequest = isIntentRequest
-module.exports.canHandle = canHandle
-module.exports.getRequest = getRequest
-module.exports.getDialogState = getDialogState
-module.exports.getIntent = getIntent
-module.exports.supportsDisplay = supportsDisplay
-module.exports.getSupportedInterfaces = getSupportedInterfaces
-module.exports.getSystem = getSystem
-module.exports.getDevice = getDevice
-module.exports.getUser = getUser
+module.exports = {
+  getLocale,
+  isHandledIntent,
+  isMatchedRequestType,
+  isIntentRequest,
+  canHandle,
+  getRequest,
+  getDialogState,
+  getIntent,
+  supportsDisplay,
+  getSupportedInterfaces,
+  getSystem,
+  getDevice,
+  getUser
+}

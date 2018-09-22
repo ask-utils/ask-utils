@@ -24,6 +24,9 @@ describe('index.js', () => {
       it('should has isHandledIntent() function.', () => {
         assert.notEqual(handlerKeys.indexOf('isHandledIntent'), -1)
       })
+      it('should has getLocale() function.', () => {
+        assert.notEqual(handlerKeys.indexOf('getLocale'), -1)
+      })
       it('should has isMatchedRequestType() function.', () => {
         assert.notEqual(handlerKeys.indexOf('isMatchedRequestType'), -1)
       })

@@ -3,6 +3,25 @@ const utils = require('../../../libs/intentHandlers')
 const { handlerInput } = require('../../handlerInput')
 
 describe('libs/intentHandlers.js', () => {
+  describe('#getLocale()', () => {
+    it('should return en-US for default', () => {
+      const locale = utils.getLocale({})
+      assert.equal(locale, 'en-US')
+    })
+    it('should return ja-JP if overwrite default locale', () => {
+      const locale = utils.getLocale({}, 'ja-JP')
+      assert.equal(locale, 'ja-JP')
+    })
+    it('should return ja-JP', () => {
+      const locale = utils.getLocale(handlerInput)
+      assert.equal(locale, 'ja-JP')
+    })
+    it('should return en-US', () => {
+      handlerInput.requestEnvelope.request.locale = 'en-US'
+      const locale = utils.getLocale(handlerInput)
+      assert.equal(locale, 'en-US')
+    })
+  })
   describe('#isHandledIntent()', () => {
     it('should return true when given matched intent name', () => {
       handlerInput.requestEnvelope.request.intent.name = 'HelloWorldIntent'

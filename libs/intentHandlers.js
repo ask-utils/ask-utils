@@ -33,7 +33,6 @@ const getRequest = handlerInput => {
   return {}
 }
 
-
 /**
  * Get locale that the skill working
  * @param {object} handlerInput  - from ask-sdk

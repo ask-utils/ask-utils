@@ -1,0 +1,6 @@
+tests/
+docs/
+.eslint*
+.gitignore
+.travis.yml
+node_modules/

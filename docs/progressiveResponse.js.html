@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: response.js</title>
+    <title>JSDoc: Source: progressiveResponse.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: response.js</h1>
+    <h1 class="page-title">Source: progressiveResponse.js</h1>
 
     
 
@@ -26,23 +26,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { getRequest } = require('./intentHandlers')
-
-/**
- * get error message object
+            <pre class="prettyprint source linenums"><code>/**
+ * Create progressive response directive
  *
  * @param {object} handlerInput - from ask-sdk
- * @return {object} - error object
- * @since 0.7.0
- **/
-const getErrorMessage = handlerInput => {
-  const request = getRequest(handlerInput)
-  if (request &amp;&amp; Object.keys(request).length > 0) {
-    return request.error || {}
+ * @param {string} speechText - text content to speach prrogressive
+ */
+const enqueueProgressiveResponseDirective = (handlerInput, speechText) => {
+  // Call Alexa Directive Service.
+  const requestEnvelope = handlerInput.requestEnvelope
+  const directiveServiceClient = handlerInput.serviceClientFactory.getDirectiveServiceClient()
+
+  const requestId = requestEnvelope.request.requestId
+  const endpoint = requestEnvelope.context.System.apiEndpoint
+  const token = requestEnvelope.context.System.apiAccessToken
+
+  // build the progressive response directive
+  const directive = {
+    header: {
+      requestId
+    },
+    directive: {
+      type: 'VoicePlayer.Speak',
+      speech: speechText
+    }
   }
-  return {}
+
+  // send directive
+  return directiveServiceClient.enqueue(directive, endpoint, token)
 }
-module.exports.getErrorMessage = getErrorMessage
+module.exports = enqueueProgressiveResponseDirective
 </code></pre>
         </article>
     </section>

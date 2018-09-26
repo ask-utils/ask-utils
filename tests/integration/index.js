@@ -94,4 +94,10 @@ describe('index.js', () => {
       assert.notEqual(handlerKeys.indexOf('getErrorMessage'), -1)
     })
   })
+  describe('isp functions', () => {
+    const handlerKeys = Object.keys(utils)
+    it('should has getSpeakableListOfProducts() function', () => {
+      assert.notEqual(handlerKeys.indexOf('getSpeakableListOfProducts'), -1)
+    })
+  })
 })

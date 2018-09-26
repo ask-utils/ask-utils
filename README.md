@@ -131,6 +131,8 @@ $ npm run lint -- --fix
 ```
 
 ### History
+- v0.11.0 - In Skill Purchasing helpers
+- v0.10.0 - `getLocale` function
 - v0.9.1 - bug fix
 - v0.9.0 - progressive response support
 - v0.8.0 - testing mock function

@@ -28,35 +28,35 @@ const getHandlerInput = (requestEnvelope, context = {}) => {
           getInSkillProducts: (locale) => ({
             locale,
             inSkillProducts: [{
-              productId: "amzn1.adg.product.yyy-yyy-yyy",
-              referenceName: "my-example-quiz",
-              type: "ENTITLEMENT",
-              name: "example quiz",
-              summary: "example quiz game summary",
-              entitled: "ENTITLED",
-              purchasable: "NOT_PURCHASABLE",
+              productId: 'amzn1.adg.product.yyy-yyy-yyy',
+              referenceName: 'my-example-quiz',
+              type: 'ENTITLEMENT',
+              name: 'example quiz',
+              summary: 'example quiz game summary',
+              entitled: 'ENTITLED',
+              purchasable: 'NOT_PURCHASABLE',
               activeEntitlementCount: 1,
-              purchaseMode: "TEST"
-            },{
-              productId: "amzn1.adg.product.xxx-xxx-xxx",
-              referenceName: "my-example-fact",
-              type: "ENTITLEMENT",
-              name: "example fact",
-              summary: "example fact summary",
-              entitled: "NOT_ENTITLED",
-              purchasable: "NOT_PURCHASABLE",
+              purchaseMode: 'TEST'
+            }, {
+              productId: 'amzn1.adg.product.xxx-xxx-xxx',
+              referenceName: 'my-example-fact',
+              type: 'ENTITLEMENT',
+              name: 'example fact',
+              summary: 'example fact summary',
+              entitled: 'NOT_ENTITLED',
+              purchasable: 'NOT_PURCHASABLE',
               activeEntitlementCount: 1,
-              purchaseMode: "TEST"
-            },{
-              productId: "amzn1.adg.product.zzz-zzz-zzz",
-              referenceName: "my-example-news",
-              type: "ENTITLEMENT",
-              name: "example news",
-              summary: "example news summary",
-              entitled: "NOT_ENTITLED",
-              purchasable: "PURCHASABLE",
+              purchaseMode: 'TEST'
+            }, {
+              productId: 'amzn1.adg.product.zzz-zzz-zzz',
+              referenceName: 'my-example-news',
+              type: 'ENTITLEMENT',
+              name: 'example news',
+              summary: 'example news summary',
+              entitled: 'NOT_ENTITLED',
+              purchasable: 'PURCHASABLE',
               activeEntitlementCount: 1,
-              purchaseMode: "TEST"
+              purchaseMode: 'TEST'
             }]
           })
         }

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>response.js - Documentation</title>
+    <title>interceptors.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,7 +31,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">response.js</h1>
+    <h1 class="page-title">interceptors.js</h1>
     
 
     
@@ -41,23 +41,82 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { getRequest } = require('./intentHandlers')
+            <pre class="prettyprint source linenums"><code>/**
+ * Logger for `addRequestInterceptors`
+ *
+ * @since 0.12.0
+ * @example
+ * // To log request parameters in all request
+ * const { RequestLogger } = require('ask-utils')
+ * exports.handler = skillBuilder
+  .addRequestHandlers(
+    LaunchRequestHandler
+  )
+  .addRequestInterceptors(new RequestLogger())
+  .lambda()
+ *
+ * // You can add additional logger
+ * const { RequestLogger } = require('ask-utils')
+ * const additionalLogger = handlerInput => console.log(handlerInput)
+ * exports.handler = skillBuilder
+  .addRequestHandlers(
+    LaunchRequestHandler
+  )
+  .addRequestInterceptors(new RequestLogger(additionalLogger))
+  .lambda()
+ */
+class RequestLogger {
+  constructor (hook = () => {}) {
+    this.hook = hook
+  }
+  async process (handlerInput) {
+    console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
+    this.hook(handlerInput)
+  }
+}
 
 /**
- * get error message object
+ * Logger for `addResponseInterceptors`
  *
- * @param {object} handlerInput - from ask-sdk
- * @return {object} - error object
- * @since 0.7.0
- **/
-const getErrorMessage = handlerInput => {
-  const request = getRequest(handlerInput)
-  if (request &amp;&amp; Object.keys(request).length > 0) {
-    return request.error || {}
+ * @since 0.12.0
+ * @example
+ * // To log response parameters in all request
+ * const { ResponseLogger } = require('ask-utils')
+ * exports.handler = skillBuilder
+  .addRequestHandlers(
+    LaunchRequestHandler,
+    HelloWorldIntentHandler,
+    HelpIntentHandler,
+    CancelAndStopIntentHandler,
+    SessionEndedRequestHandler
+  )
+  .addResponseInterceptors(new ResponseLogger())
+  .addErrorHandlers(ErrorHandler)
+  .lambda()
+ *
+ * // You can add additional logger
+ * const { ResponseLogger } = require('ask-utils')
+ * const additionalLogger = handlerInput => console.log(handlerInput)
+ * exports.handler = skillBuilder
+  .addRequestHandlers(
+    LaunchRequestHandler
+  )
+  .addResponseInterceptors(new ResponseLogger(additionalLogger))
+  .lambda()
+ */
+class ResponseLogger {
+  constructor (hook = () => {}) {
+    this.hook = hook
   }
-  return {}
+  async process (handlerInput) {
+    console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
+    this.hook(handlerInput)
+  }
 }
-module.exports.getErrorMessage = getErrorMessage
+module.exports = {
+  RequestLogger,
+  ResponseLogger
+}
 </code></pre>
         </article>
     </section>

@@ -34,6 +34,29 @@ const getRequest = handlerInput => {
 }
 
 /**
+ * Get session status. If true, is is new session
+ *
+ * @param {object} handlerInput  - from ask-sdk
+ * @since 0.12.0
+ * @return {boolean}
+ * @example
+ * // if it is new session, set user data into the session
+ * if (isNewSession(handlerInput)) {
+ *   const attributes = await handlerInput.attributesManager.getPersistentAttributes()
+ *   handlerInput.attributesManager.setSessionAttributes(attributes)
+ * }
+ */
+const isNewSession = (handlerInput) => {
+  if (
+    handlerInput.requestEnvelope &&
+    handlerInput.requestEnvelope.session
+  ) {
+    return handlerInput.requestEnvelope.session.new || false
+  }
+  return false
+}
+
+/**
  * Get locale that the skill working
  * @param {object} handlerInput  - from ask-sdk
  * @param {string} [defaultLocale='en-US'] - default locale
@@ -161,5 +184,6 @@ module.exports = {
   getSupportedInterfaces,
   getSystem,
   getDevice,
-  getUser
+  getUser,
+  isNewSession
 }

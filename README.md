@@ -131,6 +131,7 @@ $ npm run lint -- --fix
 ```
 
 ### History
+- v0.12.0 - request/response interceptor and isNewSession
 - v0.11.1 - bug fix
 - v0.11.0 - In Skill Purchasing helpers
 - v0.10.0 - `getLocale` function

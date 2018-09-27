@@ -3,6 +3,35 @@ const utils = require('../../../libs/intentHandlers')
 const { handlerInput } = require('../../handlerInput')
 
 describe('libs/intentHandlers.js', () => {
+  describe('#isNewSession()', () => {
+    it('should return true when session new is true', () => {
+      const input = {
+        requestEnvelope: {
+          session: {
+            new: true
+          }
+        }
+      }
+      assert.equal(utils.isNewSession(input), true)
+    })
+    it('should return false when session new is false', () => {
+      const input = {
+        requestEnvelope: {
+          session: {
+            new: false
+          }
+        }
+      }
+      assert.equal(utils.isNewSession(input), false)
+    })
+    it('should return false when given invalid input', () => {
+      const input = {
+        requestEnvelope: {
+        }
+      }
+      assert.equal(utils.isNewSession(input), false)
+    })
+  })
   describe('#getLocale()', () => {
     it('should return en-US for default', () => {
       const locale = utils.getLocale({})

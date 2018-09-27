@@ -131,6 +131,7 @@ $ npm run lint -- --fix
 ```
 
 ### History
+- v0.12.2 - interceptor bug fix
 - v0.12.1 - bug fix
 - v0.12.0 - request/response interceptor and isNewSession
 - v0.11.1 - bug fix

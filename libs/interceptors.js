@@ -28,7 +28,7 @@ class RequestLogger {
   }
   async process (handlerInput) {
     console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
-    this.hook(handlerInput)
+    await this.hook(handlerInput)
   }
 }
 
@@ -67,7 +67,7 @@ class ResponseLogger {
   }
   async process (handlerInput) {
     console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
-    this.hook(handlerInput)
+    await this.hook(handlerInput)
   }
 }
 module.exports = {

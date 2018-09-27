@@ -6,6 +6,7 @@ const systemDevice = require('./libs/system/device')
 const systemUsers = require('./libs/system/users')
 const response = require('./libs/response')
 const isp = require('./libs/isp')
+const interceptors = require('./libs/interceptors')
 const deprecated = {
   intentHandlers,
   randomResponse,
@@ -16,7 +17,8 @@ const funcs = Object.assign(
   randomResponse,
   slotManager,
   response,
-  isp
+  isp,
+  interceptors
 )
 const systems = Object.assign(systemDevice, systemUsers, {})
 

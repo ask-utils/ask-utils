@@ -27,4 +27,6 @@ const enqueueProgressiveResponseDirective = (handlerInput, speechText) => {
   // send directive
   return directiveServiceClient.enqueue(directive, endpoint, token)
 }
-module.exports = enqueueProgressiveResponseDirective
+module.exports = {
+  enqueueProgressiveResponseDirective
+}

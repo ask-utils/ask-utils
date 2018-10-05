@@ -1,5 +1,5 @@
 const assert = require('power-assert')
-const enqueueProgressiveResponseDirective = require('../../../libs/progressiveResponse')
+const { enqueueProgressiveResponseDirective } = require('../../../libs/progressiveResponse')
 const { getHandlerInput, getRequestEnvelopeMock } = require('../../../libs/testUtils')
 const handlerInput = getHandlerInput(getRequestEnvelopeMock())
 

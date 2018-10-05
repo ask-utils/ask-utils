@@ -1,4 +1,4 @@
-# Utility functions for ask-sdk
+# ASK-Utils - Utility functions for ask-sdk
 [![Build Status](https://travis-ci.org/ask-utils/ask-utils.svg?branch=master)](https://travis-ci.org/ask-utils/ask-utils)
 [![npm version](https://badge.fury.io/js/ask-utils.svg)](https://badge.fury.io/js/ask-utils)
 
@@ -15,7 +15,7 @@ const { getRandomMessage, canHandle, getHandlerInput } = require('ask-utils')
 ```
 
 some function can check example usage at wiki.
-(https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities)[https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities]
+[https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities](https://github.com/hideokamoto/ask-utils/wiki/Test-Utilities)
 
 ### getRandomMessage
 

@@ -131,6 +131,7 @@ $ npm run lint -- --fix
 ```
 
 ### History
+- v0.12.4 - bug fix
 - v0.12.3 - [Bugfix] pregressive response helper
 - v0.12.2 - interceptor bug fix
 - v0.12.1 - bug fix

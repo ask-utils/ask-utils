@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha tests/ -R spec --recursive",
     "lint": "./node_modules/eslint/bin/eslint.js ./",
-    "doc": "./node_modules/.bin/jsdoc -r ./libs/ -R README.md -d docs -t ./node_modules/docdash"
+    "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.json"
   },
   "keywords": [
     "alexa",

@@ -26,7 +26,7 @@
     "scripts": [
       "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css",
       "imageproxy?token=cd44e7067699a01270ae73ec7c7b8f89b7f0b4cb406e0e7d57ed6ed9f89f8658&url=https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
-      "/scripts/custom.js"
+      "scripts/custom.js"
     ]
   }
 }

@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RequestLogger.html">RequestLogger</a></li><li><a href="ResponseLogger.html">ResponseLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#enqueueProgressiveResponseDirective">enqueueProgressiveResponseDirective</a></li><li><a href="global.html#getAllEntitledProducts">getAllEntitledProducts</a></li><li><a href="global.html#getAllPurchasableProducts">getAllPurchasableProducts</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getEntitledProducts">getEntitledProducts</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getHandlerInput">getHandlerInput</a></li><li><a href="global.html#getInSkillProducts">getInSkillProducts</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#getPurchasableProducts">getPurchasableProducts</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getRequestEnvelopeMock">getRequestEnvelopeMock</a></li><li><a href="global.html#getSpeakableListOfProducts">getSpeakableListOfProducts</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#isEntitled">isEntitled</a></li><li><a href="global.html#isNewSession">isNewSession</a></li><li><a href="global.html#isPurchasable">isPurchasable</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RequestLogger.html">RequestLogger</a></li><li><a href="ResponseLogger.html">ResponseLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#enqueueProgressiveResponseDirective">enqueueProgressiveResponseDirective</a></li><li><a href="global.html#getAllEntitledProducts">getAllEntitledProducts</a></li><li><a href="global.html#getAllPurchasableProducts">getAllPurchasableProducts</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDevice">getDevice</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getEntitledProducts">getEntitledProducts</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getHandlerInput">getHandlerInput</a></li><li><a href="global.html#getInSkillProducts">getInSkillProducts</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#getPurchasableProducts">getPurchasableProducts</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getRequest">getRequest</a></li><li><a href="global.html#getRequestEnvelopeMock">getRequestEnvelopeMock</a></li><li><a href="global.html#getSpeakableListOfProducts">getSpeakableListOfProducts</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#getSystem">getSystem</a></li><li><a href="global.html#isEntitled">isEntitled</a></li><li><a href="global.html#isNewSession">isNewSession</a></li><li><a href="global.html#isPurchasable">isPurchasable</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
 </nav>
 
 <div id="main">
@@ -136,7 +136,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line19">line 19</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -190,8 +190,16 @@
 
 
 
-    <h5>Example</h5>
+    <h5>Examples</h5>
     
+    <pre class="prettyprint"><code>// When the request is IntentRequest and HelloIntent, return true.
+canHandle(handlerInput, 'IntentRequest', 'HelloIntent')
+// true</code></pre>
+
+    <pre class="prettyprint"><code>// When the request is LaunchRequest, return true.
+canHandle(handlerInput, 'LaunchRequest')
+// true</code></pre>
+
     <pre class="prettyprint"><code>// if intent request name is TestDialogIntent, should run the handler
 const TestDialogIntentHandler = {
   canHandle (handlerInput) {
@@ -853,7 +861,7 @@ const TestDialogIntentHandler = {
 
     
 
-    <h4 class="name" id="getContext"><span class="type-signature"></span>getContext<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getContext"><span class="type-signature"></span>getContext<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -865,7 +873,7 @@ const TestDialogIntentHandler = {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line145">line 145</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -916,6 +924,190 @@ const TestDialogIntentHandler = {
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const context = getContext(handlerInput)
+// {
+//  'AudioPlayer': {
+//    'playerActivity': 'IDLE'
+//  },
+//  'Display': {
+//    'token': ''
+//  },
+//  ...
+// }</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    handlerInput.requestEnvelope.context
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getDevice"><span class="type-signature"></span>getDevice<span class="signature">(handlerInput)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line255">line 255</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Get device block from handlerInput
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const device = getDevice(handlerInput)
+// {
+//   'deviceId': 'amzn1.ask.device.xxxxx',
+//   'supportedInterfaces': {
+//     'AudioPlayer': {},
+//     'Display': {
+//       'templateVersion': '1.0',
+//       'markupVersion': '1.0'
+//     }
+//   }
+// }</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handlerInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">from ask-sdk</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -1286,7 +1478,7 @@ E982ITVV7EK5U
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line90">line 90</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -2253,7 +2445,7 @@ const TestDialogIntentHandler = {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line103">line 103</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -2305,6 +2497,23 @@ const TestDialogIntentHandler = {
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// If you want to get request intent object you can get it by the function.
+const intent = getIntent(handlerInput)
+// {
+//   'name': 'HelloWorldIntent',
+//   'confirmationStatus': 'NONE',
+//   'slots': {
+//     'date': {
+//       'name': 'date',
+//       'value': '2018-05-07',
+//       'confirmationStatus': 'NONE'
+//     }
+//   }
+// }</code></pre>
 
 
 
@@ -2411,7 +2620,7 @@ const TestDialogIntentHandler = {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line69">line 69</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -2989,6 +3198,151 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
 
     
 
+    <h4 class="name" id="getRequest"><span class="type-signature"></span>getRequest<span class="signature">(handlerInput)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Get request object from handlerInput
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const request = getRequest(handlerInput)
+// {
+// 'type': 'IntentRequest',
+// 'requestId': 'amzn1.echo-api.request.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+// 'timestamp': '2018-05-02T00:18:57Z',
+// 'locale': 'ja-JP',
+// 'intent': {
+// ...</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handlerInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">from ask-sdk</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="getRequestEnvelopeMock"><span class="type-signature"></span>getRequestEnvelopeMock<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
@@ -3268,7 +3622,7 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line128">line 128</a>
+        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -3276,7 +3630,7 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
     
 
     
@@ -3426,7 +3780,7 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line36">line 36</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -3434,7 +3788,7 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
     
 
     
@@ -3478,6 +3832,18 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>getSupportedInterfaces(handlerInput)
+// {
+//   'AudioPlayer': {},
+//   'Display': {
+//     'templateVersion': '1.0',
+//     'markupVersion': '1.0'
+//   }
+// }</code></pre>
 
 
 
@@ -3565,6 +3931,155 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
 </dl>
 
     
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getSystem"><span class="type-signature"></span>getSystem<span class="signature">(handlerInput)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line233">line 233</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Get system object from handlerInput
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const system = getSystem(handlerInput)
+// {
+//   'application': {
+//     'applicationId': 'amzn1.ask.skill.xxxxxxx'
+//   },
+//   'user': {
+//     'userId': 'amzn1.ask.account.xxxxx'
+//   },
+//   'device': {
+//  ...
+//   }
+// }</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>handlerInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">from ask-sdk</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         
@@ -3738,7 +4253,7 @@ const speech = locale === 'ja-JP' ? 'こんにちは' : 'Hello'</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line49">line 49</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -4055,7 +4570,7 @@ if (isNewSession(handlerInput)) {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line22">line 22</a>
+        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line156">line 156</a>
     </li></ul></dd>
     
 
@@ -4063,7 +4578,7 @@ if (isNewSession(handlerInput)) {
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
     
 
     
@@ -4107,6 +4622,13 @@ if (isNewSession(handlerInput)) {
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>When invoke the function from Echo Dots, it will gets false
+const isSupportsDisplay = supportsDisplay(handlerInput)
+// false</code></pre>
 
 
 
@@ -4213,7 +4735,7 @@ if (isNewSession(handlerInput)) {
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="intentHandlers.js.html">intentHandlers.js</a>, <a href="intentHandlers.js.html#line116">line 116</a>
+        <a href="system_device.js.html">system/device.js</a>, <a href="system_device.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -4221,7 +4743,7 @@ if (isNewSession(handlerInput)) {
 
     
     <dt class="tag-since">Since:</dt>
-    <dd class="tag-since"><ul class="dummy"><li>0.4.0</li></ul></dd>
+    <dd class="tag-since"><ul class="dummy"><li>0.7.0</li></ul></dd>
     
 
     
@@ -4374,7 +4896,7 @@ if (isNewSession(handlerInput)) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 31 2018 10:20:21 GMT+0900 (JST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 31 2018 10:39:15 GMT+0900 (JST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

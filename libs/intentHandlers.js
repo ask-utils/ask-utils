@@ -10,6 +10,14 @@ const isIntentRequest = (input) => isMatchedRequestType(input, 'IntentRequest')
  * @return {bool} - check result, if matched handler type, will be return true.
  * @since 0.1.0
  * @example
+ *  // When the request is IntentRequest and HelloIntent, return true.
+ * canHandle(handlerInput, 'IntentRequest', 'HelloIntent')
+ * // true
+ * @example
+ *  // When the request is LaunchRequest, return true.
+ * canHandle(handlerInput, 'LaunchRequest')
+ * // true
+ * @example
  * // if intent request name is TestDialogIntent, should run the handler
  * const TestDialogIntentHandler = {
  *   canHandle (handlerInput) {
@@ -22,6 +30,20 @@ const canHandle = (handlerInput, type, intentName = '') => {
   }
   return isMatchedRequestType(handlerInput, type)
 }
+
+/**
+ * Get request object from handlerInput
+ * @param {object} handlerInput - from ask-sdk
+ * @example
+ * const request = getRequest(handlerInput)
+ * // {
+ * // 'type': 'IntentRequest',
+ * // 'requestId': 'amzn1.echo-api.request.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+ * // 'timestamp': '2018-05-02T00:18:57Z',
+ * // 'locale': 'ja-JP',
+ * // 'intent': {
+ * // ...
+ */
 const getRequest = handlerInput => {
   if (
     handlerInput &&
@@ -99,6 +121,20 @@ const getDialogState = (handlerInput) => {
  * @param {object} handlerInput - from ask-sdk
  * @return {object} - handlerInput.requestEnvelope.request.intent
  * @since 0.3.0
+ * @example
+ * // If you want to get request intent object you can get it by the function.
+ * const intent = getIntent(handlerInput)
+ * // {
+ * //   'name': 'HelloWorldIntent',
+ * //   'confirmationStatus': 'NONE',
+ * //   'slots': {
+ * //     'date': {
+ * //       'name': 'date',
+ * //       'value': '2018-05-07',
+ * //       'confirmationStatus': 'NONE'
+ * //     }
+ * //   }
+ * // }
  **/
 const getIntent = handlerInput => {
   const request = getRequest(handlerInput)
@@ -112,6 +148,10 @@ const getIntent = handlerInput => {
  * @param {object} handlerInput - from ask-sdk
  * @return {bool} - If supported display interface, return true
  * @since 0.4.0
+ * @example
+ * When invoke the function from Echo Dots, it will gets false
+ * const isSupportsDisplay = supportsDisplay(handlerInput)
+ * // false
  **/
 const supportsDisplay = handlerInput => {
   const supportedInterfaces = getSupportedInterfaces(handlerInput)
@@ -124,6 +164,15 @@ const supportsDisplay = handlerInput => {
  * @param {object} handlerInput - from ask-sdk
  * @return {object} - context.System.device.supportedInterfaces
  * @since 0.4.0
+ * @example
+ * getSupportedInterfaces(handlerInput)
+ * // {
+ * //   'AudioPlayer': {},
+ * //   'Display': {
+ * //     'templateVersion': '1.0',
+ * //     'markupVersion': '1.0'
+ * //   }
+ * // }
  **/
 const getSupportedInterfaces = handlerInput => {
   const context = getContext(handlerInput)
@@ -141,6 +190,18 @@ const getSupportedInterfaces = handlerInput => {
  * Get request context
  *
  * @link https://developer.amazon.com/ja/blogs/alexa/post/6839eb1c-f718-41cd-ad0c-6ba59c5360f5/alexa-skill-recipe-making-the-most-of-devices-that-support-display
+ * @return {object} handlerInput.requestEnvelope.context
+ * @example
+ * const context = getContext(handlerInput)
+ * // {
+ * //  'AudioPlayer': {
+ * //    'playerActivity': 'IDLE'
+ * //  },
+ * //  'Display': {
+ * //    'token': ''
+ * //  },
+ * //  ...
+ * // }
  **/
 const getContext = handlerInput => {
   if (
@@ -152,22 +213,48 @@ const getContext = handlerInput => {
   }
   return {}
 }
-
+/**
+ * Get system object from handlerInput
+ * @param {object} handlerInput - from ask-sdk
+ * @example
+ * const system = getSystem(handlerInput)
+ * // {
+ * //   'application': {
+ * //     'applicationId': 'amzn1.ask.skill.xxxxxxx'
+ * //   },
+ * //   'user': {
+ * //     'userId': 'amzn1.ask.account.xxxxx'
+ * //   },
+ * //   'device': {
+ * //  ...
+ * //   }
+ * // }
+ */
 const getSystem = handlerInput => {
   const context = getContext(handlerInput)
   if (context && context.System) return context.System
   return {}
 }
 
+/**
+ * Get device block from handlerInput
+ * @param {object} handlerInput - from ask-sdk
+ * @example
+ * const device = getDevice(handlerInput)
+ * // {
+ * //   'deviceId': 'amzn1.ask.device.xxxxx',
+ * //   'supportedInterfaces': {
+ * //     'AudioPlayer': {},
+ * //     'Display': {
+ * //       'templateVersion': '1.0',
+ * //       'markupVersion': '1.0'
+ * //     }
+ * //   }
+ * // }
+ */
 const getDevice = handlerInput => {
   const system = getSystem(handlerInput)
   if (system && system.device) return system.device
-  return {}
-}
-
-const getUser = handlerInput => {
-  const system = getSystem(handlerInput)
-  if (system && system.user) return system.user
   return {}
 }
 
@@ -184,6 +271,5 @@ module.exports = {
   getSupportedInterfaces,
   getSystem,
   getDevice,
-  getUser,
   isNewSession
 }

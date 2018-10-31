@@ -11,7 +11,7 @@ $ npm i -S ask-utils
 
 ## Usage
 
-```
+```js
 const { getRandomMessage, canHandle, getHandlerInput } = require('ask-utils')
 ```
 
@@ -22,7 +22,7 @@ some function can check example usage at wiki.
 
 We can easy create random response in your Alexa skill using ask-sdk.
 
-```
+```js
 const { getRandomMessage } = require('ask-utils')
 const errorMessages = [
   'I can not here what you say, please say again.',
@@ -48,7 +48,7 @@ const ErrorHandler = {
 ### intentHandlers
 We can easy write `canHandle` function by using `canHandle` function.
 
-```
+```js
 const HelpIntentHandler = {
   canHandle (handlerInput) {
     return canHandle(handlerInput, 'IntentRequest', 'AMAZON.HelpIntent')
@@ -67,7 +67,7 @@ const HelpIntentHandler = {
 
 #### functions
 
-```
+```js
 const { getRequest canHandle, getDialogState, getIntent } = require('ask-utils')
 const HelpIntentHandler = {
   canHandle (handlerInput) {
@@ -88,7 +88,7 @@ const HelpIntentHandler = {
 
 Easy to get intent slot value.
 
-```
+```js
 const { canHandle, getSlotValueByName } = require('ask-utils')
 const ExampleIntentHandler = {
   canHandle (handlerInput) {

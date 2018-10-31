@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>interceptors.js - Documentation</title>
+    <title>classes/translations.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">interceptors.js</h1>
+    <h1 class="page-title">classes/translations.js</h1>
     
 
     
@@ -45,81 +45,108 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Logger for `addRequestInterceptors`
- *
- * @since 0.12.0
+ * Translation Class
  * @example
- * // To log request parameters in all request
- * const { RequestLogger } = require('ask-utils')
- * exports.handler = skillBuilder
-  .addRequestHandlers(
-    LaunchRequestHandler
-  )
-  .addRequestInterceptors(new RequestLogger())
-  .lambda()
- *
- * // You can add additional logger
- * const { RequestLogger } = require('ask-utils')
- * const additionalLogger = handlerInput => console.log(handlerInput)
- * exports.handler = skillBuilder
-  .addRequestHandlers(
-    LaunchRequestHandler
-  )
-  .addRequestInterceptors(new RequestLogger(additionalLogger))
-  .lambda()
+ * const t = new Translations()
+ * t.putLocaleStrings('en-US', {
+ *  HELLO: 'Hello'
+ * })
+ * t.putLocaleStrings('ja-JP', {
+ *  HELLO: 'こんにちは'
+ * })
+ * t.getLanguageStrings()
+ * // {
+ * //   'en-US': {
+ * //     translation: {
+ * //       HELLO: 'Hello'
+ * //     }
+ * //   },
+ * //   'ja-JP': {
+ * //     translation: {
+ * //       HELLO: 'こんにちは'
+ * //     }
+ * //   }
+ * // }
  */
-class RequestLogger {
-  constructor (hook = () => {}) {
-    this.hook = hook
+class Translations {
+  /**
+   * Create helper class
+   * @param {string} [defaultLocale='en-US] - Default locale
+   */
+  constructor (defaultLocale = 'en-US') {
+    this.translationObject = {
+      translation: {}
+    }
+    this.languageStrings = {}
+    this.languageStrings[defaultLocale] = this.translationObject
   }
-  async process (handlerInput) {
-    console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
-    await this.hook(handlerInput)
+  /**
+   * Add new translation locale
+   * @param {string} locale - locale string
+   * @example
+   * // add Japanese strings
+   * const t = new Translations()
+   * t.addLocale('ja-JP')
+   */
+  addLocale (locale) {
+    if (this.languageStrings[locale]) return
+    this.languageStrings[locale] = this.translationObject
+  }
+  /**
+   * Put new translation texts
+   * @param {string} locale - target locale string
+   * @param {object} messages - translation texts
+   * @example
+   * // add English Messages
+   * const t = new Translations()
+   * t.putLocaleStrings('en-US', {
+   *  HELLO: 'Hello'
+   * })
+   * @example
+   * // add Japanese Messages
+   * const t = new Translations()
+   * t.putLocaleStrings('ja-JP', {
+   *  HELLO: 'こんにちは'
+   * })
+   */
+  putLocaleStrings (locale, messages) {
+    if (!locale) throw new Error('locale is required')
+    if (!messages || Object.keys(messages).length &lt; 1) throw new Error('message object is required')
+    if (typeof messages !== 'object') throw new Error('message should be object')
+    if (!this.languageStrings[locale]) this.addLocale(locale)
+    this.languageStrings[locale] = {
+      translation: messages
+    }
+  }
+  /**
+   * Add new translation texts
+   * @param {string} locale - target locale string
+   * @param {string} key - translation message key
+   * @param {string} message - translation text
+   * @example
+   * // add English Messages
+   * const t = new Translations()
+   * t.addLocaleStrings('en-US', 'HELLO': 'Hello')
+   * @example
+   * // You can add more translation text after run `putLocaleStrings`
+   * const t = new Translations()
+   * t.putLocaleStrings('en-US', {
+   *  HELLO: 'Hello'
+   * })
+   * t.addLocaleStrings('en-US', 'World': 'World')
+   */
+  addLocaleStrings (locale, key, message) {
+    this.languageStrings[locale].translation[key] = message
+  }
+  /**
+   * Get translation string
+   * @return {object} - translation strings
+   */
+  getLanguageStrings () {
+    return this.languageStrings
   }
 }
-
-/**
- * Logger for `addResponseInterceptors`
- *
- * @since 0.12.0
- * @example
- * // To log response parameters in all request
- * const { ResponseLogger } = require('ask-utils')
- * exports.handler = skillBuilder
-  .addRequestHandlers(
-    LaunchRequestHandler,
-    HelloWorldIntentHandler,
-    HelpIntentHandler,
-    CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
-  )
-  .addResponseInterceptors(new ResponseLogger())
-  .addErrorHandlers(ErrorHandler)
-  .lambda()
- *
- * // You can add additional logger
- * const { ResponseLogger } = require('ask-utils')
- * const additionalLogger = handlerInput => console.log(handlerInput)
- * exports.handler = skillBuilder
-  .addRequestHandlers(
-    LaunchRequestHandler
-  )
-  .addResponseInterceptors(new ResponseLogger(additionalLogger))
-  .lambda()
- */
-class ResponseLogger {
-  constructor (hook = () => {}) {
-    this.hook = hook
-  }
-  async process (handlerInput, response) {
-    console.log(`Response: ${JSON.stringify(response)}`)
-    await this.hook(handlerInput)
-  }
-}
-module.exports = {
-  RequestLogger,
-  ResponseLogger
-}
+module.exports = Translations
 </code></pre>
         </article>
     </section>

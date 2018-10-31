@@ -152,3 +152,10 @@ $ npm run lint -- --fix
 - v0.3.0 - add new helper functions and init jsdoc
 - v0.2.0 - add new helper functions
 - v0.1.1 - initial
+
+
+### Contributors
+
+|Name|Version|
+|:--|:--|
+|[@ArtskydJ](https://github.com/ArtskydJ)|v0.13.0|

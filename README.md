@@ -134,26 +134,7 @@ $ npm run lint -- --fix
 ```
 
 ### History
-- v0.13.0 - Translation helper class
-- v0.12.4 - bug fix
-- v0.12.3 - [Bugfix] pregressive response helper
-- v0.12.2 - interceptor bug fix
-- v0.12.1 - bug fix
-- v0.12.0 - request/response interceptor and isNewSession
-- v0.11.1 - bug fix
-- v0.11.0 - In Skill Purchasing helpers
-- v0.10.0 - `getLocale` function
-- v0.9.1 - bug fix
-- v0.9.0 - progressive response support
-- v0.8.0 - testing mock function
-- v0.6.0 - get all function directly
-- v0.5.1 - bug fix
-- v0.5.0 - unit test helper
-- v0.4.1 - bug fix
-- v0.4.0 - some function can get directly
-- v0.3.0 - add new helper functions and init jsdoc
-- v0.2.0 - add new helper functions
-- v0.1.1 - initial
+-> [Release Note](https://github.com/ask-utils/ask-utils/releases)
 
 
 ### Contributors

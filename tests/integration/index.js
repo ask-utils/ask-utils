@@ -2,6 +2,12 @@ const assert = require('power-assert')
 const utils = require('../../index')
 
 describe('index.js', () => {
+  describe('Class/Translations', () => {
+    it('should has Translations class', () => {
+      console.log(Object.keys(utils))
+      assert.notEqual(Object.keys(utils).indexOf('Translations'), -1)
+    })
+  })
   describe('intentHandlers', () => {
     describe('deprecate way', () => {
       const { intentHandlers } = utils

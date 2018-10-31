@@ -8,6 +8,7 @@ const response = require('./libs/response')
 const isp = require('./libs/isp')
 const progressive = require('./libs/progressiveResponse')
 const interceptors = require('./libs/interceptors')
+const Translations = require('./libs/classes/translations')
 const deprecated = {
   intentHandlers,
   randomResponse,
@@ -23,5 +24,6 @@ const funcs = Object.assign(
   progressive
 )
 const systems = Object.assign(systemDevice, systemUsers, {})
+systems.Translations = Translations
 
 module.exports = Object.assign(testUtils, systems, funcs, deprecated)

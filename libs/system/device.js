@@ -5,6 +5,9 @@ const { getDevice } = require('../intentHandlers')
  * @param {object} handlerInput - from ask-sdk
  * @return {string} - deviceId
  * @since 0.7.0
+ * @example
+ * const deviceId = getDeviceId(handlerInput)
+ * // 'amzn1.ask.device.xxxxx'
  **/
 const getDeviceId = handlerInput => {
   const device = getDevice(handlerInput)
@@ -17,7 +20,11 @@ module.exports.getDeviceId = getDeviceId
  *
  * @param {object} handlerInput - from ask-sdk
  * @return {bool} - If supported display interface, return true
- * @since 0.7.0
+ * @since 0.4.0
+ * @example
+ * When invoke the function from Echo Dots, it will gets false
+ * const isSupportsDisplay = supportsDisplay(handlerInput)
+ * // false
  **/
 const supportsDisplay = handlerInput => {
   const supportedInterfaces = getSupportedInterfaces(handlerInput)
@@ -31,7 +38,16 @@ module.exports.supportsDisplay = supportsDisplay
  *
  * @param {object} handlerInput - from ask-sdk
  * @return {object} - context.System.device.supportedInterfaces
- * @since 0.7.0
+ * @since 0.4.0
+ * @example
+ * getSupportedInterfaces(handlerInput)
+ * // {
+ * //   'AudioPlayer': {},
+ * //   'Display': {
+ * //     'templateVersion': '1.0',
+ * //     'markupVersion': '1.0'
+ * //   }
+ * // }
  **/
 const getSupportedInterfaces = handlerInput => {
   const device = getDevice(handlerInput)
@@ -47,10 +63,18 @@ module.exports.getSupportedInterfaces = getSupportedInterfaces
 
 /**
  * Get device permissions
- *E982ITVV7EK5U
+ *
  * @return {string[]} - lists of permissions
  * @param {string} [type='all'] - permission type
  * @since 0.7.0
+ * @example
+ * // You can get 'read::alexa:device:all:address'
+ * getDevicePermissions('all')
+ * // ['read::alexa:device:all:address']
+ * @example
+ * // you can get 'read::alexa:device:all:address:country_and_postal_code'
+ * getDevicePermissions('country_and_postal_code')
+ * // ['read::alexa:device:all:address:country_and_postal_code']
  **/
 const getDevicePermissions = (type = 'all') => {
   switch (type) {

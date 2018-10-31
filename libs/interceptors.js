@@ -65,8 +65,8 @@ class ResponseLogger {
   constructor (hook = () => {}) {
     this.hook = hook
   }
-  async process (handlerInput) {
-    console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
+  async process (handlerInput, response) {
+    console.log(`Response: ${JSON.stringify(response)}`)
     await this.hook(handlerInput)
   }
 }

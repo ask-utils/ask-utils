@@ -143,50 +143,6 @@ const getIntent = handlerInput => {
 }
 
 /**
- * Is supported display
- *
- * @param {object} handlerInput - from ask-sdk
- * @return {bool} - If supported display interface, return true
- * @since 0.4.0
- * @example
- * When invoke the function from Echo Dots, it will gets false
- * const isSupportsDisplay = supportsDisplay(handlerInput)
- * // false
- **/
-const supportsDisplay = handlerInput => {
-  const supportedInterfaces = getSupportedInterfaces(handlerInput)
-  if (supportedInterfaces.Display) return true
-  return false
-}
-/**
- * Get supported interface object
- *
- * @param {object} handlerInput - from ask-sdk
- * @return {object} - context.System.device.supportedInterfaces
- * @since 0.4.0
- * @example
- * getSupportedInterfaces(handlerInput)
- * // {
- * //   'AudioPlayer': {},
- * //   'Display': {
- * //     'templateVersion': '1.0',
- * //     'markupVersion': '1.0'
- * //   }
- * // }
- **/
-const getSupportedInterfaces = handlerInput => {
-  const context = getContext(handlerInput)
-  if (
-    context.System &&
-    context.System.device &&
-    context.System.device.supportedInterfaces
-  ) {
-    return context.System.device.supportedInterfaces
-  }
-  return {}
-}
-
-/**
  * Get request context
  *
  * @link https://developer.amazon.com/ja/blogs/alexa/post/6839eb1c-f718-41cd-ad0c-6ba59c5360f5/alexa-skill-recipe-making-the-most-of-devices-that-support-display
@@ -267,8 +223,6 @@ module.exports = {
   getRequest,
   getDialogState,
   getIntent,
-  supportsDisplay,
-  getSupportedInterfaces,
   getSystem,
   getDevice,
   isNewSession

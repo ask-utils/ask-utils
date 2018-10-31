@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RequestLogger.html">RequestLogger</a></li><li><a href="ResponseLogger.html">ResponseLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#enqueueProgressiveResponseDirective">enqueueProgressiveResponseDirective</a></li><li><a href="global.html#getAllEntitledProducts">getAllEntitledProducts</a></li><li><a href="global.html#getAllPurchasableProducts">getAllPurchasableProducts</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDevice">getDevice</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getEntitledProducts">getEntitledProducts</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getHandlerInput">getHandlerInput</a></li><li><a href="global.html#getInSkillProducts">getInSkillProducts</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#getPurchasableProducts">getPurchasableProducts</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getRequest">getRequest</a></li><li><a href="global.html#getRequestEnvelopeMock">getRequestEnvelopeMock</a></li><li><a href="global.html#getSpeakableListOfProducts">getSpeakableListOfProducts</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#getSystem">getSystem</a></li><li><a href="global.html#isEntitled">isEntitled</a></li><li><a href="global.html#isNewSession">isNewSession</a></li><li><a href="global.html#isPurchasable">isPurchasable</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="RequestLogger.html">RequestLogger</a></li><li><a href="ResponseLogger.html">ResponseLogger</a></li></ul><h3>Global</h3><ul><li><a href="global.html#canHandle">canHandle</a></li><li><a href="global.html#enqueueProgressiveResponseDirective">enqueueProgressiveResponseDirective</a></li><li><a href="global.html#getAllEntitledProducts">getAllEntitledProducts</a></li><li><a href="global.html#getAllPurchasableProducts">getAllPurchasableProducts</a></li><li><a href="global.html#getConsentToken">getConsentToken</a></li><li><a href="global.html#getContext">getContext</a></li><li><a href="global.html#getDevice">getDevice</a></li><li><a href="global.html#getDeviceId">getDeviceId</a></li><li><a href="global.html#getDevicePermissions">getDevicePermissions</a></li><li><a href="global.html#getDialogState">getDialogState</a></li><li><a href="global.html#getEntitledProducts">getEntitledProducts</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getHandlerInput">getHandlerInput</a></li><li><a href="global.html#getInSkillProducts">getInSkillProducts</a></li><li><a href="global.html#getIntent">getIntent</a></li><li><a href="global.html#getLocale">getLocale</a></li><li><a href="global.html#getPurchasableProducts">getPurchasableProducts</a></li><li><a href="global.html#getRandomMessage">getRandomMessage</a></li><li><a href="global.html#getRequest">getRequest</a></li><li><a href="global.html#getRequestEnvelopeMock">getRequestEnvelopeMock</a></li><li><a href="global.html#getSpeakableListOfProducts">getSpeakableListOfProducts</a></li><li><a href="global.html#getSupportedInterfaces">getSupportedInterfaces</a></li><li><a href="global.html#getSystem">getSystem</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#isEntitled">isEntitled</a></li><li><a href="global.html#isNewSession">isNewSession</a></li><li><a href="global.html#isPurchasable">isPurchasable</a></li><li><a href="global.html#supportsDisplay">supportsDisplay</a></li></ul>
 </nav>
 
 <div id="main">
@@ -189,50 +189,6 @@ const getIntent = handlerInput => {
 }
 
 /**
- * Is supported display
- *
- * @param {object} handlerInput - from ask-sdk
- * @return {bool} - If supported display interface, return true
- * @since 0.4.0
- * @example
- * When invoke the function from Echo Dots, it will gets false
- * const isSupportsDisplay = supportsDisplay(handlerInput)
- * // false
- **/
-const supportsDisplay = handlerInput => {
-  const supportedInterfaces = getSupportedInterfaces(handlerInput)
-  if (supportedInterfaces.Display) return true
-  return false
-}
-/**
- * Get supported interface object
- *
- * @param {object} handlerInput - from ask-sdk
- * @return {object} - context.System.device.supportedInterfaces
- * @since 0.4.0
- * @example
- * getSupportedInterfaces(handlerInput)
- * // {
- * //   'AudioPlayer': {},
- * //   'Display': {
- * //     'templateVersion': '1.0',
- * //     'markupVersion': '1.0'
- * //   }
- * // }
- **/
-const getSupportedInterfaces = handlerInput => {
-  const context = getContext(handlerInput)
-  if (
-    context.System &amp;&amp;
-    context.System.device &amp;&amp;
-    context.System.device.supportedInterfaces
-  ) {
-    return context.System.device.supportedInterfaces
-  }
-  return {}
-}
-
-/**
  * Get request context
  *
  * @link https://developer.amazon.com/ja/blogs/alexa/post/6839eb1c-f718-41cd-ad0c-6ba59c5360f5/alexa-skill-recipe-making-the-most-of-devices-that-support-display
@@ -313,8 +269,6 @@ module.exports = {
   getRequest,
   getDialogState,
   getIntent,
-  supportsDisplay,
-  getSupportedInterfaces,
   getSystem,
   getDevice,
   isNewSession
@@ -333,7 +287,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 31 2018 10:39:15 GMT+0900 (JST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Oct 31 2018 11:04:03 GMT+0900 (JST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -3,6 +3,21 @@
  *
  * @param {object} handlerInput - from ask-sdk
  * @param {string} speechText - text content to speach prrogressive
+ * @since 0.9.0
+ * @example
+ * async handle (handlerInput) {
+ *  try {
+ *   await enqueueProgressiveResponseDirective(handlerInput, 'Please wait for a while')
+ *  } catch (err) {
+ *   // if it failed we can continue, just the user will wait longer for first response
+ *   console.log(err)
+ *  }
+ *  // call some api
+ *  const content = await get()
+ *  return responseBuilder
+ *      .speak(content)
+ *      .getResponse()
+ * }
  */
 const enqueueProgressiveResponseDirective = (handlerInput, speechText) => {
   // Call Alexa Directive Service.

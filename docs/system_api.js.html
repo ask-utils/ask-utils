@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>system/device.js - Documentation</title>
+    <title>system/api.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">system/device.js</h1>
+    <h1 class="page-title">system/api.js</h1>
     
 
     
@@ -44,95 +44,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { getDevice } = require('../intentHandlers')
-/**
- * get device id
- *
- * @param {object} handlerInput - from ask-sdk
- * @return {string} - deviceId
- * @since 0.7.0
- * @example
- * const deviceId = getDeviceId(handlerInput)
- * // 'amzn1.ask.device.xxxxx'
- **/
-const getDeviceId = handlerInput => {
-  const device = getDevice(handlerInput)
-  return device.deviceId || ''
-}
-module.exports.getDeviceId = getDeviceId
+            <pre class="prettyprint source linenums"><code>const { getSystem } = require('../intentHandlers')
 
 /**
- * Is supported display
- *
+ * Get API endpint
  * @param {object} handlerInput - from ask-sdk
- * @return {bool} - If supported display interface, return true
- * @since 0.4.0
+ * @return {object} handlerInput.requestEnvelope.context.System.apiEndpoint
+ * @since 0.14.0
  * @example
- * When invoke the function from Echo Dots, it will gets false
- * const isSupportsDisplay = supportsDisplay(handlerInput)
- * // false
- **/
-const supportsDisplay = handlerInput => {
-  const supportedInterfaces = getSupportedInterfaces(handlerInput)
-  if (supportedInterfaces.Display) return true
-  return false
+ * const apiEndpoint = getApiEndPoint(handlerInput)
+ * // 'https://api.xxxx'
+ */
+const getApiEndPoint = (handlerInput) => {
+  const system = getSystem(handlerInput)
+  if (system &amp;&amp; system.apiEndpoint) return system.apiEndpoint
+  return ''
 }
-module.exports.supportsDisplay = supportsDisplay
-
 /**
- * Get supported interface object
- *
+ * Get API access token
  * @param {object} handlerInput - from ask-sdk
- * @return {object} - context.System.device.supportedInterfaces
- * @since 0.4.0
+ * @return {object} handlerInput.requestEnvelope.context.System.apiAccessToken
+ * @since 0.14.0
  * @example
- * getSupportedInterfaces(handlerInput)
- * // {
- * //   'AudioPlayer': {},
- * //   'Display': {
- * //     'templateVersion': '1.0',
- * //     'markupVersion': '1.0'
- * //   }
- * // }
- **/
-const getSupportedInterfaces = handlerInput => {
-  const device = getDevice(handlerInput)
-  if (
-    device &amp;&amp;
-    device.supportedInterfaces
-  ) {
-    return device.supportedInterfaces
-  }
-  return {}
+ * const apiToken = getApiAccessToken(handlerInput)
+ * // 'XXXXXXXXXXXx'
+ */
+const getApiAccessToken = (handlerInput) => {
+  const system = getSystem(handlerInput)
+  if (system &amp;&amp; system.apiAccessToken) return system.apiAccessToken
+  return ''
 }
-module.exports.getSupportedInterfaces = getSupportedInterfaces
 
-/**
- * Get device permissions
- *
- * @return {string[]} - lists of permissions
- * @param {string} [type='all'] - permission type
- * @since 0.7.0
- * @example
- * // You can get 'read::alexa:device:all:address'
- * getDevicePermissions('all')
- * // ['read::alexa:device:all:address']
- * @example
- * // you can get 'read::alexa:device:all:address:country_and_postal_code'
- * getDevicePermissions('country_and_postal_code')
- * // ['read::alexa:device:all:address:country_and_postal_code']
- **/
-const getDevicePermissions = (type = 'all') => {
-  switch (type) {
-    case 'all':
-      return ['read::alexa:device:all:address']
-    case 'country_and_postal_code':
-      return ['read::alexa:device:all:address:country_and_postal_code']
-    default:
-      return []
-  }
+module.exports = {
+  getApiEndPoint,
+  getApiAccessToken
 }
-module.exports.getDevicePermissions = getDevicePermissions
 </code></pre>
         </article>
     </section>

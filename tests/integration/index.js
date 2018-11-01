@@ -2,7 +2,12 @@ const assert = require('power-assert')
 const utils = require('../../index')
 
 describe('index.js', () => {
-  describe('Class/Translations', () => {
+  describe('Fixtures', () => {
+    it('should has RemidnerClient class', () => {
+      assert.notEqual(Object.keys(utils).indexOf('RemidnerClient'), -1)
+    })
+  })
+  describe('Class', () => {
     it('should has Translations class', () => {
       assert.notEqual(Object.keys(utils).indexOf('Translations'), -1)
     })

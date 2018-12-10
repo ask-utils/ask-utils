@@ -6,3 +6,9 @@ install:
 script:
   - npm run lint
   - npm test
+deploy:
+  provider: npm
+  email: 'info@wp-kyoto.net'
+  api_key: $NPM_TOKEN
+  on:
+    tags: true

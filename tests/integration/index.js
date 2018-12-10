@@ -46,6 +46,9 @@ describe('index.js', () => {
       it('should has canHandle() function.', () => {
         assert.notEqual(handlerKeys.indexOf('canHandle'), -1)
       })
+      it('should has isLaunchRequest() function', () => {
+        assert.notEqual(handlerKeys.indexOf('isLaunchRequest'), -1)
+      })
     })
   })
   describe('randomResponse', () => {

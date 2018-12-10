@@ -32,6 +32,27 @@ const canHandle = (handlerInput, type, intentName = '') => {
 }
 
 /**
+ * Check the request handler type is matched LaunchRequest
+ *
+ * @param {object} handlerInput - from ask-sdk
+ * @return {bool} - If the request is LaunchRequest, return true
+ * @since 0.1.0
+ * @example
+ *  // When the request is IntentRequest and HelloIntent, return false.
+ * isLaunchRequest(handlerInput)
+ * // true
+ * @example
+ *  // When the request is LaunchRequest, return true.
+ * const LaunchRequestHandler = {
+ *   canHandle (handlerInput) {
+ *     return isLaunchRequest(handlerInput)
+ *   },
+ */
+const isLaunchRequest = handlerInput => {
+  return canHandle(handlerInput, 'LaunchRequest')
+}
+
+/**
  * Get request object from handlerInput
  * @param {object} handlerInput - from ask-sdk
  * @example
@@ -225,5 +246,6 @@ module.exports = {
   getIntent,
   getSystem,
   getDevice,
-  isNewSession
+  isNewSession,
+  isLaunchRequest
 }

@@ -113,6 +113,21 @@ describe('libs/intentHandlers.js', () => {
       assert.equal(result, false)
     })
   })
+  describe('#isLaunchRequest()', () => {
+    beforeEach(() => {
+      handlerInput.requestEnvelope.request.type = 'LaunchRequest'
+      handlerInput.requestEnvelope.request.intent.name = 'HelloAlexaIntent'
+    })
+    it('should return true when given matched request type', () => {
+      const result = utils.isLaunchRequest(handlerInput)
+      assert.equal(result, true)
+    })
+    it('should return true when given matched intent name & request type', () => {
+      handlerInput.requestEnvelope.request.type = 'IntentRequest'
+      const result = utils.isLaunchRequest(handlerInput)
+      assert.equal(result, false)
+    })
+  })
   describe('#getRequest()', () => {
     it('should return request object', () => {
       const request = utils.getRequest(handlerInput)

@@ -1,5 +1,5 @@
 import {HandlerInput} from 'ask-sdk';
-import {IntentRequest, DialogState, Request} from 'ask-sdk-model';
+import {IntentRequest, Request} from 'ask-sdk-model';
 import {
   isDialogStarted,
   getDialogState
@@ -14,7 +14,7 @@ const generateHandlerInput = (request: Request): HandlerInput => {
   } as HandlerInput
   return handlerInput
 }
-describe('', () => {
+describe('libs/dialog.ts', () => {
   describe('getDialogState()', () => {
     const request = {
       dialogState: 'STARTED'

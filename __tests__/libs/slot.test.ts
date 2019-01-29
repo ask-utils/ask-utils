@@ -1,7 +1,7 @@
 import { Slot } from 'ask-sdk-model'
 import {HandlerInput} from 'ask-sdk';
 import {
-  getSlot 
+  getSlot
 } from '../../libs/slot'
 
 describe('libs/slot.ts', () => {
@@ -12,6 +12,7 @@ describe('libs/slot.ts', () => {
       return {
         requestEnvelope: {
           request: {
+            type: 'IntentRequest',
             intent: {
               slots
             }
@@ -28,7 +29,11 @@ describe('libs/slot.ts', () => {
         }
       })
       const message = getSlot(handlerInput, 'test')
-      expect(message).toEqual('aaa')
+      expect(message).toEqual({
+        name: 'test',
+        value: 'aaa',
+        confirmationStatus: 'NONE'
+      })
     })
     it('should return empty string when matched slot is not exists', () => {
       const handlerInput = getHandlerInput({

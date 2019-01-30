@@ -1,6 +1,5 @@
 import * as Ask from 'ask-sdk'
 import { Request, RequestEnvelope, IntentRequest } from 'ask-sdk-model'
-
 import HandlerInput = Ask.HandlerInput
 
 export const getRequestEnvelope = (handlerInput: HandlerInput): RequestEnvelope => {

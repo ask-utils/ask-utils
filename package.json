@@ -74,9 +74,8 @@
     }
   },
   "lint-staged": {
-    "^.+\\.(ts|tsx)$": [
-      "prettier-eslint --write",
-      "eslint",
+    "*.ts": [
+      "eslint --fix",
       "git add"
     ]
   }

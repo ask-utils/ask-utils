@@ -1,4 +1,14 @@
 extends: standard
+plugins:
+  - "@typescript-eslint"
+parser: "@typescript-eslint/parser"
+env:
+  es6: true
+  browser: true
+parserOptions:
+  sourceType: 'module'
+  ecmaFeatures:
+    ts: true
 globals:
   describe: false
   it: false

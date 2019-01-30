@@ -1,5 +1,5 @@
-import * as Ask from 'ask-sdk';
-import {Request, RequestEnvelope, IntentRequest} from 'ask-sdk-model';
+import * as Ask from 'ask-sdk'
+import { Request, RequestEnvelope, IntentRequest } from 'ask-sdk-model'
 
 import HandlerInput = Ask.HandlerInput
 
@@ -33,7 +33,7 @@ export const isMatchedIntent = (handlerInput: HandlerInput, intentName: string):
     return isMatchedIntentName(request, intentName)
 }
 export const isLaunchRequest = (handlerInput: HandlerInput): boolean => {
-    return isMatchedRequestType(handlerInput,'LaunchRequest')
+    return isMatchedRequestType(handlerInput, 'LaunchRequest')
 }
 export const isHelpIntent = (handlerInput: HandlerInput): boolean => {
     return isMatchedIntent(handlerInput, 'AMAZON.HelpIntent')

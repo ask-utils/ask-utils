@@ -1,6 +1,11 @@
 import { HandlerInput } from 'ask-sdk'
 import { Request, Slot } from 'ask-sdk-model'
 import { getRequest, isIntentRequestType } from './intentHandler'
+type resolutionSlot = {
+    synonym: string;
+    resolved: string;
+    isValidated: boolean;
+} | ''
 export const getSlot = (handlerInput: HandlerInput, slotName: string): Slot | '' => {
     const request: Request = getRequest(handlerInput)
     if (!isIntentRequestType(request)) return ''
@@ -15,11 +20,6 @@ export const getSlot = (handlerInput: HandlerInput, slotName: string): Slot | ''
     }
     return ''
 }
-type resolutionSlot = {
-    synonym: string;
-    resolved: string;
-    isValidated: boolean;
-} | ''
 export const getResolutionSlot = (slot: Slot): resolutionSlot => {
     if (slot &&
     slot.resolutions &&

@@ -3,3 +3,5 @@ node_modules/
 .envrc
 coverage/
 .idea/
+dist/
+examples/

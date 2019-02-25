@@ -1,5 +1,12 @@
 import * as Ask from 'ask-sdk'
-import { Request, RequestEnvelope, IntentRequest } from 'ask-sdk-model'
+import {
+    Request,
+    RequestEnvelope,
+    IntentRequest,
+    Intent,
+    Context,
+    interfaces
+} from 'ask-sdk-model'
 import HandlerInput = Ask.HandlerInput
 
 export const getRequestEnvelope = (handlerInput: HandlerInput): RequestEnvelope => {
@@ -10,6 +17,15 @@ export const getRequest = (handlerInput: HandlerInput): Request => {
 }
 export const getRequestType = (handlerInput: HandlerInput): string => {
     return handlerInput.requestEnvelope.request.type
+}
+export const getSystemState = (handlerInput: HandlerInput): interfaces.system.SystemState => {
+    return handlerInput.context.system
+}
+export const getContext = (handlerInput: HandlerInput): Context => {
+    return handlerInput.context
+}
+export const getRequestContext = (handlerInput: HandlerInput): Context => {
+    return handlerInput.requestEnvelope.context
 }
 // intentRequest helpers
 export const isMatchedIntentName = (request: IntentRequest, intentName: string): boolean => {
@@ -48,4 +64,31 @@ export const isStopIntent = (handlerInput: HandlerInput): boolean => {
 }
 export const isCancelIntent = (handlerInput: HandlerInput): boolean => {
     return isMatchedIntent(handlerInput, 'AMAZON.CancelIntent')
+}
+
+// get objects
+export const getLocale = (handlerInput: HandlerInput, defaultLocale: string = 'en-US'): string => {
+    const request = getRequest(handlerInput)
+    return request.locale || defaultLocale
+}
+export const getAudioPlayerState = (handlerInput: HandlerInput): interfaces.audioplayer.AudioPlayerState | null => {
+    const context = getRequestContext(handlerInput)
+    return context.AudioPlayer || null
+}
+export const getDisplayState = (handlerInput: HandlerInput): interfaces.display.DisplayState | null => {
+    const context = getRequestContext(handlerInput)
+    return context.Display || null
+}
+export const getGeolocationState = (handlerInput: HandlerInput): interfaces.geolocation.GeolocationState | null => {
+    const context = getRequestContext(handlerInput)
+    return context.Geolocation || null
+}
+export const getViewportState = (handlerInput: HandlerInput): interfaces.viewport.ViewportState | null => {
+    const context = getRequestContext(handlerInput)
+    return context.Viewport || null
+}
+export const getIntent = (handlerInput: HandlerInput): Intent | {} => {
+    const request = getRequest(handlerInput)
+    if (!isIntentRequestType(request)) return {}
+    return request.intent
 }

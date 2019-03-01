@@ -20,3 +20,4 @@ globals:
   beforeAll: false
   afterAll: false
   jasmine: false
+  expect: false

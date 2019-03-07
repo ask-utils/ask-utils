@@ -6,3 +6,8 @@ docs/
 node_modules/
 .DS_Store
 .envrc
+coverage/
+__tests__/
+libs/
+.idea/
+examples/

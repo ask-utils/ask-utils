@@ -10,7 +10,7 @@ export interface DBConfig {
     isDebug?: boolean;
     primaryKey?: string;
 }
-export default class DBClient {
+export class DBClient {
     protected client: DocumentClient
     protected isDebug: boolean
     protected tableName: string

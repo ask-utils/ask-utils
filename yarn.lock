@@ -283,33 +283,37 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
-ask-sdk-core@^2.0.7, ask-sdk-core@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/ask-sdk-core/-/ask-sdk-core-2.3.0.tgz#0d9295930776a9c45d9d5c4f9247c648bfe7fd39"
+ask-sdk-core@2, ask-sdk-core@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/ask-sdk-core/-/ask-sdk-core-2.5.2.tgz#554b349742c52c8cd6e4bbb0faf73f50b0bc67d6"
   dependencies:
-    ask-sdk-runtime "^2.2.0"
+    ask-sdk-runtime "^2.4.0"
 
-ask-sdk-dynamodb-persistence-adapter@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.3.0.tgz#6e9c1b15f063a8db8f617fadc0931f198b92820f"
+ask-sdk-dynamodb-persistence-adapter@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.5.2.tgz#0e6574329486f1e11dfb71f8a95b8eb051b2c983"
   dependencies:
     aws-sdk "^2.163.0"
 
-ask-sdk-model@^1.0.0, ask-sdk-model@^1.3.1:
+ask-sdk-model@^1.3.1:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.11.2.tgz#c91c08849c1ecb13f88f00e81d53d0249a1a5173"
 
-ask-sdk-runtime@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.2.0.tgz#00b0dbbce9a362303045f36a4fd92024d6e8e07e"
+ask-sdk-model@^1.9.0:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.15.1.tgz#387cab67c9f54befae6a3fa16afeb7abf0cd07fe"
 
-ask-sdk@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.3.0.tgz#e5d6724992442a9799559cb6d858b6936093dcdd"
+ask-sdk-runtime@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.4.0.tgz#ebdb213fee934f81c751dc783266de4a1bc155db"
+
+ask-sdk@2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.5.2.tgz#bbfb5da99a323974563a0a6ff16f5f62d492d7fe"
   dependencies:
-    ask-sdk-core "^2.3.0"
-    ask-sdk-dynamodb-persistence-adapter "^2.3.0"
-    ask-sdk-model "^1.0.0"
+    ask-sdk-core "^2.5.2"
+    ask-sdk-dynamodb-persistence-adapter "^2.5.2"
+    ask-sdk-model "^1.9.0"
 
 asn1@~0.2.3:
   version "0.2.4"

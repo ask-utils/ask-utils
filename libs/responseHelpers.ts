@@ -1,4 +1,4 @@
-import { HandlerInput, getApiAccessToken } from 'ask-sdk-core'
+import { HandlerInput } from 'ask-sdk-core'
 import { services } from 'ask-sdk-model'
 import { hasServiceClientFactory } from './serviceClient'
 export const getRandomMessage = (messages: string[]): string => {

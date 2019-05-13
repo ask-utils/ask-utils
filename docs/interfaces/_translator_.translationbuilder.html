@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;responseHelpers&quot; | ask-utils</title>
+	<title>TranslationBuilder | ask-utils</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,141 +56,140 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_responsehelpers_.html">&quot;responseHelpers&quot;</a>
+					<a href="../modules/_translator_.html">&quot;translator&quot;</a>
+				</li>
+				<li>
+					<a href="_translator_.translationbuilder.html">TranslationBuilder</a>
 				</li>
 			</ul>
-			<h1>External module &quot;responseHelpers&quot;</h1>
+			<h1>Interface TranslationBuilder</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">TranslationBuilder</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Type aliases</h3>
+							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_responsehelpers_.html#progressiveresponseerrorhandler" class="tsd-kind-icon">Progressive<wbr>Response<wbr>Error<wbr>Handler</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_responsehelpers_.html#enqueueprogressiveresponse" class="tsd-kind-icon">enqueue<wbr>Progressive<wbr>Response</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_responsehelpers_.html#getrandommessage" class="tsd-kind-icon">get<wbr>Random<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_translator_.translationbuilder.html#addlocale" class="tsd-kind-icon">add<wbr>Locale</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_translator_.translationbuilder.html#addlocalestrings" class="tsd-kind-icon">add<wbr>Locale<wbr>Strings</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_translator_.translationbuilder.html#getlanguagestrings" class="tsd-kind-icon">get<wbr>Language<wbr>Strings</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_translator_.translationbuilder.html#putlocalestrings" class="tsd-kind-icon">put<wbr>Locale<wbr>Strings</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
-					<a name="progressiveresponseerrorhandler" class="tsd-anchor"></a>
-					<h3>Progressive<wbr>Response<wbr>Error<wbr>Handler</h3>
-					<div class="tsd-signature tsd-kind-icon">Progressive<wbr>Response<wbr>Error<wbr>Handler<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/responseHelpers.ts#L10">responseHelpers.ts:10</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>e: <span class="tsd-signature-type">Error</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="enqueueprogressiveresponse" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> enqueue<wbr>Progressive<wbr>Response</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">enqueue<wbr>Progressive<wbr>Response<span class="tsd-signature-symbol">(</span>handlerInput<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HandlerInput</span>, speech<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, errorHandler<span class="tsd-signature-symbol">?: </span><a href="_responsehelpers_.html#progressiveresponseerrorhandler" class="tsd-signature-type">ProgressiveResponseErrorHandler</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addlocale" class="tsd-anchor"></a>
+					<h3>add<wbr>Locale</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Locale<span class="tsd-signature-symbol">(</span>locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/responseHelpers.ts#L23">responseHelpers.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/translator.ts#L7">translator.ts:7</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Send Progressive Response</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>handlerInput: <span class="tsd-signature-type">HandlerInput</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>ASK-SDK handler input</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>speech: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>speech text (string or SSML string)</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> errorHandler: <a href="_responsehelpers_.html#progressiveresponseerrorhandler" class="tsd-signature-type">ProgressiveResponseErrorHandler</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>error handler function (optional)</p>
-										</div>
-									</div>
+									<h5>locale: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="getrandommessage" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Random<wbr>Message</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Random<wbr>Message<span class="tsd-signature-symbol">(</span>messages<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="addlocalestrings" class="tsd-anchor"></a>
+					<h3>add<wbr>Locale<wbr>Strings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Locale<wbr>Strings<span class="tsd-signature-symbol">(</span>locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/responseHelpers.ts#L4">responseHelpers.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/translator.ts#L9">translator.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>messages: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>locale: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>key: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getlanguagestrings" class="tsd-anchor"></a>
+					<h3>get<wbr>Language<wbr>Strings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Language<wbr>Strings<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_translator_.translationobject.html" class="tsd-signature-type">TranslationObject</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">__type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/translator.ts#L10">translator.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_translator_.translationobject.html" class="tsd-signature-type">TranslationObject</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">__type</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="putlocalestrings" class="tsd-anchor"></a>
+					<h3>put<wbr>Locale<wbr>Strings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">put<wbr>Locale<wbr>Strings<span class="tsd-signature-symbol">(</span>locale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, messages<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/hideokamoto/ask-utils/blob/bec9736/libs/translator.ts#L8">translator.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>locale: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>messages: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_translator_.translationbuilder.html" class="tsd-signature-type">TranslationBuilder</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -203,56 +202,77 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_attributemanager_.html">"attribute<wbr>Manager"</a>
+						<a href="../modules/_attributemanager_.html">"attribute<wbr>Manager"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_db_.html">"db"</a>
+						<a href="../modules/_db_.html">"db"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_device_.html">"device"</a>
+						<a href="../modules/_device_.html">"device"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_dialog_.html">"dialog"</a>
+						<a href="../modules/_dialog_.html">"dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_intenthandler_.html">"intent<wbr>Handler"</a>
+						<a href="../modules/_intenthandler_.html">"intent<wbr>Handler"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_interceptors_.html">"interceptors"</a>
+						<a href="../modules/_interceptors_.html">"interceptors"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_requesthandler_.html">"request<wbr>Handler"</a>
+						<a href="../modules/_requesthandler_.html">"request<wbr>Handler"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_responsehelpers_.html">"response<wbr>Helpers"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_serviceclient_.html">"service<wbr>Client"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_slot_.html">"slot"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_responsehelpers_.html">"response<wbr>Helpers"</a>
+						<a href="../modules/_translator_.html">"translator"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_serviceclient_.html">"service<wbr>Client"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_slot_.html">"slot"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_translator_.html">"translator"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_user_.html">"user"</a>
+						<a href="../modules/_user_.html">"user"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="_responsehelpers_.html#progressiveresponseerrorhandler" class="tsd-kind-icon">Progressive<wbr>Response<wbr>Error<wbr>Handler</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_translator_.translationfactory.html" class="tsd-kind-icon">Translation<wbr>Factory</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_responsehelpers_.html#enqueueprogressiveresponse" class="tsd-kind-icon">enqueue<wbr>Progressive<wbr>Response</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_translator_.translationbuilder.html" class="tsd-kind-icon">Translation<wbr>Builder</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_translator_.translationbuilder.html#addlocale" class="tsd-kind-icon">add<wbr>Locale</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_translator_.translationbuilder.html#addlocalestrings" class="tsd-kind-icon">add<wbr>Locale<wbr>Strings</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_translator_.translationbuilder.html#getlanguagestrings" class="tsd-kind-icon">get<wbr>Language<wbr>Strings</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_translator_.translationbuilder.html#putlocalestrings" class="tsd-kind-icon">put<wbr>Locale<wbr>Strings</a>
+							</li>
+						</ul>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_responsehelpers_.html#getrandommessage" class="tsd-kind-icon">get<wbr>Random<wbr>Message</a>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_translator_.translationobject.html" class="tsd-kind-icon">Translation<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_translator_.html#translationgenerator" class="tsd-kind-icon">Translation<wbr>Generator</a>
 					</li>
 				</ul>
 			</nav>

@@ -4,12 +4,13 @@ import interfaces from 'ask-sdk-model'
 
 export const RequestLogger: RequestInterceptor<HandlerInput> = {
     async process (handlerInput: HandlerInput) {
-        console.log('RequestEnvelope: %j', handlerInput.requestEnvelope)
+        console.log('[RequestLogger] RequestEnvelope: %j', handlerInput.requestEnvelope)
     }
 }
 export const ResponseLogger: ResponseInterceptor<HandlerInput, interfaces.Response> = {
     async process (handlerInput: HandlerInput, response: interfaces.Response) {
-        console.log('Response: %j', response)
+        console.log('[ResponseLogger] RequestEnvelope: %j', handlerInput.requestEnvelope)
+        console.log('[ResponseLogger] Response: %j', response)
     }
 }
 export default {

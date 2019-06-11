@@ -22,22 +22,21 @@ export type ProgressiveResponseErrorHandler = (e: Error) => void
  */
 export const enqueueProgressiveResponse = async (handlerInput: HandlerInput, speech: string, errorHandler?: ProgressiveResponseErrorHandler): Promise<void> => {
     const { serviceClientFactory, requestEnvelope } = handlerInput
-    if (hasServiceClientFactory(serviceClientFactory)) {
-        const client = serviceClientFactory.getDirectiveServiceClient()
-        const { requestId } = requestEnvelope.request
-        const payload: services.directive.SendDirectiveRequest = {
-            header: {
-                requestId
-            },
-            directive: {
-                type: 'VoicePlayer.Speak',
-                speech
-            }
+    if (!hasServiceClientFactory(serviceClientFactory)) return
+    const client = serviceClientFactory.getDirectiveServiceClient()
+    const { requestId } = requestEnvelope.request
+    const payload: services.directive.SendDirectiveRequest = {
+        header: {
+            requestId
+        },
+        directive: {
+            type: 'VoicePlayer.Speak',
+            speech
         }
-        try {
-            client.enqueue(payload)
-        } catch (e) {
-            if (errorHandler) errorHandler(e)
-        }
+    }
+    try {
+        client.enqueue(payload)
+    } catch (e) {
+        if (errorHandler) errorHandler(e)
     }
 }

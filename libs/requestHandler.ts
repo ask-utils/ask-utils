@@ -1,7 +1,8 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core'
 import {
     interfaces,
-    Request
+    Request,
+    Response
 } from 'ask-sdk-model'
 
 export const cloneHandler = (cloneTarget: RequestHandler): RequestHandler => {

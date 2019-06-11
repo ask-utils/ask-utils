@@ -18,12 +18,12 @@ export class TranslationFactory {
             [lang: string]: TranslationObject;
         } = {}
         return {
-            addLocale (locale: string) {
+            addLocale (locale: string): TranslationBuilder {
                 if (languageStrings[locale] || !translationObject) return this
                 languageStrings[locale] = translationObject
                 return this
             },
-            putLocaleStrings (locale: string, messages: string) {
+            putLocaleStrings (locale: string, messages: string): TranslationBuilder {
                 if (!locale) throw new Error('locale is required')
                 if (!messages || Object.keys(messages).length < 1) throw new Error('message object is required')
                 if (typeof messages !== 'object') throw new Error('message should be object')
@@ -33,11 +33,11 @@ export class TranslationFactory {
                 }
                 return this
             },
-            addLocaleStrings (locale: string, key: string, message: string) {
+            addLocaleStrings (locale: string, key: string, message: string): TranslationBuilder {
                 languageStrings[locale].translation[key] = message
                 return this
             },
-            getLanguageStrings () {
+            getLanguageStrings (): TranslationObject | {} {
                 return languageStrings
             }
         }

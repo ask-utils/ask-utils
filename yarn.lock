@@ -670,7 +670,7 @@ arrify@^1.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
-ask-sdk-core@2, ask-sdk-core@^2.6.0:
+ask-sdk-core@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ask-sdk-core/-/ask-sdk-core-2.6.0.tgz#8d067b190f065113980485d9a948a2a1f80a4132"
   integrity sha512-1NPiqxFiQbBOxZtgtEYMCU6kWwMcyBxSEpL7B71yHh9o7v6Tqaiu7j/ukUxXh5Ingr+23jSptOLPfiWo5fBorA==
@@ -684,7 +684,7 @@ ask-sdk-dynamodb-persistence-adapter@^2.6.0:
   dependencies:
     aws-sdk "^2.163.0"
 
-ask-sdk-model@^1.3.1, ask-sdk-model@^1.9.0:
+ask-sdk-model@^1.16.0, ask-sdk-model@^1.9.0:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.16.0.tgz#05ebbbdd26d72769e4a29c4a62bdc98597d2746a"
   integrity sha512-GPIfiQVXUAqUVv0x+Z2h3a3XW4Et9bNhdQ2cNkfeHPDd3eJ8K8JMBNGcJk32rEQnef2uEf03lcjz2sCvHBlf+A==
@@ -694,7 +694,7 @@ ask-sdk-runtime@^2.4.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.4.0.tgz#ebdb213fee934f81c751dc783266de4a1bc155db"
   integrity sha512-NiTXGeljx3wV9GIbwOvYc3EKPLTR1ZVoJBGNNyoAwg89v1L/hZgg5p3rJM0YJfIqw6HJUHJbtdJsRIHtkscxRA==
 
-ask-sdk@2:
+ask-sdk@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.6.0.tgz#ea71e41acd2a5dfc0dcbfd8497dd1ebfe27e10f2"
   integrity sha512-nQyA0tRsoJ3469qhpNgfDmcQR18hcj38YfdzM2Zc/tcjBV/LEYOqcapVt+UCiPggn4kOafLnunXtq2VH3yi/YQ==
@@ -5209,7 +5209,7 @@ tslib@1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
-tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==

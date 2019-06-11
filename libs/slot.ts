@@ -21,23 +21,26 @@ export const getSlot = (handlerInput: HandlerInput, slotName: string): Slot | ''
     return ''
 }
 export const getResolutionSlot = (slot: Slot): resolutionSlot => {
-    if (slot &&
-    slot.resolutions &&
-    slot.resolutions.resolutionsPerAuthority &&
-    slot.resolutions.resolutionsPerAuthority[0] &&
-    slot.resolutions.resolutionsPerAuthority[0].status &&
-    slot.resolutions.resolutionsPerAuthority[0].status.code) {
+    if (!slot) return ''
+    const value = slot.value || ''
+    if (
+        slot.resolutions &&
+        slot.resolutions.resolutionsPerAuthority &&
+        slot.resolutions.resolutionsPerAuthority[0] &&
+        slot.resolutions.resolutionsPerAuthority[0].status &&
+        slot.resolutions.resolutionsPerAuthority[0].status.code
+    ) {
         switch (slot.resolutions.resolutionsPerAuthority[0].status.code) {
             case 'ER_SUCCESS_MATCH':
                 return {
-                    synonym: slot.value,
+                    synonym: value,
                     resolved: slot.resolutions.resolutionsPerAuthority[0].values[0].value.name,
                     isValidated: true
                 }
             case 'ER_SUCCESS_NO_MATCH':
                 return {
-                    synonym: slot.value,
-                    resolved: slot.value,
+                    synonym: value,
+                    resolved: value,
                     isValidated: false
                 }
             default:
@@ -45,8 +48,8 @@ export const getResolutionSlot = (slot: Slot): resolutionSlot => {
         }
     } else {
         return {
-            synonym: slot.value,
-            resolved: slot.value,
+            synonym: value,
+            resolved: value,
             isValidated: false
         }
     }
@@ -56,6 +59,6 @@ export const getSlotValue = (handlerInput: HandlerInput, slotName: string): stri
     const slot = getSlot(handlerInput, slotName)
     if (!slot) return ''
     const resolution = getResolutionSlot(slot)
-    if (!resolution) return slot.value
+    if (!resolution) return slot.value || ''
     return resolution.resolved
 }

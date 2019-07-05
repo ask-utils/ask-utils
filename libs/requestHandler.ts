@@ -2,7 +2,8 @@ import { RequestHandler, HandlerInput } from 'ask-sdk-core'
 import {
     interfaces,
     Request,
-    Response
+    Response,
+    RequestEnvelope
 } from 'ask-sdk-model'
 
 export const cloneHandler = (cloneTarget: RequestHandler): RequestHandler => {
@@ -24,4 +25,8 @@ export const isSkillConnectionResponse = (request: Request): request is interfac
 
 export const isSkillConnectionRequest = (request: Request): request is interfaces.connections.ConnectionsRequest => {
     return request.type === 'Connections.Request'
+}
+
+export const isSkillEvent = (requestEnvelope: RequestEnvelope): boolean => {
+    return /^AlexaSkillEvent/.test(requestEnvelope.request.type)
 }

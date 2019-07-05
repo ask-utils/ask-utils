@@ -16,3 +16,14 @@ export const getSessionAttribute = (handlerInput: HandlerInput, attributeName: s
     const atts = getSessionAttributes(handlerInput)
     return atts[attributeName]
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getPersistentAttributes = async <Default = {[key: string]: any}>(handlerInput: HandlerInput, defaultAttributes: Default) => {
+    try {
+        const data = await handlerInput.attributesManager.getPersistentAttributes()
+        if (!data) return defaultAttributes
+        return data
+    } catch (e) {
+        return defaultAttributes
+    }
+}

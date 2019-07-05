@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "utility functions for ask-sdk",
   "main": "dist/index.js",
   "scripts": {

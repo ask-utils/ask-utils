@@ -11,3 +11,4 @@ __tests__/
 libs/
 .idea/
 examples/
+.rpt2_cache/

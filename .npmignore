@@ -12,3 +12,4 @@ libs/
 .idea/
 examples/
 .rpt2_cache/
+yarn-error.log

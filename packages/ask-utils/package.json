@@ -16,6 +16,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@ask-utils/error-handlers": "^1.0.0"
+    "@ask-utils/error-handlers": "^1.0.0",
+    "@ask-utils/handlers": "^1.0.0"
   }
 }

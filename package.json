@@ -4,14 +4,13 @@
   "description": "utility functions for ask-sdk",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "tsc": "tsc",
-    "test": "jest",
-    "lint": "eslint 'libs/**/*.{ts,tsx}'",
-    "doc": "typedoc --out docs libs/",
-    "postversion": "git push origin $(git describe --abbrev=0 --tags)",
-    "test:watch": "jest --watch",
-    "test:dev": "jest --watch --silent=false --verbose false --coverage"
+    "test": "lerna run test",
+    "type": "lerna run type",
+    "build": "lerna run build",
+    "bootstrap": "lerna bootstrap",
+    "lerna": "lenra",
+    "reboot": "lerna clean -y && lerna bootstrap",
+    "lint": "eslint ./**/*.ts"
   },
   "keywords": [
     "alexa",
@@ -29,6 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.12",
+    "@types/moment": "^2.13.0",
     "@types/node": "^10.12.18",
     "@typescript-eslint/eslint-plugin": "^1.1.1",
     "@typescript-eslint/parser": "^1.1.1",
@@ -37,6 +37,7 @@
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.16.0",
     "aws-sdk": "^2.447.0",
+    "class-resolver": "^1.1.0",
     "eslint": "^5.12.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
@@ -47,6 +48,7 @@
     "jest": "^24.8.0",
     "lerna": "^3.13.2",
     "lint-staged": "^8.1.1",
+    "moment": "^2.24.0",
     "prettier": "^1.16.2",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",

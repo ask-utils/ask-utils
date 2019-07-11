@@ -26,7 +26,7 @@ export interface ErrorHandlerBuilder {
  * ```typescript
  * const ErrorHandler = SentryErrorHandlerFactory.init()
  *                          .setHandle((handlerInput) => {
-*                             return handlerInput.responseBuilder
+ *                            return handlerInput.responseBuilder
  *                              .speak('Sorry I could not understand the meaning. Please tell me again')
  *                              .reprompt('Could you tell me onece more?')
  *                              .getResponse()

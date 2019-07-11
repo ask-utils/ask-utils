@@ -23,9 +23,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "include": [
-    "libs/"
-  ],
   "exclude": [
     "__tests__",
     "docs",

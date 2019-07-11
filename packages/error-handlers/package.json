@@ -1,0 +1,20 @@
+{
+  "name": "@ask-utils/error-handlers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^1.16.7",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.5.0"
+  }
+}

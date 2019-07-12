@@ -5,12 +5,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
     "build": "rollup -c",
     "tsc": "tsc",
     "test": "jest",
     "lint": "eslint 'libs/**/*.{ts,tsx}'",
     "doc": "typedoc --out docs libs/",
-    "postversion": "git push origin $(git describe --abbrev=0 --tags)",
     "test:watch": "jest --watch",
     "test:dev": "jest --watch --silent=false --verbose false --coverage"
   },

@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "2.3.2",
+  "version": "3.0.0",
   "description": "utility functions for ask-sdk",
   "main": "dist/index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "lerna": "lenra",
     "reboot": "lerna clean -y && lerna bootstrap",
+    "postversion": "git push origin $(git describe --abbrev=0 --tags)",
     "lint": "eslint ./**/*.ts"
   },
   "keywords": [

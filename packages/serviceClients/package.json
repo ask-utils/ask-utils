@@ -19,7 +19,9 @@
     "ask-sdk",
     "alexa-skill"
   ],
-  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {

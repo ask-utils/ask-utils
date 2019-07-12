@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/proactive-event",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "description": "Alexa proactive event utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

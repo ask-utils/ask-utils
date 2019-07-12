@@ -73,15 +73,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "dependencies": {
-    "ask-sdk": "^2.6.0",
-    "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.18.0",
-    "aws-sdk": "^2.492.0",
-    "axios": "^0.19.0",
-    "class-resolver": "^1.1.0",
-    "moment": "^2.24.0",
-    "tslib": "^1.10.0"
   }
 }

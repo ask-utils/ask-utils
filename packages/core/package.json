@@ -51,5 +51,13 @@
       "**/__tests__/*/*.+(ts|tsx|js)",
       "**/__tests__/**/*.+(ts|tsx|js)"
     ]
+  },
+  "dependencies": {
+    "ask-sdk": "^2.6.0",
+    "ask-sdk-core": "^2.6.0",
+    "ask-sdk-model": "^1.18.0",
+    "ask-sdk-runtime": "^2.4.0",
+    "aws-sdk": "^2.492.0",
+    "tslib": "^1.10.0"
   }
 }

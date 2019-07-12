@@ -8,3 +8,4 @@ examples/
 .rpt2_cache/
 yarn-error.log
 lerna-debug.log
+base/

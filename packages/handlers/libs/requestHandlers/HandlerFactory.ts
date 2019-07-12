@@ -1,3 +1,6 @@
+/**
+ * Deprecated
+ */
 /* eslint-disable */
 import { RequestHandler, HandlerInput } from 'ask-sdk-core'
 import { Response, Request, RequestEnvelope } from 'ask-sdk-model'

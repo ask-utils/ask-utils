@@ -14,7 +14,6 @@
     "test:watch": "jest --watch",
     "test:dev": "jest --watch --silent=false --verbose false --coverage"
   },
-  "keywords": [],
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
@@ -24,5 +23,37 @@
   },
   "dependencies": {
     "ask-utils": "^2.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Alexa",
+    "ASK SDK",
+    "Request Handlers",
+    "ask-utils"
+  ],
+  "directories": {
+    "lib": "libs",
+    "test": "__tests__"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*/*.+(ts|tsx|js)",
+      "**/__tests__/**/*.+(ts|tsx|js)"
+    ]
   }
 }

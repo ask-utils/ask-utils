@@ -8,6 +8,7 @@
     "build": "rollup -c"
   },
   "keywords": [],
+  "private": true,
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {

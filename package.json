@@ -59,24 +59,6 @@
     "typedoc": "^0.14.1",
     "typescript": "^3.2.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    },
-    "testMatch": [
-      "**/__tests__/*/*.+(ts|tsx|js)"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

@@ -19,6 +19,7 @@
   "dependencies": {
     "@ask-utils/core": "^1.0.0",
     "@ask-utils/error-handlers": "^1.0.0",
-    "@ask-utils/handlers": "^1.0.0"
+    "@ask-utils/handlers": "^1.0.0",
+    "@ask-utils/proactive-event": "^0.2.5"
   }
 }

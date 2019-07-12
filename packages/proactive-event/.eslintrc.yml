@@ -1,0 +1,4 @@
+
+rules:
+  "@typescript-eslint/no-namespace": off
+  "@typescript-eslint/explicit-function-return-type": off

@@ -22,6 +22,9 @@
     "rollup-plugin-typescript2": "^0.21.2",
     "typescript": "^3.5.3"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@sentry/node": "^5.5.0"
   }

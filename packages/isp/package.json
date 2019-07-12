@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/isp",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Alexa ISP utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

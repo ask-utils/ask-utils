@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,10 +17,10 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.0.4",
-    "@ask-utils/error-handlers": "^3.0.4",
-    "@ask-utils/handlers": "^3.0.4",
-    "@ask-utils/proactive-event": "^3.0.4",
+    "@ask-utils/core": "^3.0.5",
+    "@ask-utils/error-handlers": "^3.0.5",
+    "@ask-utils/handlers": "^3.0.5",
+    "@ask-utils/proactive-event": "^3.0.5",
     "ask-sdk": "^2.6.0",
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.18.0",

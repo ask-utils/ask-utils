@@ -11,7 +11,13 @@
     "lerna": "lenra",
     "reboot": "lerna clean -y && lerna bootstrap",
     "postversion": "git push origin $(git describe --abbrev=0 --tags)",
-    "lint": "eslint ./**/*.ts"
+    "lint": "eslint ./**/*.ts",
+    "versionup": "lerna version",
+    "versionup:patch": "lerna version patch",
+    "versionup:minor": "lerna version minor",
+    "versionup:major": "lerna version major",
+    "release": "lerna publish from-package",
+    "release:canary": "lerna publish --canary"
   },
   "keywords": [
     "alexa",
@@ -34,11 +40,6 @@
     "@typescript-eslint/eslint-plugin": "^1.1.1",
     "@typescript-eslint/parser": "^1.1.1",
     "@typescript-eslint/typescript-estree": "^1.1.1",
-    "ask-sdk": "^2.6.0",
-    "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.16.0",
-    "aws-sdk": "^2.447.0",
-    "class-resolver": "^1.1.0",
     "eslint": "^5.12.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
@@ -49,14 +50,12 @@
     "jest": "^24.8.0",
     "lerna": "^3.13.2",
     "lint-staged": "^8.1.1",
-    "moment": "^2.24.0",
     "prettier": "^1.16.2",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
     "rollup": "^1.12.3",
     "rollup-plugin-typescript2": "^0.20.1",
     "ts-jest": "^23.10.5",
-    "tslib": "^1.10.0",
     "typedoc": "^0.14.1",
     "typescript": "^3.2.2"
   },
@@ -72,6 +71,13 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.19.0"
+    "ask-sdk": "^2.6.0",
+    "ask-sdk-core": "^2.6.0",
+    "ask-sdk-model": "^1.18.0",
+    "aws-sdk": "^2.492.0",
+    "axios": "^0.19.0",
+    "class-resolver": "^1.1.0",
+    "moment": "^2.24.0",
+    "tslib": "^1.10.0"
   }
 }

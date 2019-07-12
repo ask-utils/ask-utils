@@ -93,7 +93,7 @@ const HelpIntentHandler = {
 ## development
 
 ```
-$ git clone git@github.com:hideokamoto/ask-utils.git
+$ git clone git@github.com:ask-utils/ask-utils.git
 $ cd ask-utils
 $ npm i
 ```

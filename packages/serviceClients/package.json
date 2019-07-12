@@ -1,7 +1,7 @@
 {
-  "name": "@ask-utils/base",
+  "name": "@ask-utils/service-client",
   "version": "3.0.4",
-  "description": "base package.",
+  "description": "alt service client for Alexa.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

@@ -7,8 +7,14 @@
   "scripts": {
     "build": "rollup -c"
   },
-  "keywords": [],
-  "private": true,
+  "keywords": [
+    "alexa",
+    "ask-sdk",
+    "alexa-skill"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
@@ -21,10 +27,14 @@
     "@ask-utils/error-handlers": "^3.0.7",
     "@ask-utils/handlers": "^3.0.7",
     "@ask-utils/proactive-event": "^3.0.7",
-    "ask-sdk": "^2.6.0",
-    "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.18.0",
-    "ask-sdk-runtime": "^2.4.0",
-    "tslib": "^1.10.0"
+    "@ask-utils/isp": "^3.0.7",
+    "@ask-utils/service-client": "^3.0.7"
+  },
+  "bugs": {
+    "url": "https://github.com/ask-utils/ask-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ask-utils/ask-utils.git"
   }
 }

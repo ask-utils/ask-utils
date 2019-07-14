@@ -1,7 +1,7 @@
 {
   "name": "@ask-utils/core",
   "version": "3.0.7",
-  "description": "",
+  "description": "Core helpers for ask-sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

@@ -1,7 +1,5 @@
 import { RequestHandler, HandlerInput } from 'ask-sdk-core'
 import {
-    interfaces,
-    Request,
     Response,
     RequestEnvelope
 } from 'ask-sdk-model'
@@ -17,14 +15,6 @@ interface MergeObjectType {
 
 export const mergeHandler = (cloneTarget: RequestHandler, mergeObject: MergeObjectType): RequestHandler => {
     return Object.assign({}, cloneTarget, mergeObject)
-}
-
-export const isSkillConnectionResponse = (request: Request): request is interfaces.connections.ConnectionsResponse => {
-    return request.type === 'Connections.Response'
-}
-
-export const isSkillConnectionRequest = (request: Request): request is interfaces.connections.ConnectionsRequest => {
-    return request.type === 'Connections.Request'
 }
 
 export const isSkillEvent = (requestEnvelope: RequestEnvelope): boolean => {

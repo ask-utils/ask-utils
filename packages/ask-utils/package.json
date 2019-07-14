@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,11 +23,11 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.0.7",
+    "@ask-utils/core": "^3.0.8",
     "@ask-utils/error-handlers": "^3.0.7",
     "@ask-utils/handlers": "^3.0.7",
-    "@ask-utils/proactive-event": "^3.0.7",
     "@ask-utils/isp": "^3.0.7",
+    "@ask-utils/proactive-event": "^3.0.7",
     "@ask-utils/service-client": "^3.0.7"
   },
   "bugs": {

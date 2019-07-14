@@ -12,7 +12,7 @@ $ npm i -S ask-utils
 ## Packages
 
  | name | npm url | Repository | Summary | 
- | :-- | :-- | :-- | 
+ | :-- | :-- | :-- | :-- |
  | @ask-utils/core | https://www.npmjs.com/package/@ask-utils/core | https://github.com/ask-utils/ask-utils/tree/master/packages/core | Core utilities | 
  | @ask-utils/proactive-event | https://www.npmjs.com/package/@ask-utils/proactive-event | https://github.com/ask-utils/ask-utils/tree/master/packages/proactive-event | Proactive Event parameter builder and request client | 
  | @ask-utils/isp | https://www.npmjs.com/package/@ask-utils/isp | https://github.com/ask-utils/ask-utils/tree/master/packages/isp | ISP helpers | 

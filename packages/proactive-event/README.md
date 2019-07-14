@@ -1,9 +1,7 @@
-# ASK-Utils - Utility functions for ask-sdk
-[![Build Status](https://travis-ci.org/ask-utils/proactive-event.svg?branch=master)](https://travis-ci.org/ask-utils/proactive-event)
-[![npm version](https://badge.fury.io/js/@ask-utils/proactive-event.svg)](https://badge.fury.io/js/@ask-utils/proactive-event)
-![logo](https://raw.githubusercontent.com/ask-utils/ask-utils/master/docs/img/logo.png)
+# ASK-Utils - Proactive event helpers
+![logo](https://ask-utils.dev/static/9cbabc261164aba75a5d7e32d0e53371/8a651/youtube_profile_image.png)
 
-https://ask-utils.github.io/proactive-event/
+https://ask-utils.dev
 
 ## Getting started
 

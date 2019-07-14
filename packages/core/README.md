@@ -1,9 +1,8 @@
 # ASK-Utils - Utility functions for ask-sdk
-[![Build Status](https://travis-ci.org/ask-utils/ask-utils.svg?branch=master)](https://travis-ci.org/ask-utils/ask-utils)
-[![npm version](https://badge.fury.io/js/ask-utils.svg)](https://badge.fury.io/js/ask-utils)
-![logo](https://raw.githubusercontent.com/ask-utils/ask-utils/master/docs/img/logo.png)
 
-https://ask-utils.github.io/ask-utils/
+![logo](https://ask-utils.dev/static/9cbabc261164aba75a5d7e32d0e53371/8a651/youtube_profile_image.png)
+
+https://ask-utils.dev
 
 ## Getting started
 

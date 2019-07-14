@@ -11,14 +11,14 @@ $ npm i -S ask-utils
 
 ## Packages
 
-|name|npm url|Summary|
-|:--|:--|:--|
-|@ask-utils/core|https://www.npmjs.com/package/@ask-utils/core|Core utilities|
-|@ask-utils/proactive-event|https://www.npmjs.com/package/@ask-utils/proactive-event|Proactive Event parameter builder and request client|
-|@ask-utils/isp|https://www.npmjs.com/package/@ask-utils/isp|ISP helpers|
-|@ask-utils/handlers|https://www.npmjs.com/package/@ask-utils/handlers|Utility handler and interceptors|
-|@ask-utils/error-handlers|https://www.npmjs.com/package/@ask-utils/error-handlers|Error handler helpers|
-|@ask-utils/service-client|https://www.npmjs.com/package/@ask-utils/service-client|ServiceClient alternative|
+ | name | npm url | Repository | Summary | 
+ | :-- | :-- | :-- | 
+ | @ask-utils/core | https://www.npmjs.com/package/@ask-utils/core | https://github.com/ask-utils/ask-utils/tree/master/packages/core | Core utilities | 
+ | @ask-utils/proactive-event | https://www.npmjs.com/package/@ask-utils/proactive-event | https://github.com/ask-utils/ask-utils/tree/master/packages/proactive-event | Proactive Event parameter builder and request client | 
+ | @ask-utils/isp | https://www.npmjs.com/package/@ask-utils/isp | https://github.com/ask-utils/ask-utils/tree/master/packages/isp | ISP helpers | 
+ | @ask-utils/handlers | https://www.npmjs.com/package/@ask-utils/handlers | https://github.com/ask-utils/ask-utils/tree/master/packages/handlers | Utility handler and interceptors | 
+ | @ask-utils/error-handlers | https://www.npmjs.com/package/@ask-utils/error-handlers | https://github.com/ask-utils/ask-utils/tree/master/packages/error-handlers | Error handler helpers | 
+ | @ask-utils/service-client | https://www.npmjs.com/package/@ask-utils/service-client | https://github.com/ask-utils/ask-utils/tree/master/packages/serviceClient s |ServiceClient alternative | 
 
 
 
@@ -53,6 +53,6 @@ $ npm run lint -- --fix
 
 ### Contributors
 
-|Name|Version|
-|:--|:--|
-|[@ArtskydJ](https://github.com/ArtskydJ)|v0.13.0|
+ | Name | Version | 
+ | :-- | :-- | 
+ | [@ArtskydJ](https://github.com/ArtskydJ) | v0.13.0 | 

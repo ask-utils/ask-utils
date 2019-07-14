@@ -94,6 +94,29 @@ const { inSkillProducts } = handlerInput.attributesManager.getSessionAttributes(
 const entitledProducts = getAllEntitledProducts(inSkillProducts)
 ```
 
+## General Handlers
+
+You can add several handlers for ISP request.
+
+```typescript
+import { SkillBuilders } from 'ask-sdk'
+import {
+  ISPHandlers,
+  loadISPDataInterceptor
+} from '@ask-utils/isp'
+
+
+SkillBuilders.standard()
+  .addRequestHandlers(
+    ...ISPHandlers,
+  )
+  .addRequestInterceptors(
+    loadISPDataInterceptor
+  )
+  .lambda()
+```
+
+
 ## development
 
 ```

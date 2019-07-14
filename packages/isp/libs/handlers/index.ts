@@ -14,7 +14,6 @@ export * from './BuyResponse'
 export * from './Refund'
 export * from './RefundResult'
 export * from './Upsell'
-export * from './fixtures'
 
 export const ISPHandlers: RequestHandler[] = [
     ProductDetailIntentHandler,

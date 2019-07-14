@@ -2,7 +2,7 @@ import { HandlerInput, getLocale } from 'ask-sdk-core'
 import { Response } from 'ask-sdk-model'
 import {
     isMatchedIntent
-} from 'ask-utils'
+} from '@ask-utils/core'
 import {
     getProduct,
     getProductNameFromSlot

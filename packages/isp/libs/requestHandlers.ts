@@ -32,3 +32,15 @@ export const isBuyConnectionResponse = (handlerInput: HandlerInput): boolean => 
     if (!isSkillConnectionResponse(request)) return false
     return request.name === 'Buy'
 }
+
+export const isBuyConnectionResposneRequest = (request: Request): request is Required<interfaces.connections.ConnectionsResponse> => {
+    return isSkillConnectionResponse(request) && request.name === 'Buy'
+}
+export const isCancelConnectionResposneRequest = (request: Request): request is Required<interfaces.connections.ConnectionsResponse> => {
+    return isSkillConnectionResponse(request) && request.name === 'Cancel'
+}
+export const getProductIdFromConnectionResponse = (request: Request): string | null => {
+    if (!isSkillConnectionRequest(request)) return null
+    if (!request.payload) return null
+    return request.payload.productId || null
+}

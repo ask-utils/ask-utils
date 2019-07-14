@@ -53,6 +53,7 @@
     ]
   },
   "dependencies": {
+    "@ask-utils/core": "^3.0.8",
     "ask-sdk": "^2.6.0",
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.18.0",

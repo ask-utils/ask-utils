@@ -1,4 +1,5 @@
 import { HandlerInput, getLocale, isNewSession } from 'ask-sdk-core'
+import { ISPProductClient } from '../client'
 /**
  * Load In Skill Product interceptor
  * @external https://developer.amazon.com/ja/blogs/alexa/post/75ee61df-8365-44bb-b28f-e708000891ad/how-to-use-interceptors-to-simplify-handler-code-and-cache-product-and-purchase-information-in-monetized-alexa-skills
@@ -26,6 +27,33 @@ export const loadISPDataInterceptor = {
             const sessionAttributes = attributesManager.getSessionAttributes()
             sessionAttributes.inSkillProducts = result.inSkillProducts
             attributesManager.setSessionAttributes(sessionAttributes)
+        } catch (error) {
+            console.log(`Error calling InSkillProducts API: ${error}`)
+        }
+    }
+}
+/**
+ * Load In Skill Product interceptor alternative
+ * @example
+ * ```typescript
+ * // set it into the request interceptor
+ * .addRequestInteceptor(loadISPDataInterceptor)
+ *
+ * // get product from session attributes
+ * import { getAllEntitledProducts } from '@ask-utils/isp'
+ *
+ * const { products } = handlerInput.attributesManager.getSessionAttributes()
+ * const entitledProducts = getAllEntitledProducts(products)
+ * ```
+ */
+export const altLoadISPDataInterceptor = {
+    async process (handlerInput: HandlerInput): Promise<void> {
+        const { requestEnvelope } = handlerInput
+        if (!requestEnvelope.session || !isNewSession(requestEnvelope)) return
+        // new session, check to see what products are already owned.
+        try {
+            const client = new ISPProductClient(handlerInput)
+            await client.disabledCache().getProducts()
         } catch (error) {
             console.log(`Error calling InSkillProducts API: ${error}`)
         }

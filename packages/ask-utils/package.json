@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,12 +23,12 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.1.0",
-    "@ask-utils/error-handlers": "^3.0.7",
-    "@ask-utils/handlers": "^3.0.7",
-    "@ask-utils/isp": "^3.1.1",
-    "@ask-utils/proactive-event": "^3.0.7",
-    "@ask-utils/service-client": "^3.0.7"
+    "@ask-utils/core": "^3.1.2",
+    "@ask-utils/error-handlers": "^3.1.2",
+    "@ask-utils/handlers": "^3.1.2",
+    "@ask-utils/isp": "^3.1.2",
+    "@ask-utils/proactive-event": "^3.1.2",
+    "@ask-utils/service-client": "^3.1.2"
   },
   "bugs": {
     "url": "https://github.com/ask-utils/ask-utils/issues"

@@ -14,7 +14,7 @@ export class ContentBuilder {
         this.responseBuilder = responseBuilder
     }
     protected isJP (): boolean {
-        return /^jp/.test(this.locale)
+        return /^ja/.test(this.locale)
     }
     public putSpeechText (text: string): this {
         this.contents.speechText = text

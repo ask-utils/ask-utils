@@ -43,6 +43,24 @@ export const UnSupportedISPResponse = (locale: string): {
 export const NoProductResponse = (responseBuilder: ResponseBuilder, locale: string, products?: InskillProducts): Response => {
     const purchaseableProducts = products ? getAllPurchasableProducts(products) : []
     const purchaseableProductText = purchaseableProducts.map(product => product.name).join(', ')
+    // no purchaseable products
+    if (!purchaseableProductText) {
+        if (/^ja/.test(locale)) {
+            return responseBuilder.speak([
+                'すみません。',
+                '購入できる商品は、すでに購入済の様子です。',
+                '他の機能などについて知りたい場合は、ヘルプと話しかけてください。'
+            ].join(''))
+                .reprompt('どちらにしますか？使い方についてもっと知りたい場合は、「ヘルプ」と言ってください。')
+                .getResponse()
+        }
+        return responseBuilder.speak([
+            `You already have all products..`,
+            'Qhat do you want?'
+        ].join(' '))
+            .reprompt('What do you want?')
+            .getResponse()
+    }
     if (/^ja/.test(locale)) {
         return responseBuilder.speak([
             `${purchaseableProductText}を購入することができます。`,
@@ -53,7 +71,7 @@ export const NoProductResponse = (responseBuilder: ResponseBuilder, locale: stri
                 : '',
             'どうしますか？'
         ].join(' '))
-            .reprompt('購入・詳細、どちらにしますか？ゲームをする場合は、「ゲーム開始」と言ってください。')
+            .reprompt('購入・詳細、どちらにしますか？使い方についてもっと知りたい場合は、「ヘルプ」と言ってください。')
             .getResponse()
     }
     return responseBuilder.speak([

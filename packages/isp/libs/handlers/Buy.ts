@@ -20,6 +20,9 @@ import {
     getBuyProductDirective
 } from '../directiveBuilders'
 import {
+    ISPProductClient
+} from '../client'
+import {
 
 } from '../productFinders'
 
@@ -52,7 +55,11 @@ export const BuyIntentHandler = {
 
         const product = await getProduct(handlerInput)
         // みつからない
-        if (!product) return NoProductResponse(responseBuilder, locale)
+        if (!product) {
+            const client = new ISPProductClient(handlerInput)
+            const { inSkillProducts } = await client.listProducts()
+            return NoProductResponse(responseBuilder, locale, inSkillProducts)
+        }
         // 買えない商品
         if (product.purchasable === 'NOT_PURCHASABLE') {
             if (/^ja/.test(locale)) {

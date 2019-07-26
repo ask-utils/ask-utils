@@ -18,7 +18,7 @@ export class ContentBuilder {
         this.responseBuilder = responseBuilder
     }
     protected isJP (): boolean {
-        return /^jp/.test(this.locale)
+        return /^ja/.test(this.locale)
     }
     public getResponse (): Response {
         const { speechText, repromptText, directive } = this.contents

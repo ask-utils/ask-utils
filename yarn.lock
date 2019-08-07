@@ -1617,10 +1617,24 @@ ask-sdk-core@^2.6.0:
   dependencies:
     ask-sdk-runtime "^2.4.0"
 
+ask-sdk-core@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-core/-/ask-sdk-core-2.7.0.tgz#477064d850250149f0c3c4e1d510c7809109e98c"
+  integrity sha512-XEuoQOH8B+fQqdVRtEeLWtNL46yjKxwIpbXg042ZaCNYwwmJaVmbvmnR5p0UXgKjULqWm1QEXjYL5INQlfrK7w==
+  dependencies:
+    ask-sdk-runtime "^2.7.0"
+
 ask-sdk-dynamodb-persistence-adapter@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.6.0.tgz#b4220ef4f5ff332211626839bbeb0b3aa30ff2e9"
   integrity sha512-aJ5ShRfgl69qv2WuasIGUhmVRaFy0CHUJ9lb2jardHvlWfsEBV7UvJlgkGpDaEKxzi1SvYJTHUxtRGnaem9UnA==
+  dependencies:
+    aws-sdk "^2.163.0"
+
+ask-sdk-dynamodb-persistence-adapter@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.7.0.tgz#1c77a96422a40f765ff44ff4a820d97fd005fd13"
+  integrity sha512-LbwdNLFaUXfy6Wt6Hs4wrZfeopbpZT90SuYT5oo+/g0m8JQNTVVH3Kn4R4K7PTwYFGdHuppvHC1bIu9emt5zZw==
   dependencies:
     aws-sdk "^2.163.0"
 
@@ -1634,6 +1648,18 @@ ask-sdk-runtime@^2.4.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.4.0.tgz#ebdb213fee934f81c751dc783266de4a1bc155db"
   integrity sha512-NiTXGeljx3wV9GIbwOvYc3EKPLTR1ZVoJBGNNyoAwg89v1L/hZgg5p3rJM0YJfIqw6HJUHJbtdJsRIHtkscxRA==
 
+ask-sdk-runtime@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.7.0.tgz#2905ed9921d9d961c8770ebd29116cb4c7236b39"
+  integrity sha512-l2YxzibbTc8Ld5Rpy/Kg3oASiCGKHxgbZnKYrywZStlDPF5tEAGpRBhdtVd+yBSRikl/9fgcetb2wMewtoZF2g==
+
+ask-sdk-s3-persistence-adapter@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-s3-persistence-adapter/-/ask-sdk-s3-persistence-adapter-2.7.0.tgz#889b4283d6738c614186ff48efbbe4114914547c"
+  integrity sha512-m9PG5WztVsqV5Fopdlx0NQk8Yi89mc+tSUjUX58jjqQ5IhO0egs42tWfcaMCuUTdvuBzXQqElGQOLr8xajTMlA==
+  dependencies:
+    aws-sdk "^2.163.0"
+
 ask-sdk@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.6.0.tgz#ea71e41acd2a5dfc0dcbfd8497dd1ebfe27e10f2"
@@ -1641,6 +1667,15 @@ ask-sdk@^2.6.0:
   dependencies:
     ask-sdk-core "^2.6.0"
     ask-sdk-dynamodb-persistence-adapter "^2.6.0"
+    ask-sdk-model "^1.9.0"
+
+ask-sdk@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.7.0.tgz#041a1371408a5fa1801eade547a6bc94d529d357"
+  integrity sha512-BMCD810Y7E/DlHmqQ8Ginvobrs69pgEzCWSyCDUhaLnDUIduf+BmqZpxc0zQ/8ABBOjNtzhJ8/mV7USQijk6iw==
+  dependencies:
+    ask-sdk-core "^2.7.0"
+    ask-sdk-dynamodb-persistence-adapter "^2.7.0"
     ask-sdk-model "^1.9.0"
 
 ask-utils@^2.3.2:

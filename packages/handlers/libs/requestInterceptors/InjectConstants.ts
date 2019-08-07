@@ -2,7 +2,7 @@ import { HandlerInput } from 'ask-sdk-core'
 import { RequestInterceptor } from 'ask-sdk-runtime'
 
 export interface SkillConstants {
-    [key: string]: unknown;
+    [key: string]: any;
 }
 export class ConstantsInterceptorFactory {
     public static init<T extends SkillConstants = SkillConstants> (constants: T): RequestInterceptor<HandlerInput> {

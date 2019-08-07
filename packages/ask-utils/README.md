@@ -27,7 +27,63 @@ $ npm i -S ask-utils
  | @ask-utils/error-handlers | https://www.npmjs.com/package/@ask-utils/error-handlers | https://github.com/ask-utils/ask-utils/tree/master/packages/error-handlers | Error handler helpers | 
  | @ask-utils/service-client | https://www.npmjs.com/package/@ask-utils/service-client | https://github.com/ask-utils/ask-utils/tree/master/packages/serviceClient s |ServiceClient alternative | 
 
+## Skill Builder (Beta)
+We can easy to create your own skill builder
 
+```typescript
+import {
+  createSkill,
+  SkillHandlersFactory
+} from 'ask-utils'
+
+// can get skill constancts by request attributes
+const ExampleHandler = {
+  canHandle: () => true,
+  handle: handlerInput => {
+    const { CONSTANTS } = handlerInput.attributesManager.getRequestAttributes()
+    return handlerInput.responseBuilder
+      .speak(`Welcome to the ${CONSTANTS.SKILL_NAME}!`)
+      .getResponse()
+  }
+}
+
+const handlers = SkillHandlersFactory.create()
+  .addRequestHandlers(
+    LaunchRequest,
+    NextIntent,
+    AnswerIntent,
+    YesNextIntent,
+    HelpIntent,
+    ResumeIntent,
+    StopIntent,
+    NoIntent,
+    CancelIntent,
+    FallBackIntent
+  )
+  .addRequestInterceptors(
+    MyRequestInterceptor1,
+    MyRequestInterceptor2,
+  )
+  .addResponseInterceptors(
+    MyResponseInterceptor1,
+    MyResponseInterceptor2,
+  )
+  .addErrorHandlers(
+    MyErrorHandler1,
+    MyErrorHandler2,
+  )
+
+export const handler = createSkill({
+    persistanceType: 'S3',
+    bucketName: process.env.BUCKET_NAME as string,
+    bucketPathPrefix: process.env.PATH_PREFIX as string,
+    isISP: true,
+    constants: {
+      SKILL_NAME: 'My Awesome Skill'
+    }
+  }, handlers.getHandlers())
+  .lambda()
+```
 
 ## development
 

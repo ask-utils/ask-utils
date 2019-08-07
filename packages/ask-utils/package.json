@@ -28,7 +28,10 @@
     "@ask-utils/handlers": "^3.1.2",
     "@ask-utils/isp": "^3.1.4",
     "@ask-utils/proactive-event": "^3.1.2",
-    "@ask-utils/service-client": "^3.1.2"
+    "@ask-utils/service-client": "^3.1.2",
+    "ask-sdk": "^2.7.0",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.7.0",
+    "ask-sdk-s3-persistence-adapter": "^2.7.0"
   },
   "bugs": {
     "url": "https://github.com/ask-utils/ask-utils/issues"

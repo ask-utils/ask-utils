@@ -25,7 +25,6 @@ export class SkillHandlersFactory {
         }
         return {
             addRequestHandlers (...requestHandlers: RequestHandler[]): SkillHandlersBuilder {
-                console.log(requestHandlers)
                 requestHandlers.forEach(handler => handlers.requestHandlers.push(handler))
                 return this
             },

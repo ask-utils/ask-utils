@@ -1,6 +1,6 @@
 {
   "name": "ask-utils",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,12 +23,12 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.1.2",
-    "@ask-utils/error-handlers": "^3.1.2",
-    "@ask-utils/handlers": "^3.2.0",
-    "@ask-utils/isp": "^3.1.4",
-    "@ask-utils/proactive-event": "^3.1.2",
-    "@ask-utils/service-client": "^3.1.2",
+    "@ask-utils/core": "^3.2.2",
+    "@ask-utils/error-handlers": "^3.2.2",
+    "@ask-utils/handlers": "^3.2.2",
+    "@ask-utils/isp": "^3.2.2",
+    "@ask-utils/proactive-event": "^3.2.2",
+    "@ask-utils/service-client": "^3.2.2",
     "ask-sdk": "^2.7.0",
     "ask-sdk-dynamodb-persistence-adapter": "^2.7.0",
     "ask-sdk-s3-persistence-adapter": "^2.7.0"

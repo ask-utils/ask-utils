@@ -22,10 +22,10 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "ask-sdk": "^2.6.0",
-    "ask-sdk-core": "^2.6.0",
-    "ask-sdk-model": "^1.18.0",
-    "ask-sdk-runtime": "^2.4.0",
+    "ask-sdk": "^2.7.0",
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.19.0",
+    "ask-sdk-runtime": "^2.7.0",
     "ask-utils": "^2.3.2",
     "class-resolver": "^1.1.0",
     "tslib": "^1.10.0"

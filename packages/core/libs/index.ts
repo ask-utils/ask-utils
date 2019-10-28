@@ -1,4 +1,5 @@
 import 'tslib'
+export * from './amznPolly'
 export * from './attributeManager'
 export * from './dialog'
 export * from './intentHandler'

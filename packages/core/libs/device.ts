@@ -1,5 +1,5 @@
-import { HandlerInput } from 'ask-sdk'
-import { Device, SupportedInterfaces, interfaces } from 'ask-sdk-model'
+import { HandlerInput, getSupportedInterfaces as coreGetSupportedInterfaces } from 'ask-sdk-core'
+import { Device, SupportedInterfaces, interfaces, RequestEnvelope } from 'ask-sdk-model'
 
 export const getDevice = (handlerInput: HandlerInput): Device | undefined => {
     return handlerInput.requestEnvelope.context.System.device
@@ -42,4 +42,13 @@ export const getDisplayInterface = (handlerInput: HandlerInput): interfaces.disp
     const supportedInterfaces = getSupportedInterfaces(handlerInput)
     if (!supportedInterfaces) return {}
     return supportedInterfaces.Display || {}
+}
+
+/**
+ * APLをサポートしているリクエストかどうか
+ * @param request
+ */
+export const hasAPL = (request: RequestEnvelope): boolean => {
+    const interfaces = coreGetSupportedInterfaces(request)
+    return !!(interfaces['Alexa.Presentation.APL'])
 }

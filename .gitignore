@@ -9,3 +9,5 @@ examples/
 yarn-error.log
 lerna-debug.log
 base/
+dark_image.png
+light_image.png

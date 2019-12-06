@@ -3,7 +3,8 @@ import { Response } from 'ask-sdk-model'
 
 import {
     isBuyConnectionResposneRequest,
-    getProductIdFromConnectionResponse
+    getProductIdFromConnectionResponse,
+    isUpsellConnectionResposneRequest
 } from '../requestHandlers'
 import {
     BuyResponseContentBuilder
@@ -14,8 +15,8 @@ import {
 
 export const BuyResponseHandler = {
     canHandle (handlerInput: HandlerInput): boolean {
-        return handlerInput.requestEnvelope.request.type === 'Connections.Response' &&
-          handlerInput.requestEnvelope.request.name === 'Buy'
+        if (handlerInput.requestEnvelope.request.type !== 'Connections.Response') return false
+        return handlerInput.requestEnvelope.request.name === 'Buy' || handlerInput.requestEnvelope.request.name === 'Upsell'
     },
     async handle (handlerInput: HandlerInput): Promise<Response> {
         const { requestEnvelope, responseBuilder, serviceClientFactory } = handlerInput
@@ -28,7 +29,9 @@ export const BuyResponseHandler = {
 
         if (!serviceClientFactory) return contents.setUnSupportedISPResponse().getResponse()
         const { request } = requestEnvelope
-        if (!isBuyConnectionResposneRequest(request)) throw new Error('Invalid request object')
+        if (!isBuyConnectionResposneRequest(request) || !isUpsellConnectionResposneRequest(request)) {
+            throw new Error('Invalid request object')
+        }
         const productId = getProductIdFromConnectionResponse(requestEnvelope.request)
 
         if (!productId) {

@@ -33,6 +33,10 @@ export const isBuyConnectionResponse = (handlerInput: HandlerInput): boolean => 
     return request.name === 'Buy'
 }
 
+export const isUpsellConnectionResposneRequest = (request: Request): request is Required<interfaces.connections.ConnectionsResponse> => {
+    return isSkillConnectionResponse(request) && request.name === 'Upsell'
+}
+
 export const isBuyConnectionResposneRequest = (request: Request): request is Required<interfaces.connections.ConnectionsResponse> => {
     return isSkillConnectionResponse(request) && request.name === 'Buy'
 }

@@ -29,7 +29,7 @@ export const BuyResponseHandler = {
 
         if (!serviceClientFactory) return contents.setUnSupportedISPResponse().getResponse()
         const { request } = requestEnvelope
-        if (!isBuyConnectionResposneRequest(request) || !isUpsellConnectionResposneRequest(request)) {
+        if (!isBuyConnectionResposneRequest(request) && !isUpsellConnectionResposneRequest(request)) {
             throw new Error('Invalid request object')
         }
         const productId = getProductIdFromConnectionResponse(requestEnvelope.request)

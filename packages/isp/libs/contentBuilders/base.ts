@@ -115,21 +115,25 @@ export class ISPContentBuilder extends ContentBuilder {
    * Product does not found response
    */
     private getProductNotFoundResponse (): ResponseContent {
-        const productName = this.getProductName()
-        if (this.isJP()) {
-            return {
-                speechText: [
-                    `${productName}を購入することができます。`,
-                    `詳細を聞きたい場合は「${productName}について教えて」、`,
-                    `購入する場合は「${productName}を購入」と話しかけてください。`,
-                    'どうしますか？'
-                ].join(' '),
-                repromptText: '購入・詳細、どちらにしますか？'
+        try {
+            const productName = this.getProductName()
+            if (this.isJP()) {
+                return {
+                    speechText: [
+                        `${productName}を購入することができます。`,
+                        `詳細を聞きたい場合は「${productName}について教えて」、`,
+                        `購入する場合は「${productName}を購入」と話しかけてください。`,
+                        'どうしますか？'
+                    ].join(' '),
+                    repromptText: '購入・詳細、どちらにしますか？'
+                }
             }
-        }
-        return {
-            speechText: `${productName}. what item do you want?`,
-            repromptText: `${productName}. what item do you want?`
+            return {
+                speechText: `${productName}. what item do you want?`,
+                repromptText: `${productName}. what item do you want?`
+            }
+        } catch (e) {
+            return this.getProductsNotFoundResponse()
         }
     }
     public setProductNotFoundResponse (): this {

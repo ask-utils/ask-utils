@@ -21,7 +21,7 @@ export const getSessionAttribute = (handlerInput: HandlerInput, attributeName: s
 export const getPersistentAttributes = async <Attributes = {[key: string]: any}>(handlerInput: HandlerInput, defaultAttributes: Attributes): Promise<Attributes> => {
     try {
         const data = await handlerInput.attributesManager.getPersistentAttributes()
-        if (!data) return defaultAttributes
+        if (!data || Object.keys(data).length === 0) return defaultAttributes
         return data as Attributes
     } catch (e) {
         return defaultAttributes

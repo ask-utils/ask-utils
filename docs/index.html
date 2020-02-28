@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ask-utils documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ask-utils documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="ask-utils---utility-functions-for-ask-sdk">ASK-Utils - Utility functions for ask-sdk</h1>
+<p><a href="https://nodei.co/npm/ask-utils/"><img src="https://nodei.co/npm/ask-utils.png?downloads=true&downloadRank=true&stars=true" alt="NPM" class="img-responsive"></a><br><a href="https://badge.fury.io/js/ask-utils"><img src="https://badge.fury.io/js/ask-utils.svg" alt="npm version" class="img-responsive"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" class="img-responsive"></a>
+<a href="https://codeclimate.com/github/ask-utils/ask-utils/maintainability"><img src="https://api.codeclimate.com/v1/badges/c17851759423ce151b9e/maintainability" alt="Maintainability" class="img-responsive"></a>
+<a href="https://codeclimate.com/github/ask-utils/ask-utils/test_coverage"><img src="https://api.codeclimate.com/v1/badges/c17851759423ce151b9e/test_coverage" alt="Test Coverage" class="img-responsive"></a>
+<a href="https://travis-ci.org/ask-utils/ask-utils"><img src="https://travis-ci.org/ask-utils/ask-utils.svg?branch=master" alt="Build Status" class="img-responsive"></a></p>
+<p><img src="https://ask-utils.dev/static/9cbabc261164aba75a5d7e32d0e53371/8a651/youtube_profile_image.png" alt="logo" class="img-responsive"></p>
+<p><a href="https://ask-utils.dev">https://ask-utils.dev</a></p>
+<h2 id="getting-started">Getting started</h2>
+<div><pre class="line-numbers"><code class="language-none">$ npm i -S ask-utils</code></pre></div><h2 id="packages">Packages</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">npm url</th>
+<th align="left">Repository</th>
+<th align="left">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">@ask-utils/core</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/core">https://www.npmjs.com/package/@ask-utils/core</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/core">https://github.com/ask-utils/ask-utils/tree/master/packages/core</a></td>
+<td align="left">Core utilities</td>
+</tr>
+<tr>
+<td align="left">@ask-utils/proactive-event</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/proactive-event">https://www.npmjs.com/package/@ask-utils/proactive-event</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/proactive-event">https://github.com/ask-utils/ask-utils/tree/master/packages/proactive-event</a></td>
+<td align="left">Proactive Event parameter builder and request client</td>
+</tr>
+<tr>
+<td align="left">@ask-utils/isp</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/isp">https://www.npmjs.com/package/@ask-utils/isp</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/isp">https://github.com/ask-utils/ask-utils/tree/master/packages/isp</a></td>
+<td align="left">ISP helpers</td>
+</tr>
+<tr>
+<td align="left">@ask-utils/handlers</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/handlers">https://www.npmjs.com/package/@ask-utils/handlers</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/handlers">https://github.com/ask-utils/ask-utils/tree/master/packages/handlers</a></td>
+<td align="left">Utility handler and interceptors</td>
+</tr>
+<tr>
+<td align="left">@ask-utils/error-handlers</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/error-handlers">https://www.npmjs.com/package/@ask-utils/error-handlers</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/error-handlers">https://github.com/ask-utils/ask-utils/tree/master/packages/error-handlers</a></td>
+<td align="left">Error handler helpers</td>
+</tr>
+<tr>
+<td align="left">@ask-utils/service-client</td>
+<td align="left"><a href="https://www.npmjs.com/package/@ask-utils/service-client">https://www.npmjs.com/package/@ask-utils/service-client</a></td>
+<td align="left"><a href="https://github.com/ask-utils/ask-utils/tree/master/packages/serviceClient">https://github.com/ask-utils/ask-utils/tree/master/packages/serviceClient</a> s</td>
+<td align="left">ServiceClient alternative</td>
+</tr>
+</tbody>
+</table>
+<h2 id="development">development</h2>
+<div><pre class="line-numbers"><code class="language-none">$ git clone git&#64;github.com:hideokamoto/ask-utils.git
+$ cd ask-utils
+$ yarn
+$ yarn bootstrap</code></pre></div><h3 id="test">test</h3>
+<div><pre class="line-numbers"><code class="language-none">$ npm test</code></pre></div><h3 id="lint">Lint</h3>
+<div><pre class="line-numbers"><code class="language-none">$ npm run lint
+
+or
+
+$ npm run lint -- --fix</code></pre></div><h3 id="history">History</h3>
+<p>-&gt; <a href="https://github.com/ask-utils/ask-utils/releases">Release Note</a></p>
+<h3 id="contributors">Contributors</h3>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/ArtskydJ">@ArtskydJ</a></td>
+<td align="left">v0.13.0</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

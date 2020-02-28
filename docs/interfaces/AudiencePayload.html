@@ -1,0 +1,573 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ask-utils documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ask-utils documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>AudiencePayload</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>packages/proactive-event/libs/model.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#user">user</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="user"></a>
+                                        <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>user:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export namespace Types {
+    export type Locale &#x3D; &#x27;de-DE&#x27; | &#x27;en-AU&#x27; | &#x27;en-CA&#x27; | &#x27;en-GB&#x27; | &#x27;en-IN&#x27; | &#x27;en-US&#x27; | &#x27;es-ES&#x27; | &#x27;es-MX&#x27; | &#x27;fr-CA&#x27; | &#x27;fr-FR&#x27; | &#x27;it-IT&#x27; | &#x27;ja-JP&#x27;
+    export type dateTime &#x3D; string
+    export interface Person {
+        name: string;
+    }
+    export type MediaType &#x3D; &#x27;BOOK&#x27; | &#x27;EPISODE&#x27; | &#x27;ALBUM&#x27; | &#x27;SINGLE&#x27; | &#x27;MOVIE&#x27; | &#x27;GAME&#x27;
+    export type DistributionMethod &#x3D; &#x27;STREAM&#x27; | &#x27;AIR&#x27; | &#x27;RELEASE&#x27; | &#x27;PREMIERE&#x27; | &#x27;DROP&#x27;
+    export interface Thing {
+        name: &#x27;localizedattribute:providerName&#x27;;
+    }
+    export interface Availability {
+        startTime: Types.dateTime;
+        provider?: Thing;
+        method: DistributionMethod;
+    }
+    export interface CreativeWork {
+        name: string; // &quot;localizedattribute:contentName&quot;,
+        contentType: MediaType;
+    }
+    export type OfferType &#x3D; &#x27;MATCH&#x27; | &#x27;REMATCH&#x27; | &#x27;GAME&#x27;
+    export type InviteType &#x3D; &#x27;CHALLENGE&#x27; | &#x27;INVITE&#x27;
+    export type RelationshipToInvitee &#x3D; &#x27;FRIEND&#x27; | &#x27;CONTACT&#x27;
+    export interface GameInvite {
+        inviter: Person;
+        relationshipToInvitee: RelationshipToInvitee;
+        inviteType: InviteType;
+    }
+    export interface Game {
+        offer: OfferType;
+        name: string; // &#x27;localizedattribute:gameName&#x27;;
+    }
+
+    export type ConfirmationStatus &#x3D; &#x27;CONFIRMED&#x27; | &#x27;CANCELED&#x27; | &#x27;RESCHEDULED&#x27; | &#x27;REQUESTED&#x27; | &#x27;CREATED&#x27; | &#x27;UPDATED&#x27;
+    export type OccasionType &#x3D; &#x27;RESERVATION_REQUEST&#x27; | &#x27;RESERVATION&#x27; | &#x27;APPOINTMENT_REQUEST&#x27; | &#x27;APPOINTMENT&#x27;
+    export interface ConfirmationState {
+        confirmationStatus: ConfirmationStatus;
+    }
+    export interface Ogranization {
+        name: string; // &#x27;localizedattribute:providerName&#x27;;
+    }
+    export interface Skill {
+        name: string; // &#x27;localizedattribute:brokerName&#x27;;
+    }
+    export interface Occasion {
+        occasionType: OccasionType;
+        subject: string; // &quot;localizedattribute:subject&quot;,
+        provider: Ogranization;
+        bookingTime: Types.dateTime; // &quot;2018-11-20T19:16:31Z&quot;,
+        broker?: Skill;
+    }
+    export interface ParcelDelivery {
+        expectedArrival: Types.dateTime; // &quot;2018-12-14T23:32:00.463Z&quot;
+    }
+    export interface OrderState {
+        status: OrderStatus;
+        enterTimestamp?: Types.dateTime; // &quot;20180916T030000Z   2018-09-16T03:00:00.463Z&quot;
+        deliveryDetails?: ParcelDelivery;
+    }
+    export interface Order {
+        seller: {
+            name: string; // &#x27;localizedattribute:sellerName&#x27;;
+        };
+    }
+    export type OrderStatus &#x3D; &#x27;PREORDER_RECEIVED&#x27; | &#x27;ORDER_RECEIVED&#x27; | &#x27;ORDER_PREPARING&#x27; | &#x27;ORDER_SHIPPED&#x27; | &#x27;ORDER_OUT_FOR_DELIVERY&#x27; | &#x27;ORDER_OUT_FOR_DELIVERY&#x27; | &#x27;ORDER_DELIVERED&#x27;
+    export type GarbageType &#x3D; &#x27;BOTTLES&#x27; | &#x27;BULKY&#x27; | &#x27;BURNABLE&#x27; | &#x27;CANS&#x27; | &#x27;CLOTHING&#x27; | &#x27;COMPOSTABLE&#x27; | &#x27;CRUSHABLE&#x27; | &#x27;GARDEN_WASTE&#x27; | &#x27;GLASS&#x27; | &#x27;HAZARDOUS&#x27; | &#x27;HOME_APPLIANCES&#x27; | &#x27;KITCHEN_WASTE&#x27; | &#x27;LANDFILL&#x27; | &#x27;PET_BOTTLES&#x27; | &#x27;RECYCLABLE_PLASTICS&#x27; | &#x27;WASTE_PAPER&#x27;
+    export type DayOfWeek &#x3D; &#x27;MONDAY&#x27; | &#x27;TUESDAY&#x27; | &#x27;WEDNESDAY&#x27; | &#x27;THURSDAY&#x27; | &#x27;FRIDAY&#x27; | &#x27;SATURDAY&#x27; | &#x27;SUNDAY&#x27;
+    export interface TrashCollectionAlert {
+        garbageTypes: GarbageType[];
+        collectionDayOfWeek: DayOfWeek;
+    }
+    export type WeatherAlertType &#x3D; &#x27;TORNADO&#x27; | &#x27;HURRICANE&#x27; | &#x27;SNOW_STORM&#x27; | &#x27;THUNDER_STORM&#x27;
+    export interface WeatherAlert {
+        source?: string; // &#x27;localizedattribute:source&#x27;;
+        alertType: WeatherAlertType;
+    }
+
+    export interface Goal {
+        scoreEarned: number;
+        teamName: string;
+    }
+    export interface SportsEvent {
+        eventLeague: Soccer;
+        homeTeamStatistic: GameStatistic;
+        awayTeamStatistic: GameStatistic;
+    }
+    export interface SportsTeam {
+        name: string;
+    }
+    export interface GameStatistic {
+        team: SportsTeam;
+        score: number;
+    }
+    export interface Soccer {
+        name: string;
+    }
+
+    export interface MessageState {
+        status: MessageStatus;
+        freshness?: MessageFreshness;
+    }
+    export type MessageStatus &#x3D; &#x27;UNREAD&#x27; | &#x27;FLAGGED&#x27;
+    export type MessageFreshness &#x3D; &#x27;NEW&#x27; | &#x27;OVERDUE&#x27;
+    export type MessageUrgent &#x3D; &#x27;URGENT&#x27;
+    export interface MessageGroup {
+        creator: Types.Person;
+        count: number;
+        urgency?: MessageUrgent;
+    }
+    export interface LocalizedAttribute {
+        locale: Locale;
+        [name: string]: string;
+    }
+    export type LocalizedAttributes &#x3D; LocalizedAttribute[]
+}
+
+export namespace event {
+    export interface Props&lt;E &#x3D; EventName, P &#x3D; Payload&gt; {
+        name: E;
+        payload: P;
+    }
+    export type EventName &#x3D; WeatherAlert.EventName | SportsEvent.EventName | MessageAlert.EventName | OrderStatus.EventName | Occasion.EventName | MediaContent.EventName | SocialGameInvite.EventName | TrashCollectionAlert.EventName
+    export type Payload &#x3D; TrashCollectionAlert.Payload | WeatherAlert.Payload | SportsEvent.Payload | MessageAlert.Payload | OrderStatus.Payload | Occasion.Payload | MediaContent.Payload | SocialGameInvite.Payload
+    export namespace TrashCollectionAlert {
+        export type EventName &#x3D; Activated.EventName
+        export type Payload &#x3D; Activated.Payload
+        export namespace Activated {
+            export type EventName &#x3D; &#x27;AMAZON.TrashCollectionAlert.Activated&#x27;
+            export interface Payload {
+                alert: Types.TrashCollectionAlert;
+            }
+        }
+    }
+    export namespace WeatherAlert {
+        export type EventName &#x3D; Activated.EventName
+        export type Payload &#x3D; Activated.Payload
+        export namespace Activated {
+            export type EventName &#x3D; &#x27;AMAZON.WeatherAlert.Activated&#x27;
+            export interface Payload {
+                weatherAlert: Types.WeatherAlert;
+            }
+        }
+    }
+    export namespace SportsEvent {
+        export type EventName &#x3D; Updated.EventName
+        export type Payload &#x3D; Updated.Payload
+        export namespace Updated {
+            export type EventName &#x3D; &#x27;AMAZON.SportsEvent.Updated&#x27;
+            export interface Payload {
+                update?: Types.Goal;
+                sportsEvent: Types.SportsEvent;
+            }
+        }
+    }
+    export namespace MessageAlert {
+        export type EventName &#x3D; Activated.EventName
+        export type Payload &#x3D; Activated.Payload
+        export namespace Activated {
+            export type EventName &#x3D; &#x27;AMAZON.MessageAlert.Activated&#x27;
+            export interface Payload {
+                state: Types.MessageState;
+                messageGroup: Types.MessageGroup;
+            }
+        }
+    }
+    export namespace OrderStatus {
+        export type EventName &#x3D; Updated.EventName
+        export type Payload &#x3D; Updated.Payload
+        export namespace Updated {
+            export type EventName &#x3D; &#x27;AMAZON.OrderStatus.Updated&#x27;
+            export interface Payload {
+                state: Types.OrderState;
+                order: Types.Order;
+            }
+        }
+    }
+    export namespace Occasion {
+        export type EventName &#x3D; Updated.EventName
+        export type Payload &#x3D; Updated.Payload
+        export namespace Updated {
+            export type EventName &#x3D; &#x27;AMAZON.Occasion.Updated&#x27;
+            export interface Payload {
+                state: Types.ConfirmationState;
+                occasion: Types.Occasion;
+            }
+        }
+    }
+    export namespace MediaContent {
+        export type EventName &#x3D; Available.EventName
+        export type Payload &#x3D; Available.Payload
+        export namespace Available {
+            export type EventName &#x3D; &#x27;AMAZON.MediaContent.Available&#x27;
+            export interface Payload {
+                availability: Types.Availability;
+                content: Types.CreativeWork;
+            }
+        }
+    }
+    export namespace SocialGameInvite {
+        export type EventName &#x3D; Available.EventName
+        export type Payload &#x3D; Available.Payload
+        export namespace Available {
+            export type EventName &#x3D; &#x27;AMAZON.SocialGameInvite.Available&#x27;
+            export interface Payload {
+                invite: Types.GameInvite;
+                game: Types.Game;
+            }
+        }
+    }
+}
+
+export namespace client {
+    export interface Class {
+        getAccessToken: Promise&lt;client.AuthResponse&gt;;
+    }
+    export type ClientId &#x3D; string
+    export type ClientSecret &#x3D; string
+    export type APIURL &#x3D; &#x27;https://api.amazonalexa.com/v1/proactiveEvents/&#x27; | &#x27;https://api.eu.amazonalexa.com/v1/proactiveEvents/&#x27; | &#x27;https://api.fe.amazonalexa.com/v1/proactiveEvents/&#x27;
+    export type DevAPIURL &#x3D; &#x27;https://api.amazonalexa.com/v1/proactiveEvents/stages/development&#x27; | &#x27;https://api.eu.amazonalexa.com/v1/proactiveEvents/stages/development&#x27; | &#x27;https://api.fe.amazonalexa.com/v1/proactiveEvents/stages/development&#x27;
+    export type APIEndpoint &#x3D; APIURL | DevAPIURL
+    export type ApiRegion &#x3D; &#x27;FE&#x27; | &#x27;US&#x27; | &#x27;EU&#x27;
+    export interface ClientConfig {
+        clientId: ClientId;
+        clientSecret: ClientSecret;
+        apiEndpont?: APIEndpoint;
+        apiRegion?: ApiRegion;
+        isProduction?: boolean;
+    }
+    export interface AuthResponse {
+        &#x27;access_token&#x27;: string;
+        &#x27;expires_in&#x27;: number;
+        &#x27;scope&#x27;: &#x27;alexa::proactive_events&#x27;;
+        &#x27;token_type&#x27;: &#x27;Bearer&#x27;;
+    }
+    export type AudienceType &#x3D; &#x27;Unicast&#x27; | &#x27;Multicast&#x27;
+    export interface AudiencePayload {
+        user: string;
+    }
+    export interface RelevantAudience {
+        type: AudienceType;
+        payload?: AudiencePayload;
+    }
+    export interface RequstBody {
+        timestamp: string;
+        expiryTime: string;
+        event: {
+            payload: event.Payload;
+            name: event.EventName;
+            relevantAudience: RelevantAudience;
+            refereneId: string;
+        };
+    }
+    export interface Response {
+        statusCode: number;
+        message: string;
+        request: RequstBody;
+    }
+}
+
+export namespace interfaces {
+    export interface PayloadBuilder {
+        getEventName(): event.EventName;
+        getParameter(): event.Props;
+    }
+    export namespace LocalizedAttributes {
+        export interface Factory {
+            putLocalizedAttribute(locale: Types.Locale, key: string, text: string): Factory;
+            getLocalizedAttributes(): Types.LocalizedAttributes;
+        }
+    }
+    export namespace TrashCollectionAlert {
+        export type PayloadBuilder &#x3D; Activated.PayloadBuilder
+        export namespace Activated {
+            export interface PayloadBuilder {
+                putAlert(alert: Types.TrashCollectionAlert): PayloadBuilder;
+                putGarbageTypes(garbageTypes: Types.GarbageType[]): PayloadBuilder;
+                addGarbageType(garbageType: Types.GarbageType): PayloadBuilder;
+                setCollectionDayOfWeek(collectionDayOfWeek: Types.DayOfWeek): PayloadBuilder;
+                getEventName(): event.TrashCollectionAlert.Activated.EventName;
+                getPayload(): event.TrashCollectionAlert.Payload;
+                getParameter(): event.Props&lt;event.TrashCollectionAlert.EventName, event.TrashCollectionAlert.Payload&gt;;
+            }
+        }
+    }
+    export namespace WeatherAlert {
+        export type PayloadBuilder &#x3D; Activated.PayloadBuilder
+        export namespace Activated {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                setAlertSource(source?: string): PayloadBuilder;
+                setAlertType(type: Types.WeatherAlertType): PayloadBuilder;
+                getEventName (): event.WeatherAlert.Activated.EventName;
+                getParameter(): event.Props&lt;event.WeatherAlert.Activated.EventName, event.WeatherAlert.Activated.Payload&gt;;
+                getPayload(): event.WeatherAlert.Activated.Payload;
+            }
+        }
+    }
+    export namespace SportsEvent {
+        export type PayloadBuilder &#x3D; Updated.PayloadBuilder
+        export namespace Updated {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                updateGoalData(teamName: string, score: number): PayloadBuilder;
+                setEventLeagueName(name: string): PayloadBuilder;
+                setHomeTeamStatistic(teamName: string, score: number): PayloadBuilder;
+                setAwayTeamStatistic(teamName: string, score: number): PayloadBuilder;
+                getEventName(): event.SportsEvent.Updated.EventName;
+                getParameter(): event.Props&lt;event.SportsEvent.Updated.EventName, event.SportsEvent.Updated.Payload&gt;;
+                getPayload(): event.SportsEvent.Updated.Payload;
+            }
+        }
+    }
+    export namespace MessageAlert {
+        export type PayloadBuilder &#x3D; Activated.PayloadBuilder
+        export namespace Activated {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                setMessageCreator(name: string): PayloadBuilder;
+                setMessageCount(count: number): PayloadBuilder;
+                setMessageUrgency(urgency?: Types.MessageUrgent): PayloadBuilder;
+                setMessageFreshness(freshness: Types.MessageFreshness): PayloadBuilder;
+                setMessageStatus(messageStatus: Types.MessageStatus): PayloadBuilder;
+                getEventName (): event.MessageAlert.Activated.EventName;
+                getParameter(): event.Props&lt;event.MessageAlert.Activated.EventName, event.MessageAlert.Activated.Payload&gt;;
+                getPayload(): event.MessageAlert.Payload;
+            }
+        }
+    }
+    export namespace OrderStatus {
+        export type PayloadBuilder &#x3D; Updated.PayloadBuilder
+        export namespace Updated {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                setOrderStatus(status: Types.OrderStatus): PayloadBuilder;
+                setEnterTimestamp(date: Date): PayloadBuilder;
+                setExpectedArrival(date: Date): PayloadBuilder;
+                updateSellerName(name: string): PayloadBuilder;
+                getEventName(): event.OrderStatus.EventName;
+                getPayload(): event.OrderStatus.Updated.Payload;
+                getParameter(): event.Props&lt;event.OrderStatus.Updated.EventName, event.OrderStatus.Updated.Payload&gt;;
+            }
+        }
+    }
+    export namespace Occasion {
+        export type PayloadBuilder &#x3D; Updated.PayloadBuilder
+        export namespace Updated {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                updateConfirmationStatus(status: Types.ConfirmationStatus): PayloadBuilder;
+                setOccasionType(type: Types.OccasionType): PayloadBuilder;
+                setSubject(subject: string): PayloadBuilder;
+                setProviderName(name: string): PayloadBuilder;
+                setBookingTime(date: Date): PayloadBuilder;
+                setBrokerName(name: string): PayloadBuilder;
+                getEventName(): event.Occasion.Updated.EventName;
+                getConfirmationState(): Types.ConfirmationState;
+                getConfirmationStatus(): Types.ConfirmationStatus;
+                getPayload(): event.Occasion.Payload;
+                getParameter(): event.Props&lt;event.Occasion.Updated.EventName, event.Occasion.Updated.Payload&gt;;
+            }
+        }
+    }
+    export namespace MediaContent {
+        export namespace Available {
+            export interface PayloadBuilder {
+                setContentName(name?: string): PayloadBuilder;
+                setMediaType(type: Types.MediaType): PayloadBuilder;
+                getEventName(): event.MediaContent.EventName;
+                setStartTime(date: Date): PayloadBuilder;
+                setDistributionMethod(method: Types.DistributionMethod): PayloadBuilder;
+                setProvider(providerName: string): PayloadBuilder;
+                getPayload(): event.MediaContent.Payload;
+                getParameter(): event.Props&lt;event.MediaContent.EventName, event.MediaContent.Available.Payload&gt;;
+            }
+        }
+    }
+    export namespace SocialGameInvite {
+        export namespace Available {
+            export interface PayloadBuilder extends interfaces.PayloadBuilder {
+                setInviterName(name: string): PayloadBuilder;
+                setRelationshipToInvitee(relation: Types.RelationshipToInvitee): PayloadBuilder;
+                setInviteType(type: Types.InviteType): PayloadBuilder;
+                setGameName(name: string): PayloadBuilder;
+                setGameOfferName(name: Types.OfferType): PayloadBuilder;
+                getEventName(): event.SocialGameInvite.Available.EventName;
+                getPayload(): event.SocialGameInvite.Available.Payload;
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'AudiencePayload.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

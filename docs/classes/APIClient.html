@@ -1,0 +1,911 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ask-utils documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ask-utils documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>APIClient</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>packages/isp/libs/client.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#endpoint">endpoint</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isDebug">isDebug</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#locale">locale</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#token">token</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createAxiosRequestObject">createAxiosRequestObject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#get">get</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getProduct">getProduct</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getURL">getURL</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#listProducts">listProducts</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                                <span class="modifier">Public</span>
+                        <code>constructor(requestEnvelope: RequestEnvelope, isDebug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">packages/isp/libs/client.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>requestEnvelope</td>
+                                                  
+                                                        <td>
+                                                                    <code>RequestEnvelope</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>isDebug</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="endpoint"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            endpoint</b>
+                            <a href="#endpoint"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">packages/isp/libs/client.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDebug"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            isDebug</b>
+                            <a href="#isDebug"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">packages/isp/libs/client.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="locale"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            locale</b>
+                            <a href="#locale"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">packages/isp/libs/client.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="token"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            token</b>
+                            <a href="#token"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">packages/isp/libs/client.ts:9</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAxiosRequestObject"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            createAxiosRequestObject
+                        </b>
+                        <a href="#createAxiosRequestObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAxiosRequestObject(productId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">packages/isp/libs/client.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>AxiosRequestConfig</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="get"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Async</span>
+                            get
+                        </b>
+                        <a href="#get"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>get(productId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">packages/isp/libs/client.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProduct"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getProduct
+                        </b>
+                        <a href="#getProduct"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProduct(productId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">packages/isp/libs/client.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Skill.html" target="_self" >Promise&lt;InSkillProduct&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getURL"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getURL
+                        </b>
+                        <a href="#getURL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getURL(productId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">packages/isp/libs/client.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listProducts"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            listProducts
+                        </b>
+                        <a href="#listProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listProducts()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">packages/isp/libs/client.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;InSkillProductsResponse&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import axios, { AxiosRequestConfig } from &#x27;axios&#x27;
+import { getLocale, getApiAccessToken, HandlerInput, AttributesManager } from &#x27;ask-sdk-core&#x27;
+import { RequestEnvelope, services } from &#x27;ask-sdk-model&#x27;
+import InSkillProductsResponse &#x3D; services.monetization.InSkillProductsResponse
+import InSkillProduct &#x3D; services.monetization.InSkillProduct
+type InskillProducts &#x3D; InSkillProduct[]
+
+export class APIClient {
+    private token: string
+    private locale: string
+    private endpoint: string
+    private isDebug: boolean
+    public constructor (requestEnvelope: RequestEnvelope, isDebug: boolean &#x3D; true) {
+        this.token &#x3D; getApiAccessToken(requestEnvelope)
+        this.locale &#x3D; getLocale(requestEnvelope)
+        this.endpoint &#x3D; requestEnvelope.context.System.apiEndpoint
+        this.isDebug &#x3D; isDebug
+    }
+    private getURL (productId?: string): string {
+        const url &#x3D; &#x60;${this.endpoint}/v1/users/~current/skills/~current/inSkillProducts&#x60;
+        if (!productId) return url
+        return &#x60;${url}/productId&#x60;
+    }
+    private createAxiosRequestObject (productId?: string): AxiosRequestConfig {
+        return {
+            method: &#x27;GET&#x27;,
+            url: this.getURL(productId),
+            headers: {
+                &#x27;Content-type&#x27;: &#x27;application/json&#x27;,
+                &#x27;Accept-Language&#x27;: this.locale,
+                &#x27;Authorization&#x27;: &#x60;Bearer ${this.token}&#x60;
+            }
+        }
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    protected async get (productId?: string): Promise&lt;any&gt; {
+        const param &#x3D; this.createAxiosRequestObject(productId)
+        if (this.isDebug) console.log(&#x27;[Get ISP product] %j&#x27;, param)
+        const { data } &#x3D; await axios(param)
+        if (this.isDebug) console.log(&#x27;[Get ISP product] %j&#x27;, data)
+        return data
+    }
+    public listProducts (): Promise&lt;InSkillProductsResponse&gt; {
+        return this.get()
+    }
+    public getProduct (productId: string): Promise&lt;InSkillProduct&gt; {
+        return this.get(productId)
+    }
+}
+
+export class ISPProductClient extends APIClient {
+    private attributeManager: AttributesManager
+    private cacheUsage: &#x27;enable&#x27; | &#x27;disable&#x27; &#x3D; &#x27;enable&#x27;
+    private products: InskillProducts &#x3D; []
+    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
+    constructor (handlerInput: HandlerInput, isDebug: boolean &#x3D; true) {
+        super(handlerInput.requestEnvelope, isDebug)
+        this.attributeManager &#x3D; handlerInput.attributesManager
+    }
+    public getCacheStatus (): &#x27;enable&#x27; | &#x27;disable&#x27; {
+        return this.cacheUsage
+    }
+    /**
+   * Disallow to use the session attributes item at first
+   **/
+    public disabledCache (): this {
+        this.cacheUsage &#x3D; &#x27;disable&#x27;
+        return this
+    }
+    /**
+   * Allow to use the session attributes item at first
+   **/
+    public enableCache (): this {
+        this.cacheUsage &#x3D; &#x27;enable&#x27;
+        return this
+    }
+    /**
+   * Check product avaliable status
+   * If products is empty, try to fetch at once
+   */
+    private async hasProducts (): Promise&lt;boolean&gt; {
+        if (!this.products || this.products.length &lt; 1) await this.fetchLists()
+        if (!this.products || this.products.length &lt; 1) return false
+        return true
+    }
+    /**
+   * get product from session attributes
+   */
+    private getCachedProducts (): InskillProducts {
+        const { products } &#x3D; this.attributeManager.getSessionAttributes()
+        if (products &amp;&amp; products.length &gt; 0) {
+            this.products &#x3D; products
+        }
+        return this.products
+    }
+    /**
+   * Fetch the ISP API.
+   * If cacheUsage is enabled, it will return from session attributes at first
+   */
+    public async fetchLists (): Promise&lt;void&gt; {
+        const atts &#x3D; this.attributeManager.getSessionAttributes()
+        if (this.cacheUsage &#x3D;&#x3D;&#x3D; &#x27;enable&#x27;) {
+            const cachedProducts &#x3D; this.getCachedProducts()
+            if (cachedProducts &amp;&amp; cachedProducts.length &gt; 0) {
+                return
+            }
+        }
+        const data &#x3D; await this.get()
+        const products &#x3D; data.inSkillProducts
+        this.products &#x3D; products
+        this.attributeManager.setSessionAttributes({
+            ...atts,
+            products
+        })
+    }
+    /**
+   * get product by product id
+   * @param productId {string}
+   */
+    public async getProductById (productId: string): Promise&lt;InSkillProduct&gt; {
+        if (this.cacheUsage &#x3D;&#x3D;&#x3D; &#x27;enable&#x27;) {
+            const cachedProducts &#x3D; this.getCachedProducts()
+            if (cachedProducts &amp;&amp; cachedProducts.length &gt; 0) {
+                // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+                const item &#x3D; cachedProducts.find(cache &#x3D;&gt; cache.productId &#x3D;&#x3D;&#x3D; productId)
+                if (item) return item
+            }
+        }
+        const product &#x3D; await this.get(productId)
+        return product
+    }
+    /**
+   * get products
+   */
+    public async getProducts (): Promise&lt;InskillProducts&gt; {
+        await this.fetchLists()
+        return this.products
+    }
+    /**
+   * Find product by the list number
+   * @param userInputNo {number} list number
+   */
+    public async findProductByNo (userInputNo: number): Promise&lt;InSkillProduct | null&gt; {
+        if (!await this.hasProducts()) return null
+        const target &#x3D; this.products[userInputNo]
+        return target
+    }
+    /**
+   * Find product by the specific id
+   * @param productId {string} product id
+   */
+    public async findProductById (productId: string): Promise&lt;InSkillProduct | null&gt; {
+        if (!await this.hasProducts()) return null
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        const product &#x3D; this.products.find(product &#x3D;&gt; product.productId &#x3D;&#x3D;&#x3D; productId)
+        if (!product) return null
+        return product
+    }
+    /**
+   * Find product by the product name
+   * @param productName {string} product name
+   */
+    public async findProductByName (productName: string): Promise&lt;InSkillProduct | null&gt; {
+        if (!await this.hasProducts()) return null
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        const product &#x3D; this.products.find(product &#x3D;&gt; product.name &#x3D;&#x3D;&#x3D; productName)
+        if (!product) return null
+        return product
+    }
+    /**
+   * Find product by several condition
+   * @param condition {productName?: string, userInputNo?: number, productId?: string} search conditions
+   */
+    public async searchProduct (condition: {productName?: string; userInputNo?: number; productId?: string}): Promise&lt;InSkillProduct | null&gt; {
+        if (!condition.productName &amp;&amp; !condition.userInputNo &amp;&amp; !condition.productId) throw new Error(&#x27;No search condition&#x27;)
+        if (condition.userInputNo) return this.findProductByNo(condition.userInputNo)
+        if (condition.productName) return this.findProductByName(condition.productName)
+        if (condition.productId) return this.findProductById(condition.productId)
+        throw new Error(&#x27;Invalid search condition&#x27;)
+    }
+}
+export default ISPProductClient
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'APIClient.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

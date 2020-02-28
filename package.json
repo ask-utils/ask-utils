@@ -4,7 +4,7 @@
   "description": "utility functions for ask-sdk",
   "main": "dist/index.js",
   "scripts": {
-    "doc": "npx compodoc -c .compodocrc.json",
+    "doc": "npx compodoc -c .compodocrc.json && touch docs/.nojekyll",
     "doc:serve": "yarn doc && npx compodoc -s",
     "test": "lerna run test",
     "type": "lerna run type",

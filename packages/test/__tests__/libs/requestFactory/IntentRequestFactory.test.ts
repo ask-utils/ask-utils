@@ -1,7 +1,7 @@
 import {
     IntenthRequestFactory,
     InvalidIntentRequestException
-} from '../../../libs/requestFactory/IntentRequestFactory'
+} from '../../../libs/request/IntentRequestFactory'
 
 describe('IntenthRequestFactory', () => {
     let factory: IntenthRequestFactory
@@ -15,16 +15,16 @@ describe('IntenthRequestFactory', () => {
 
     it('should return intent request', () => {
         expect(factory.setIntent({
-            name: "NewIntent",
-            confirmationStatus: "NONE"
+            name: 'NewIntent',
+            confirmationStatus: 'NONE'
         }).getRequest()).toEqual({
             locale: 'en-US',
             requestId: expect.any(String),
             timestamp: expect.any(String),
-            type: "IntentRequest",
+            type: 'IntentRequest',
             intent: {
-                name: "NewIntent",
-                confirmationStatus: "NONE"
+                name: 'NewIntent',
+                confirmationStatus: 'NONE'
             }
         })
     })

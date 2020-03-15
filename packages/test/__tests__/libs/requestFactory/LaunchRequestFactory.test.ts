@@ -1,6 +1,6 @@
 import {
     LaunchRequestFactory
-} from '../../../libs/requestFactory/LaunchRequestFactory'
+} from '../../../libs/request/LaunchRequestFactory'
 
 describe('LaunchRequestFactory', () => {
     let factory: LaunchRequestFactory
@@ -12,7 +12,7 @@ describe('LaunchRequestFactory', () => {
             locale: 'en-US',
             requestId: expect.any(String),
             timestamp: expect.any(String),
-            type: "LaunchRequest"
+            type: 'LaunchRequest'
         })
     })
 })

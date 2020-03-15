@@ -13,6 +13,15 @@ export class SessionFactory {
             userId: ''
         }
     }
+
+    public enableNewSessionFlag (): this {
+        this.session.new = true
+        return this
+    }
+    public disableNewSessionFlag (): this {
+        this.session.new = false
+        return this
+    }
     public getSession (): Session {
         return this.session
     }

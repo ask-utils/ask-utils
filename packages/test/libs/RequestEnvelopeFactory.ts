@@ -13,12 +13,16 @@ import {
 } from './context'
 
 export class RequestEnvelopeFactory {
-    public requestFactory: RequestFactory;
-    public contextFactory: ContextFactory;
-    public sessionFactory: SessionFactory;
-    public version = '1.0'
+    public readonly requestFactory: RequestFactory;
+    public readonly contextFactory: ContextFactory;
+    public readonly sessionFactory: SessionFactory;
+    public readonly version = '1.0'
 
-    public constructor (requestFactory: RequestFactory, contextFactory: ContextFactory, sessionFactory: SessionFactory) {
+    public constructor (
+        requestFactory: RequestFactory,
+        contextFactory: ContextFactory = new ContextFactory(),
+        sessionFactory: SessionFactory = new SessionFactory()
+    ) {
         this.requestFactory = requestFactory
         this.contextFactory = contextFactory
         this.sessionFactory = sessionFactory

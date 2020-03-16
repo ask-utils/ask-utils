@@ -13,26 +13,26 @@ import {
 } from './context'
 
 export class RequestEnvelopeFactory {
-    public readonly requestFactory: RequestFactory;
-    public readonly contextFactory: ContextFactory;
-    public readonly sessionFactory: SessionFactory;
+    public readonly request: RequestFactory;
+    public readonly context: ContextFactory;
+    public readonly session: SessionFactory;
     public readonly version = '1.0'
 
     public constructor (
-        requestFactory: RequestFactory,
-        contextFactory: ContextFactory = new ContextFactory(),
-        sessionFactory: SessionFactory = new SessionFactory()
+        request: RequestFactory,
+        context: ContextFactory = new ContextFactory(),
+        session: SessionFactory = new SessionFactory()
     ) {
-        this.requestFactory = requestFactory
-        this.contextFactory = contextFactory
-        this.sessionFactory = sessionFactory
+        this.request = request
+        this.context = context
+        this.session = session
     }
 
     public getRequest (): RequestEnvelope {
         return {
-            request: this.requestFactory.getRequest(),
-            session: this.sessionFactory.getSession(),
-            context: this.contextFactory.getContext(),
+            request: this.request.getRequest(),
+            session: this.session.getSession(),
+            context: this.context.getContext(),
             version: this.version
         }
     }

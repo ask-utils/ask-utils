@@ -43,6 +43,47 @@ describe('RequestEnvelopeFactory', () => {
             'version': '1.0'
         })
     })
+    it('should create update attribute updator directry', () => {
+        const factory = new RequestEnvelopeFactory(
+            new RequestFactory('Reminders.ReminderCreated')
+        )
+        factory.applicationId = 'application.ID'
+        factory.userId = 'user.ID'
+        factory.sessionId = 'session.ID'
+        factory.requestId = 'request.ID'
+        factory.requestDate = new Date(2020, 0, 1, 15, 22, 30)
+        expect(factory.getRequest()).toMatchObject({
+            'context': {
+                'System': {
+                    'apiAccessToken': 'token',
+                    'apiEndpoint': 'https://api.amazonalexa.com',
+                    'application': {
+                        'applicationId': 'application.ID'
+                    },
+                    'user': {
+                        'userId': 'user.ID'
+                    }
+                }
+            },
+            'request': {
+                'locale': 'en-US',
+                'requestId': 'request.ID',
+                'timestamp': '2020-01-01T06:22:30Z',
+                'type': 'Reminders.ReminderCreated'
+            },
+            'session': {
+                'application': {
+                    'applicationId': 'application.ID'
+                },
+                'new': true,
+                'sessionId': 'session.ID',
+                'user': {
+                    'userId': 'user.ID'
+                }
+            },
+            'version': '1.0'
+        })
+    })
     it('should create custom attributes request', () => {
         const factory = new RequestEnvelopeFactory(
             new IntenthRequestFactory('ja-JP'),

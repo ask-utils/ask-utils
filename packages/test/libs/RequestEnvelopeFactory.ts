@@ -21,6 +21,7 @@ export class RequestEnvelopeFactory<T extends RequestFactory = RequestFactory> {
     public userId: string = 'amzn1.ask.account.' + uuid()
     public sessionId: string = 'SessionID.' + uuid()
     public requestId: string = 'amzn1.echo-external.request.' + uuid()
+    public requestDate: Date = new Date()
     public apiAccessToken: string = 'token'
     public apiEndpoint: string = 'https://api.amazonalexa.com'
 
@@ -55,6 +56,7 @@ export class RequestEnvelopeFactory<T extends RequestFactory = RequestFactory> {
 
         const user = this.user.putUserId(userId).getUser()
         this.request.setRequestId(requestId)
+            .setRequestedDate(this.requestDate)
 
         this.context.system.putApplication(application)
             .putApiEndpoint(apiEndpoint)

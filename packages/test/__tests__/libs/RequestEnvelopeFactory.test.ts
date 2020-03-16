@@ -3,7 +3,7 @@ import {
     RequestFactory,
     SessionFactory,
     ContextFactory,
-    IntenthRequestFactory
+    IntentRequestFactory
 } from '../../libs/index'
 
 describe('RequestEnvelopeFactory', () => {
@@ -86,7 +86,7 @@ describe('RequestEnvelopeFactory', () => {
     })
     it('should import createt factories', () => {
         const context = new ContextFactory()
-        const request = new IntenthRequestFactory('ja-JP')
+        const request = new IntentRequestFactory('ja-JP')
         const session = new SessionFactory()
         context.system.putPerson('personId', 'token')
         session.isNewSession(false)
@@ -155,7 +155,7 @@ describe('RequestEnvelopeFactory', () => {
     })
     it('should create custom attributes request', () => {
         const factory = new RequestEnvelopeFactory(
-            new IntenthRequestFactory('ja-JP'),
+            new IntentRequestFactory('ja-JP'),
             new ContextFactory(),
             new SessionFactory()
         )

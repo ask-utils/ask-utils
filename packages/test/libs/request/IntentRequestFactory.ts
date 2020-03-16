@@ -11,7 +11,7 @@ export class InvalidIntentRequestException extends Error {
     public message = 'Invalid IntentRequest object'
 }
 
-export class IntenthRequestFactory extends RequestFactory<IntentRequest> {
+export class IntentRequestFactory extends RequestFactory<IntentRequest> {
     public constructor (locale: string = 'en-US') {
         super('IntentRequest', locale)
     }

@@ -1,12 +1,12 @@
 import {
-    IntenthRequestFactory,
+    IntentRequestFactory,
     InvalidIntentRequestException
 } from '../../../libs/request/IntentRequestFactory'
 
-describe('IntenthRequestFactory', () => {
-    let factory: IntenthRequestFactory
+describe('IntentRequestFactory', () => {
+    let factory: IntentRequestFactory
     beforeEach(() => {
-        factory = new IntenthRequestFactory()
+        factory = new IntentRequestFactory()
     })
     it('should throw error intent object is not given', () => {
         expect(() => factory.getRequest())

@@ -1,8 +1,7 @@
 import {
     interfaces,
-    Permissions,
     User,
-    SupportedInterfaces
+    Device
 } from 'ask-sdk-core/node_modules/ask-sdk-model'
 import { v4 as uuid } from 'uuid'
 import System = interfaces.system.SystemState
@@ -14,14 +13,17 @@ export class SystemFactory {
     /**
      * Default object
      */
-    private system: System = {
-        application: {
-            applicationId: 'amzn1.echo-sdk-ams.app.' + uuid()
-        },
-        user: {
-            userId: 'amzn1.ask.account.' + uuid()
-        },
-        apiEndpoint: 'https://api.amazonalexa.com'
+    private system: System
+    public constructor (applicationId?: string, userId?: string) {
+        this.system = {
+            application: {
+                applicationId: applicationId || 'amzn1.echo-sdk-ams.app.' + uuid()
+            },
+            user: {
+                userId: userId || 'amzn1.ask.account.' + uuid()
+            },
+            apiEndpoint: 'https://api.amazonalexa.com'
+        }
     }
 
     /**
@@ -39,13 +41,8 @@ export class SystemFactory {
      * @param acccessToken
      * @param permissions
      */
-    public putUser (id: string, acccessToken?: string, permissions?: Permissions): this {
-        const user: User = {
-            userId: id
-        }
-        if (acccessToken) user.accessToken = acccessToken
-        if (permissions) user.permissions = permissions
-        this.system.user = user
+    public putUser (user: Partial<User>): this {
+        this.system.user = Object.assign(this.system.user, user)
         return this
     }
 
@@ -54,10 +51,10 @@ export class SystemFactory {
      * @param id
      * @param supportedInterfaces
      */
-    public putDevice (id: string, supportedInterfaces: SupportedInterfaces): this {
+    public putDevice (device: Device): this {
         this.system.device = {
-            deviceId: id,
-            supportedInterfaces
+            ...this.system.device,
+            ...device
         }
         return this
     }

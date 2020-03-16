@@ -84,6 +84,75 @@ describe('RequestEnvelopeFactory', () => {
             'version': '1.0'
         })
     })
+    it('should import createt factories', () => {
+        const context = new ContextFactory()
+        const request = new IntenthRequestFactory('ja-JP')
+        const session = new SessionFactory()
+        context.system.putPerson('personId', 'token')
+        session.isNewSession(false)
+            .putAttributes({
+                name: 'hello'
+            })
+
+        request.setIntent({
+            name: 'HelloIntent',
+            slots: {
+                example: {
+                    name: 'Hello',
+                    confirmationStatus: 'NONE'
+                }
+            },
+            confirmationStatus: 'NONE'
+        })
+
+        const factory = new RequestEnvelopeFactory(request, context, session)
+
+        expect(factory.getRequest()).toMatchObject({
+            'context': {
+                'System': {
+                    'apiAccessToken': 'token',
+                    'apiEndpoint': 'https://api.amazonalexa.com',
+                    'application': {
+                        'applicationId': expect.any(String)
+                    },
+                    'user': {
+                        'userId': expect.any(String)
+                    }
+                }
+            },
+            'request': {
+                'locale': 'ja-JP',
+                'requestId': expect.any(String),
+                'timestamp': expect.any(String),
+                'type': 'IntentRequest',
+                intent: {
+                    name: 'HelloIntent',
+                    slots: {
+                        example: {
+                            name: 'Hello',
+                            confirmationStatus: 'NONE'
+                        }
+                    },
+
+                    confirmationStatus: 'NONE'
+                }
+            },
+            'session': {
+                'application': {
+                    'applicationId': expect.any(String)
+                },
+                'attributes': {
+                    'name': 'hello'
+                },
+                'new': false,
+                'sessionId': expect.any(String),
+                'user': {
+                    'userId': expect.any(String)
+                }
+            },
+            'version': '1.0'
+        })
+    })
     it('should create custom attributes request', () => {
         const factory = new RequestEnvelopeFactory(
             new IntenthRequestFactory('ja-JP'),

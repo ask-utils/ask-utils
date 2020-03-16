@@ -1,7 +1,7 @@
 {
-  "name": "@ask-utils/state",
+  "name": "@ask-utils/situation",
   "version": "3.2.2",
-  "description": "Skill Routing library for ask-sdk v2",
+  "description": "Handle skill situation for ask-sdk v2 session attributes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

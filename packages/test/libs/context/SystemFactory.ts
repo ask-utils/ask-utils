@@ -1,7 +1,9 @@
 import {
     interfaces,
     User,
-    Device
+    Device,
+    Application
+
 } from 'ask-sdk-core/node_modules/ask-sdk-model'
 import { v4 as uuid } from 'uuid'
 import System = interfaces.system.SystemState
@@ -32,6 +34,15 @@ export class SystemFactory {
      */
     public putApplicationId (id: string): this {
         this.system.application.applicationId = id
+        return this
+    }
+
+    /**
+     * Put the application
+     * @param id
+     */
+    public putApplication (application: Application): this {
+        this.system.application = application
         return this
     }
 

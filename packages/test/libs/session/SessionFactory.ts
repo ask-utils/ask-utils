@@ -1,8 +1,13 @@
 import {
     User,
-    Session
+    Session,
+    Application
 } from 'ask-sdk-core/node_modules/ask-sdk-model'
 import { v4 as uuid } from 'uuid'
+
+export interface SessionAttribute {
+    [key: string]: any;
+}
 
 export class SessionFactory {
     protected session: Session = {
@@ -16,6 +21,11 @@ export class SessionFactory {
         }
     }
 
+    public putApplication (app: Application): this {
+        this.session.application = app
+        return this
+    }
+
     public putSessionId (sessionId: string): this {
         this.session.sessionId = sessionId
         return this
@@ -25,12 +35,13 @@ export class SessionFactory {
         return this
     }
 
-    public enableNewSessionFlag (): this {
-        this.session.new = true
+    public putAttributes<T extends SessionAttribute = SessionAttribute> (attributes: T): this {
+        this.session.attributes = attributes
         return this
     }
-    public disableNewSessionFlag (): this {
-        this.session.new = false
+
+    public isNewSession (status: boolean): this {
+        this.session.new = status
         return this
     }
     public getSession (): Session {

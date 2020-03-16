@@ -14,23 +14,24 @@ import {
 import {
     UserFactory
 } from './user'
+import { ApplicationFactory } from './application'
 
-export class RequestEnvelopeFactory {
+export class RequestEnvelopeFactory<T extends RequestFactory = RequestFactory> {
     public applicationId: string = 'amzn1.echo-sdk-ams.app.' + uuid()
     public userId: string = 'amzn1.ask.account.' + uuid()
     public sessionId: string = 'SessionID.' + uuid()
     public requestId: string = 'amzn1.echo-external.request.' + uuid()
-    public apiAccessToken: string = ''
+    public apiAccessToken: string = 'token'
     public apiEndpoint: string = 'https://api.amazonalexa.com'
 
-    public readonly request: RequestFactory;
+    public readonly request: T;
     public readonly context: ContextFactory;
     public readonly session: SessionFactory;
     public readonly user: UserFactory;
     public readonly version = '1.0'
 
     public constructor (
-        request: RequestFactory,
+        request: T,
         context: ContextFactory = new ContextFactory(),
         session: SessionFactory = new SessionFactory(),
         user: UserFactory = new UserFactory()
@@ -49,14 +50,20 @@ export class RequestEnvelopeFactory {
             apiAccessToken,
             apiEndpoint
         } = this
-        this.user.putUserId(userId)
+        const application = (new ApplicationFactory()).putId(applicationId)
+            .getApplication()
+
+        const user = this.user.putUserId(userId).getUser()
         this.request.setRequestId(requestId)
-        this.context.system.putApplicationId(applicationId)
+
+        this.context.system.putApplication(application)
             .putApiEndpoint(apiEndpoint)
             .putApiAccessToken(apiAccessToken)
-            .putUser(this.user.getUser())
+            .putUser(user)
+
         this.session.putSessionId(sessionId)
-            .putUser(this.user.getUser())
+            .putUser(user)
+            .putApplication(application)
 
         return this
     }

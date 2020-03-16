@@ -44,6 +44,11 @@ export class SessionFactory {
         this.session.new = status
         return this
     }
+
+    public putSession (session: Session): this {
+        this.session = session
+        return this
+    }
     public getSession (): Session {
         return this.session
     }

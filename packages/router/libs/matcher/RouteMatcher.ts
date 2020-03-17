@@ -7,6 +7,10 @@ import {
     isIntentRequestType
 } from '@ask-utils/core'
 import {
+    StateManager,
+    State
+} from '@ask-utils/situation'
+import {
     Request
 } from 'ask-sdk-core/node_modules/ask-sdk-model'
 import {
@@ -17,14 +21,16 @@ import {
     shouldMatchRequestType
 } from './helpers'
 
-export class RouteMatcher {
+export class RouteMatcher <T extends State = State> {
     private readonly input: HandlerInput
+    private readonly stateManager: StateManager<T>;
     private readonly request: Request
-    private readonly targetRoute: Router
+    private readonly targetRoute: Router<T>
     private canHandle: boolean = false
-    public constructor (input: HandlerInput, targetRoute: Router) {
+    public constructor (input: HandlerInput, targetRoute: Router<T>) {
         this.input = input
         this.request = getRequest(input)
+        this.stateManager = new StateManager<T>(input.attributesManager)
         this.targetRoute = targetRoute
     }
     private async executeCustomSituation (): Promise<void> {
@@ -48,6 +54,16 @@ export class RouteMatcher {
          */
         if (isIntentRequestType(this.request)) {
             this.canHandle = shouldMatchIntentRequest(request, targetRoute)
+        }
+
+        /**
+         * Check the requested state
+         */
+        if (this.stateManager.hasState() && this.targetRoute.situation) {
+            const currentState = this.targetRoute.situation.state
+            if (currentState) {
+                this.canHandle = this.stateManager.matchedCurrentState(currentState.current as T)
+            }
         }
 
         /**

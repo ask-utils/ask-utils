@@ -4,7 +4,7 @@ import {
 
 export type State = string
 export interface SkillState<T extends State = State> {
-    current: T;
+    current: T | '';
     next?: T[];
     before?: T[];
 }
@@ -12,12 +12,13 @@ export class StateManager<T extends State = State> {
     public stateKey: string = '__state'
     private state: SkillState<T>;
     private readonly attributeManager: AttributesManager
-    public constructor (attributeManager: AttributesManager, initialState: T) {
+    public constructor (attributeManager: AttributesManager, initialState?: T) {
         this.attributeManager = attributeManager
         this.state = {
-            current: initialState
+            current: initialState || ''
         }
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private isState (state: any): state is SkillState<T> {
         return state && state.current
     }
@@ -47,12 +48,19 @@ export class StateManager<T extends State = State> {
         const targetState = attributes[stateKey]
         if (!this.isState(targetState)) {
             this.mergeSessionAttributes()
-            return this.getState()
+            const retryAtt = attributeManager.getSessionAttributes()
+            return retryAtt[stateKey]
         }
         return targetState
     }
 
-    public getCurrentState (): T {
+    public hasState (): boolean {
+        const state = this.getState()
+        if (!state) return false
+        return state.current !== ''
+    }
+
+    public getCurrentState (): T | '' {
         const targetState = this.getState()
         return targetState.current
     }

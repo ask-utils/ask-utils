@@ -122,6 +122,36 @@ describe('requestHandler', () => {
             expect(await requestHandler.canHandle(handlerInput)).toEqual(true)
         })
 
+        it('should auto set shouldEndSession props', async () => {
+            type State = 'start' | 'step1' | 'help'
+            const requestHandler = RequestHandlerFactory.create<State>({
+                requestType: 'IntentRequest',
+                intentName: 'HelloIntent',
+                situation: {
+                    shouldEndSession: true
+                },
+                handler: (input) => {
+                    return input.responseBuilder.getResponse()
+                }
+            })
+            const requestEnvelopeFactory = new RequestEnvelopeFactory(
+                (new IntentRequestFactory())
+                    .setIntent({
+                        name: 'HelloIntent',
+                        confirmationStatus: 'NONE'
+                    })
+            )
+            const handlerInputFactory = new HandlerInputFactory(
+                requestEnvelopeFactory
+            ).updateRequest(requestEnvelopeFactory.getRequest())
+
+            const handlerInput = handlerInputFactory.create()
+
+            expect(await requestHandler.handle(handlerInput)).toEqual({
+                shouldEndSession: true
+            })
+        })
+
         it('should execute the handler and auto update the next request state', async () => {
             type State = 'start' | 'step1' | 'help'
             const skill = CustomSkillFactory.init().addRequestHandlers(

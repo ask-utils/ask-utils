@@ -23,25 +23,65 @@ SENTRY_DNS=YOUR_SENTRY_DNS
 ## Basic Usage
 
 ```typescript
-import Alexa from 'ask-sdk'
-import { SetErrorTrackerInterceptor, SentryDefaultErrorHandler } from '@ask-utils/router'
 
-export const handler = Alexa.SkillBuilders.standard()
-            .addErrorHandlers(SentryDefaultErrorHandler)
-            .addRequestInterceptors(SetErrorTrackerInterceptor)
-            .lambda()
-```
+import {
+    RequestHandlerFactory
+} from '@ask-utils/router'
+const router = new RequestHandlerFactory()
+router.addRoutes({
+    requestType: 'LaunchRequest',
+    handler: (input) => {
+        return input.responseBuilder
+            .speak('hello world').getResponse()
+    }
+}, {
+    requestType: 'IntentRequest',
+    intentName: 'HelloIntent',
+    handler: (input, helpers) => {
+        helpers.stateManager.setState('step1')
+        return input.responseBuilder
+        .speak('Go to step 1').reprompt('will you go?').getResponse()
+    }
+}, {
+    requestType: 'IntentRequest',
+    intentName: 'Step1Intent',
+    situation: {
+        state: {
+            current: 'step1',
+            next: 'step2'
+        }
+    },
+    handler: (input) => {
+        return input.responseBuilder
+        .speak('Go to step 2').reprompt('will you go?').getResponse()
+    }
+}, {
+    requestType: 'IntentRequest',
+    intentName: 'Step2Intent',
+    situation: {
+        state: {
+            current: 'step2',
+            next: 'end'
+        }
+    },
+    handler: (input) => {
+        return input.responseBuilder
+        .speak('Finnaly').reprompt('will you go?').getResponse()
+    }
+}, {
+    requestType: 'IntentRequest',
+    intentName: 'AMAZON.StopIntent',
+    situation: {
+        shouldEndSession: true
+    },
+    handler: (input) => {
+        return input.responseBuilder
+        .speak('Bye!').getResponse()
+    }
+})
 
-## Custom Usage
-
-```typescript
-const ErrorHandler = SentryErrorHandlerFactory.init()
-        .setHandle((handlerInput, error) => {
-          console.log('Stack: %j', error.stack)
-          return handlerInput.responseBuilder
-            .speak('Sorry I could not understand the meaning. Please tell me again')
-            .reprompt('Could you tell me onece more?')
-            .getResponse()
-        })
-        .getHandler()
+export const handler = CustomSkillFactory.init()
+    .addRequestHandlers(
+        ...router.createHandlers()
+    ).lambda()
 ```

@@ -8,11 +8,16 @@ import {
     RouteMatcher
 } from '../matcher'
 import {
-    Router
+    Router,
+    Situation
 } from '../model'
 
-const getStateFromRoute = <T extends State = State>(route: Router<T>): InitialState<T> | undefined => {
+const getSituation = <T extends State = State>(route: Router<T>): Situation | undefined => {
     const { situation } = route
+    return situation || undefined
+}
+const getStateFromRoute = <T extends State = State>(route: Router<T>): InitialState<T> | undefined => {
+    const situation = getSituation(route)
     if (!situation || !situation.state) return undefined
     return situation.state as InitialState<T>
 }
@@ -49,6 +54,10 @@ export class RequestHandlerFactory<T extends State = State> {
                     if (current && next) {
                         stateManager.setState(next, [], [current])
                     }
+                }
+                const situation = getSituation(route)
+                if (situation && situation.shouldEndSession !== undefined) {
+                    input.responseBuilder.withShouldEndSession(situation.shouldEndSession)
                 }
                 const result = route.handler(input, {
                     stateManager

@@ -1,5 +1,5 @@
 
-import { StateManager, State } from '@ask-utils/situation'
+import { StateManager, State, InitialState } from '@ask-utils/situation'
 import { RequestHandler } from 'ask-sdk'
 import {
     Response
@@ -11,10 +11,10 @@ import {
     Router
 } from '../model'
 
-const getStateFromRoute = <T extends State = State>(route: Router<T>): T | undefined => {
+const getStateFromRoute = <T extends State = State>(route: Router<T>): InitialState<T> | undefined => {
     const { situation } = route
     if (!situation || !situation.state) return undefined
-    return situation.state as T
+    return situation.state as InitialState<T>
 }
 
 export class RequestHandlerFactory<T extends State = State> {
@@ -26,7 +26,7 @@ export class RequestHandlerFactory<T extends State = State> {
     }
 
     public createHandlers (): RequestHandler[] {
-        return this.router.map(route => {
+        return this.router.map((route): RequestHandler => {
             return RequestHandlerFactory.create<T>(route)
         })
     }
@@ -41,6 +41,15 @@ export class RequestHandlerFactory<T extends State = State> {
             },
             handle: (input): Response | Promise<Response> => {
                 const stateManager = new StateManager<T>(input.attributesManager, expectedState)
+                /**
+                 * Auto state updator
+                 */
+                if (expectedState) {
+                    const { current, next } = expectedState
+                    if (current && next) {
+                        stateManager.setState(next, [], [current])
+                    }
+                }
                 const result = route.handler(input, {
                     stateManager
                 })

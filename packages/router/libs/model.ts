@@ -13,7 +13,7 @@ interface Situation {
 
 interface SituationState {
     current?: string;
-
+    next?: string;
 }
 
 export interface HandlerHelpers<T extends State = State> {

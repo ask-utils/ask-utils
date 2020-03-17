@@ -8,14 +8,19 @@ export interface SkillState<T extends State = State> {
     next?: T[];
     before?: T[];
 }
+export interface InitialState<T extends State = State> {
+    current?: T;
+    next?: T;
+}
 export class StateManager<T extends State = State> {
     public stateKey: string = '__state'
     private state: SkillState<T>;
     private readonly attributeManager: AttributesManager
-    public constructor (attributeManager: AttributesManager, initialState?: T) {
+    public constructor (attributeManager: AttributesManager, initialState?: InitialState<T>) {
         this.attributeManager = attributeManager
         this.state = {
-            current: initialState || ''
+            current: initialState && initialState.current ? initialState.current : '',
+            next: initialState && initialState.next ? [initialState.next] : []
         }
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

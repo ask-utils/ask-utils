@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import {
     AttributesManagerFactory,
     AttributesManager
@@ -27,23 +28,23 @@ describe('StateManager', () => {
     })
     it('should return initilized state', () => {
         type State = 'init' | 'help' | 'end'
-        const mgr = new StateManager<State>(attributesManager, 'init')
+        const mgr = new StateManager<State>(attributesManager, { current: 'init' })
         expect(mgr.getCurrentState()).toEqual('init')
     })
     it('should return initilized state', () => {
         type State = 'init' | 'help' | 'end'
-        const mgr = new StateManager<State>(attributesManager, 'init')
+        const mgr = new StateManager<State>(attributesManager, { current: 'init' })
         mgr.setState('help')
         expect(mgr.matchedCurrentState('help')).toEqual(true)
     })
     it('should return initilized state', () => {
         type State = 'init' | 'help' | 'end'
-        const mgr = new StateManager<State>(attributesManager, 'init')
+        const mgr = new StateManager<State>(attributesManager, { current: 'init' })
         expect(mgr.matchedCurrentState('help')).toEqual(false)
     })
     it('should return state object', () => {
         type State = 'init' | 'help' | 'end' | 'state1' | 'state2' | 'state3'
-        const state = new StateManager<State>(attributesManager, 'init')
+        const state = new StateManager<State>(attributesManager, { current: 'init' })
         state.setState('state2', ['help', 'state3', 'end'], ['init', 'state1'])
         expect(state.getState()).toEqual({
             current: 'state2',
@@ -56,7 +57,7 @@ describe('StateManager', () => {
         let stateManager: StateManager
         beforeAll(() => {
             attributesManager = createAttributeManager()
-            stateManager = new StateManager<State>(attributesManager, 'init')
+            stateManager = new StateManager<State>(attributesManager, { current: 'init' })
         })
         afterAll(() => {
             attributesManager = createAttributeManager()

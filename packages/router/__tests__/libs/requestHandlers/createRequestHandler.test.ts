@@ -122,7 +122,7 @@ describe('requestHandler', () => {
             expect(await requestHandler.canHandle(handlerInput)).toEqual(true)
         })
 
-        it('test', async () => {
+        it('should execute the handler and auto update the next request state', async () => {
             type State = 'start' | 'step1' | 'help'
             const skill = CustomSkillFactory.init().addRequestHandlers(
                 RequestHandlerFactory.create<State>({
@@ -130,7 +130,47 @@ describe('requestHandler', () => {
                     intentName: 'HelloIntent',
                     situation: {
                         state: {
-                            current: 'help'
+                            current: 'help',
+                            next: 'step1'
+                        }
+                    },
+                    handler: (input) => {
+                        return input.responseBuilder.getResponse()
+                    }
+                })
+            )
+            const requestEnvelopeFactory = new RequestEnvelopeFactory(
+                (new IntentRequestFactory())
+                    .setIntent({
+                        name: 'HelloIntent',
+                        confirmationStatus: 'NONE'
+                    })
+            )
+            requestEnvelopeFactory.session.putAttributes({
+                __state: {
+                    current: 'help'
+                }
+            })
+            skill.create()
+            const result = await skill.create().invoke(requestEnvelopeFactory.getRequest())
+            expect(result.sessionAttributes).toMatchObject({
+                __state: {
+                    before: ['help'],
+                    current: 'step1'
+                }
+            })
+        })
+
+        it('should execute the handler and update manually', async () => {
+            type State = 'start' | 'step1' | 'help'
+            const skill = CustomSkillFactory.init().addRequestHandlers(
+                RequestHandlerFactory.create<State>({
+                    requestType: 'IntentRequest',
+                    intentName: 'HelloIntent',
+                    situation: {
+                        state: {
+                            current: 'help',
+                            next: 'step1'
                         }
                     },
                     handler: (input, { stateManager }) => {

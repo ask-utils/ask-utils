@@ -54,6 +54,9 @@ export class RouteMatcher <T extends State = State> {
          */
         if (isIntentRequestType(this.request)) {
             this.canHandle = shouldMatchIntentRequest(request, targetRoute)
+        } else {
+            // If the request is not Intent Request, set true.(We can overwrite by state and custom)
+            this.canHandle = true
         }
 
         /**

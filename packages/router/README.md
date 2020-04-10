@@ -7,17 +7,13 @@
 ![logo](https://ask-utils.dev/static/9cbabc261164aba75a5d7e32d0e53371/8a651/youtube_profile_image.png)
 
 https://ask-utils.dev
+
+Simple skill handler routing libs.
+
 ## Getting started
 
 ```
 $ npm i -S @ask-utils/router
-```
-
-## Requirement
-You `SHOULD` set the environment variable in your env (Lambda, Container, etc..)
-
-```
-SENTRY_DNS=YOUR_SENTRY_DNS
 ```
 
 ## Basic Usage

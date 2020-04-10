@@ -1395,6 +1395,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/uuid@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.0.tgz#9f6993ccc8210efa90bda7e1afabbb06a9f860cd"
+  integrity sha512-RiX1I0lK9WFLFqy2xOxke396f0wKIzk5sAll0tL4J4XDYJXURI7JOs96XQb3nP+2gEpQ/LutBb66jgiT5oQshQ==
+
 "@types/yargs@^12.0.2", "@types/yargs@^12.0.9":
   version "12.0.12"
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
@@ -1776,10 +1781,10 @@ ask-sdk-model@^1.18.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.25.2.tgz#0e819d70bc8a5baf2851f4e7400f0f877ff362d9"
   integrity sha512-/jIobSufgEztAr5pku1V7qLgeCYLWivVatKjHRUddiLiD6ZjLjFBMT+s2/BYiHe9BL6w4IpSwZmP4JPRVQvoWw==
 
-ask-sdk-model@^1.19.0:
-  version "1.25.1"
-  resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.25.1.tgz#691694ec2e90ec255aa3eb910be2e49bef8ae9f2"
-  integrity sha512-/rP8zdsIOdsp7B2THbtZpHq3cPW4VXPFyd18pN3cdaaBtfM4Karl9xDFGYBL160c4LT1mLohB2ke6NDb8izYfQ==
+ask-sdk-model@^1.26.0:
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.26.0.tgz#28dde85c887be2b7c355eab26d377cecbe0e0bad"
+  integrity sha512-Flkw4rowQtuaSdUON6/OLml85lZMJQRsac9AtF+pKcp06gmiNX0x8x4/u4WBbzBUd5PoFoYBs79i3VnmQ+Vn5w==
 
 ask-sdk-model@^1.9.0:
   version "1.18.0"
@@ -9367,6 +9372,11 @@ uuid@^3.0.0, uuid@^3.3.3:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+  integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
 
 validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.3:
   version "3.0.4"

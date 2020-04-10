@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/situation",
-  "version": "3.2.2",
+  "version": "3.3.4",
   "description": "Handle skill situation for ask-sdk v2 session attributes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,16 +18,16 @@
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
+    "@ask-utils/test": "^3.3.4",
     "rollup": "^1.16.7",
     "rollup-plugin-typescript2": "^0.21.2",
-    "typescript": "^3.5.3",
-    "@ask-utils/test": "^3.2.2"
+    "typescript": "^3.5.3"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.3.3",
+    "@ask-utils/core": "^3.3.4",
     "ask-sdk": "^2.7.0",
     "ask-sdk-core": "^2.7.0",
     "ask-sdk-model": "^1.26.0",

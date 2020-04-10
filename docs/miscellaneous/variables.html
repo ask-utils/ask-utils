@@ -73,6 +73,12 @@
                             <a href="#cloneHandler" title="packages/core/libs/requestHandler.ts"><b>cloneHandler</b>&nbsp;&nbsp;&nbsp;(packages/.../requestHandler.ts)</a>
                         </li>
                         <li>
+                            <a href="#createAttributeManager" title="packages/situationManager/__tests__/lib/StateManager.test.ts"><b>createAttributeManager</b>&nbsp;&nbsp;&nbsp;(packages/.../StateManager.test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createIntentRequestHandlerInput" title="packages/test/libs/wrappers/handlerInput.ts"><b>createIntentRequestHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../handlerInput.ts)</a>
+                        </li>
+                        <li>
                             <a href="#createRandomToken" title="packages/isp/libs/directiveBuilders.ts"><b>createRandomToken</b>&nbsp;&nbsp;&nbsp;(packages/.../directiveBuilders.ts)</a>
                         </li>
                         <li>
@@ -85,19 +91,19 @@
                             <a href="#enqueueProgressiveResponse" title="packages/core/libs/responseHelpers.ts"><b>enqueueProgressiveResponse</b>&nbsp;&nbsp;&nbsp;(packages/.../responseHelpers.ts)</a>
                         </li>
                         <li>
+                            <a href="#execGenericTests" title="packages/proactive-event/__tests__/libs/helpers/typeGuards.test.ts"><b>execGenericTests</b>&nbsp;&nbsp;&nbsp;(packages/.../typeGuards.test.ts)</a>
+                        </li>
+                        <li>
                             <a href="#execGenericTests" title="packages/proactive-event/__tests__/libs/helpers/index.test.ts"><b>execGenericTests</b>&nbsp;&nbsp;&nbsp;(packages/.../index.test.ts)</a>
                         </li>
                         <li>
-                            <a href="#execGenericTests" title="packages/proactive-event/__tests__/libs/helpers/typeGuards.test.ts"><b>execGenericTests</b>&nbsp;&nbsp;&nbsp;(packages/.../typeGuards.test.ts)</a>
+                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/dialog.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../dialog.test.ts)</a>
                         </li>
                         <li>
                             <a href="#generateHandlerInput" title="packages/core/__tests__/libs/attributeManager.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../attributeManager.test.ts)</a>
                         </li>
                         <li>
                             <a href="#generateHandlerInput" title="packages/core/__tests__/libs/intentHandler.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../intentHandler.test.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/dialog.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../dialog.test.ts)</a>
                         </li>
                         <li>
                             <a href="#getAllEntitledProducts" title="packages/isp/libs/productFinders.ts"><b>getAllEntitledProducts</b>&nbsp;&nbsp;&nbsp;(packages/.../productFinders.ts)</a>
@@ -250,10 +256,16 @@
                             <a href="#getSessionId" title="packages/core/libs/user.ts"><b>getSessionId</b>&nbsp;&nbsp;&nbsp;(packages/.../user.ts)</a>
                         </li>
                         <li>
+                            <a href="#getSituation" title="packages/router/libs/requestHandlers/createRequestHandler.ts"><b>getSituation</b>&nbsp;&nbsp;&nbsp;(packages/.../createRequestHandler.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getSlot" title="packages/core/libs/slot.ts"><b>getSlot</b>&nbsp;&nbsp;&nbsp;(packages/.../slot.ts)</a>
                         </li>
                         <li>
                             <a href="#getSlotValue" title="packages/core/libs/slot.ts"><b>getSlotValue</b>&nbsp;&nbsp;&nbsp;(packages/.../slot.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getStateFromRoute" title="packages/router/libs/requestHandlers/createRequestHandler.ts"><b>getStateFromRoute</b>&nbsp;&nbsp;&nbsp;(packages/.../createRequestHandler.ts)</a>
                         </li>
                         <li>
                             <a href="#getSupportedInterfaces" title="packages/core/libs/device.ts"><b>getSupportedInterfaces</b>&nbsp;&nbsp;&nbsp;(packages/.../device.ts)</a>
@@ -509,6 +521,12 @@
                         </li>
                         <li>
                             <a href="#SetLaunchCountInterceptor" title="packages/handlers/libs/requestInterceptors/LaunchCount.ts"><b>SetLaunchCountInterceptor</b>&nbsp;&nbsp;&nbsp;(packages/.../LaunchCount.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#shouldMatchIntentRequest" title="packages/router/libs/matcher/helpers.ts"><b>shouldMatchIntentRequest</b>&nbsp;&nbsp;&nbsp;(packages/.../helpers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#shouldMatchRequestType" title="packages/router/libs/matcher/helpers.ts"><b>shouldMatchRequestType</b>&nbsp;&nbsp;&nbsp;(packages/.../helpers.ts)</a>
                         </li>
                         <li>
                             <a href="#SocialGameInvite" title="packages/proactive-event/libs/index.ts"><b>SocialGameInvite</b>&nbsp;&nbsp;&nbsp;(packages/.../index.ts)</a>
@@ -1095,6 +1113,76 @@
             </tbody>
         </table>
 </section>
+    <h3>packages/situationManager/__tests__/lib/StateManager.test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createAttributeManager"></a>
+                        <span class="name">
+                            <b>
+                            createAttributeManager</b>
+                            <a href="#createAttributeManager"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(requestFactory: RequestFactory &#x3D; new RequestFactory(&#x27;LaunchRequest&#x27;)) &#x3D;&gt; {
+    const request &#x3D; (new RequestEnvelopeFactory(
+        requestFactory
+    )).getRequest()
+    const att &#x3D; AttributesManagerFactory.init({
+        requestEnvelope: request
+    })
+    return att
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>packages/test/libs/wrappers/handlerInput.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createIntentRequestHandlerInput"></a>
+                        <span class="name">
+                            <b>
+                            createIntentRequestHandlerInput</b>
+                            <a href="#createIntentRequestHandlerInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(intent: Intent): HandlerInput &#x3D;&gt; {
+    const handlerInput &#x3D; (new HandlerInputFactory(
+        new RequestEnvelopeFactory(
+            (new IntentRequestFactory())
+                .setIntent(intent)
+        )
+    )).create()
+    return handlerInput
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Simple helper to create a HandlerInput of intentRequest</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
     <h3>packages/isp/libs/directiveBuilders.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -1425,51 +1513,6 @@
             </tbody>
         </table>
 </section>
-    <h3>packages/proactive-event/__tests__/libs/helpers/index.test.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="execGenericTests"></a>
-                        <span class="name">
-                            <b>
-                            execGenericTests</b>
-                            <a href="#execGenericTests"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>(func: Function) &#x3D;&gt; {
-    it(&#x27;should throw error when given null&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func(null)).toThrow()
-    })
-    it(&#x27;should throw error when given undefined&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func(undefined)).toThrow()
-    })
-    it(&#x27;should throw error when given number&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func(100)).toThrow()
-    })
-    it(&#x27;should throw error when given string&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func(&#x27;string&#x27;)).toThrow()
-    })
-    it(&#x27;should throw error when given empty object&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func({})).toThrow()
-    })
-    it(&#x27;should throw error when given invalid object&#x27;, () &#x3D;&gt; {
-        expect(() &#x3D;&gt; func({
-            hoge: true
-        })).toThrow()
-    })
-}</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
     <h3>packages/proactive-event/__tests__/libs/helpers/typeGuards.test.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -1532,6 +1575,82 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>{ hoge: true }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>packages/proactive-event/__tests__/libs/helpers/index.test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="execGenericTests"></a>
+                        <span class="name">
+                            <b>
+                            execGenericTests</b>
+                            <a href="#execGenericTests"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(func: Function) &#x3D;&gt; {
+    it(&#x27;should throw error when given null&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func(null)).toThrow()
+    })
+    it(&#x27;should throw error when given undefined&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func(undefined)).toThrow()
+    })
+    it(&#x27;should throw error when given number&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func(100)).toThrow()
+    })
+    it(&#x27;should throw error when given string&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func(&#x27;string&#x27;)).toThrow()
+    })
+    it(&#x27;should throw error when given empty object&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func({})).toThrow()
+    })
+    it(&#x27;should throw error when given invalid object&#x27;, () &#x3D;&gt; {
+        expect(() &#x3D;&gt; func({
+            hoge: true
+        })).toThrow()
+    })
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>packages/core/__tests__/libs/dialog.test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="generateHandlerInput"></a>
+                        <span class="name">
+                            <b>
+                            generateHandlerInput</b>
+                            <a href="#generateHandlerInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(request: Request): HandlerInput &#x3D;&gt; {
+    const handlerInput &#x3D; {
+        requestEnvelope: {
+            request: request
+        }
+    } as HandlerInput
+    return handlerInput
+}</code>
                         </td>
                     </tr>
 
@@ -1655,37 +1774,6 @@
     type: &#x27;LaunchRequest&#x27;,
     requestId: &#x27;string&#x27;,
     timestamp: &#x27;string&#x27;
-}</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
-    <h3>packages/core/__tests__/libs/dialog.test.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="generateHandlerInput"></a>
-                        <span class="name">
-                            <b>
-                            generateHandlerInput</b>
-                            <a href="#generateHandlerInput"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>(request: Request): HandlerInput &#x3D;&gt; {
-    const handlerInput &#x3D; {
-        requestEnvelope: {
-            request: request
-        }
-    } as HandlerInput
-    return handlerInput
 }</code>
                         </td>
                     </tr>
@@ -4107,6 +4195,58 @@
             </tbody>
         </table>
 </section>
+    <h3>packages/router/libs/requestHandlers/createRequestHandler.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getSituation"></a>
+                        <span class="name">
+                            <b>
+                            getSituation</b>
+                            <a href="#getSituation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;T extends State &#x3D; State&gt;(route: Router&lt;T&gt;): Situation | undefined &#x3D;&gt; {
+    const { situation } &#x3D; route
+    return situation || undefined
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getStateFromRoute"></a>
+                        <span class="name">
+                            <b>
+                            getStateFromRoute</b>
+                            <a href="#getStateFromRoute"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;T extends State &#x3D; State&gt;(route: Router&lt;T&gt;): InitialState&lt;T&gt; | undefined &#x3D;&gt; {
+    const situation &#x3D; getSituation(route)
+    if (!situation || !situation.state) return undefined
+    return situation.state as InitialState&lt;T&gt;
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
     <h3>packages/core/libs/serviceClient.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -5386,6 +5526,58 @@
         })
         await input.attributesManager.savePersistentAttributes()
     }
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>packages/router/libs/matcher/helpers.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shouldMatchIntentRequest"></a>
+                        <span class="name">
+                            <b>
+                            shouldMatchIntentRequest</b>
+                            <a href="#shouldMatchIntentRequest"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;T extends State &#x3D; State&gt;(request: Request, route: Router&lt;T&gt;): boolean &#x3D;&gt; {
+    if (!isIntentRequestType(request)) return false
+    if (!route.intentName) return true
+    return route.intentName &#x3D;&#x3D;&#x3D; request.intent.name
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shouldMatchRequestType"></a>
+                        <span class="name">
+                            <b>
+                            shouldMatchRequestType</b>
+                            <a href="#shouldMatchRequestType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&lt;T extends State &#x3D; State&gt;(request: Request, route: Router&lt;T&gt;): boolean &#x3D;&gt; {
+    if (request.type !&#x3D;&#x3D; route.requestType) return false
+    return true
 }</code>
                         </td>
                     </tr>

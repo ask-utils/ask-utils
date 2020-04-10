@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>ParameterFactory</li>
+  <li>LaunchRequestFactory</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts</code>
+            <code>packages/handlers/libs/requestHandlers/factories/index.ts</code>
         </p>
 
 
@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">packages/handlers/libs/requestHandlers/factories/index.ts:25</a></div>
                 </td>
             </tr>
 
@@ -137,7 +137,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/PayloadBuilder.html" target="_self" >PayloadBuilder</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/HandlerBuilder.html" target="_self" >HandlerBuilder</a></code>
 
                     </div>
                 </td>
@@ -154,66 +154,32 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import moment from &#x27;moment&#x27;
-import {
-    interfaces,
-    Types
-} from &#x27;../../model&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import HandlerBuilder from &#x27;./Base&#x27;
+import IntentHandlerBuilder from &#x27;./Intent&#x27;
+import LaunchRequestBuilder from &#x27;./LaunchRequest&#x27;
+export * from &#x27;./Base&#x27;
+export * from &#x27;./Intent&#x27;
+export * from &#x27;./model&#x27;
 
-// helper
-import {
-    getOrderState
-} from &#x27;../../helpers&#x27;
-import OrderStatus &#x3D; interfaces.OrderStatus
-import PayloadBuilder &#x3D; OrderStatus.Updated.PayloadBuilder
+export class IntentHandlerFactory {
+    public static init (intentName?: string): IntentHandlerBuilder {
+        if (!intentName) throw new Error(&#x27;intentName is required&#x27;)
+        return new IntentHandlerBuilder(intentName)
+    }
+}
 
-export default class ParameterFactory {
-    public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.OrderStatus.Updated&#x27;
-
-        const order: Types.Order &#x3D; {
-            seller: {
-                name: &#x27;localizedattribute:sellerName&#x27;
-            }
+export class HandlerFactory {
+    public static init (type: string, intentName?: string): HandlerBuilder {
+        if (type &#x3D;&#x3D;&#x3D; &#x27;IntentRequest&#x27;) {
+            return IntentHandlerFactory.init(intentName)
         }
+        return new HandlerBuilder()
+    }
+}
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const orderState: any &#x3D; {}
-        return {
-            setOrderStatus (status: Types.OrderStatus) {
-                orderState.status &#x3D; status
-                return this
-            },
-            setEnterTimestamp (date: Date) {
-                orderState.enterTimestamp &#x3D; moment(date).toISOString()
-                return this
-            },
-            setExpectedArrival (date: Date) {
-                orderState.deliveryDetails &#x3D; {
-                    expectedArrival: moment(date).toISOString()
-                }
-                return this
-            },
-            updateSellerName (name: string) {
-                order.seller.name &#x3D; name
-                return this
-            },
-            getEventName () {
-                return eventName
-            },
-            getPayload () {
-                return {
-                    state: getOrderState(orderState),
-                    order
-                }
-            },
-            getParameter () {
-                return {
-                    name: eventName,
-                    payload: this.getPayload()
-                }
-            }
-        }
+export class LaunchRequestFactory {
+    public static init (): HandlerBuilder {
+        return new LaunchRequestBuilder()
     }
 }
 </code></pre>
@@ -244,7 +210,7 @@ export default class ParameterFactory {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'ParameterFactory-2.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'LaunchRequestFactory-1.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

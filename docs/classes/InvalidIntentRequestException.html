@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>ParameterFactory</li>
+  <li>InvalidIntentRequestException</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,10 +60,16 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts</code>
+            <code>packages/test/libs/request/IntentRequestFactory.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>Error</code>
+            </p>
 
 
 
@@ -71,18 +77,17 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Properties</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#init">init</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#message">message</a>
                             </li>
                         </ul>
                     </td>
@@ -92,59 +97,53 @@
 
 
 
+
         </tbody>
     </table>
 </section>
-
 
 
             <section>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="init"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Static</span>
-                            init
-                        </b>
-                        <a href="#init"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>init()</code>
-                </td>
-            </tr>
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;Invalid IntentRequest object&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">packages/test/libs/request/IntentRequestFactory.ts:11</a></div>
+                            </td>
+                        </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts:15</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/PayloadBuilder.html" target="_self" >PayloadBuilder</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </section>
+
+
 
 
 
@@ -154,66 +153,40 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import moment from &#x27;moment&#x27;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    RequestFactory
+} from &#x27;./RequestFactory&#x27;
 import {
-    interfaces,
-    Types
-} from &#x27;../../model&#x27;
+    Intent,
+    IntentRequest,
+    DialogState
+} from &#x27;ask-sdk-core/node_modules/ask-sdk-model&#x27;
 
-// helper
-import {
-    getOrderState
-} from &#x27;../../helpers&#x27;
-import OrderStatus &#x3D; interfaces.OrderStatus
-import PayloadBuilder &#x3D; OrderStatus.Updated.PayloadBuilder
+export class InvalidIntentRequestException extends Error {
+    public message &#x3D; &#x27;Invalid IntentRequest object&#x27;
+}
 
-export default class ParameterFactory {
-    public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.OrderStatus.Updated&#x27;
+export class IntentRequestFactory extends RequestFactory&lt;IntentRequest&gt; {
+    public constructor (locale: string &#x3D; &#x27;en-US&#x27;) {
+        super(&#x27;IntentRequest&#x27;, locale)
+    }
 
-        const order: Types.Order &#x3D; {
-            seller: {
-                name: &#x27;localizedattribute:sellerName&#x27;
-            }
-        }
+    public setIntent (intent: Intent): this {
+        this.updateRequest({
+            intent
+        })
+        return this
+    }
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const orderState: any &#x3D; {}
-        return {
-            setOrderStatus (status: Types.OrderStatus) {
-                orderState.status &#x3D; status
-                return this
-            },
-            setEnterTimestamp (date: Date) {
-                orderState.enterTimestamp &#x3D; moment(date).toISOString()
-                return this
-            },
-            setExpectedArrival (date: Date) {
-                orderState.deliveryDetails &#x3D; {
-                    expectedArrival: moment(date).toISOString()
-                }
-                return this
-            },
-            updateSellerName (name: string) {
-                order.seller.name &#x3D; name
-                return this
-            },
-            getEventName () {
-                return eventName
-            },
-            getPayload () {
-                return {
-                    state: getOrderState(orderState),
-                    order
-                }
-            },
-            getParameter () {
-                return {
-                    name: eventName,
-                    payload: this.getPayload()
-                }
-            }
-        }
+    public setDialogState (state: DialogState): this {
+        this.updateRequest({
+            dialogState: state
+        })
+        return this
+    }
+
+    protected validateRequest (): void {
+        if (!this.request.intent) throw new InvalidIntentRequestException()
     }
 }
 </code></pre>
@@ -244,7 +217,7 @@ export default class ParameterFactory {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'ParameterFactory-2.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'InvalidIntentRequestException.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

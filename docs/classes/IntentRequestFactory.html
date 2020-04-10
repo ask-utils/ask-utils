@@ -42,7 +42,7 @@
 
 <ol class="breadcrumb">
   <li>Classes</li>
-  <li>LaunchRequestFactory</li>
+  <li>IntentRequestFactory</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/test/libs/request/LaunchRequestFactory.ts</code>
+            <code>packages/test/libs/request/IntentRequestFactory.ts</code>
         </p>
 
 
@@ -120,7 +120,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#setTask">setTask</a>
+                                <a href="#setDialogState">setDialogState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setIntent">setIntent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#validateRequest">validateRequest</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -194,7 +202,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">packages/test/libs/request/LaunchRequestFactory.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">packages/test/libs/request/IntentRequestFactory.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -434,28 +442,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="setTask"></a>
+                    <a name="setDialogState"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            setTask
+                            setDialogState
                         </b>
-                        <a href="#setTask"><span class="icon ion-ios-link"></span></a>
+                        <a href="#setDialogState"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>setTask(task: Task)</code>
+                    <code>setDialogState(state: <a href="../undefineds/State.html">DialogState</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">packages/test/libs/request/LaunchRequestFactory.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">packages/test/libs/request/IntentRequestFactory.ts:26</a></div>
                 </td>
             </tr>
 
@@ -475,9 +483,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>task</td>
+                                    <td>state</td>
                                     <td>
-                                            <code>Task</code>
+                                                <code><a href="../miscellaneous/typealiases.html#State" target="_self" >DialogState</a></code>
                                     </td>
 
                                     <td>
@@ -490,6 +498,112 @@
                         </table>
                     </div>
                     <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setIntent"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setIntent
+                        </b>
+                        <a href="#setIntent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setIntent(intent: Intent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">packages/test/libs/request/IntentRequestFactory.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>intent</td>
+                                    <td>
+                                            <code>Intent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateRequest"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            validateRequest
+                        </b>
+                        <a href="#validateRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateRequest()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">packages/test/libs/request/IntentRequestFactory.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -1214,18 +1328,37 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     RequestFactory
 } from &#x27;./RequestFactory&#x27;
-import { LaunchRequest, Task } from &#x27;ask-sdk-core/node_modules/ask-sdk-model&#x27;
+import {
+    Intent,
+    IntentRequest,
+    DialogState
+} from &#x27;ask-sdk-core/node_modules/ask-sdk-model&#x27;
 
-export class LaunchRequestFactory extends RequestFactory&lt;LaunchRequest&gt; {
+export class InvalidIntentRequestException extends Error {
+    public message &#x3D; &#x27;Invalid IntentRequest object&#x27;
+}
+
+export class IntentRequestFactory extends RequestFactory&lt;IntentRequest&gt; {
     public constructor (locale: string &#x3D; &#x27;en-US&#x27;) {
-        super(&#x27;LaunchRequest&#x27;, locale)
+        super(&#x27;IntentRequest&#x27;, locale)
     }
 
-    public setTask (task: Task): this {
+    public setIntent (intent: Intent): this {
         this.updateRequest({
-            task
+            intent
         })
         return this
+    }
+
+    public setDialogState (state: DialogState): this {
+        this.updateRequest({
+            dialogState: state
+        })
+        return this
+    }
+
+    protected validateRequest (): void {
+        if (!this.request.intent) throw new InvalidIntentRequestException()
     }
 }
 </code></pre>
@@ -1256,7 +1389,7 @@ export class LaunchRequestFactory extends RequestFactory&lt;LaunchRequest&gt; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'LaunchRequestFactory.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'IntentRequestFactory.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

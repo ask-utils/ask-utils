@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/Occasion/Updated/PayloadFactory.ts</code>
+            <code>packages/proactive-event/libs/MessageAlert/Activated/PayloadFactory.ts</code>
         </p>
 
 
@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">packages/proactive-event/libs/Occasion/Updated/PayloadFactory.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">packages/proactive-event/libs/MessageAlert/Activated/PayloadFactory.ts:14</a></div>
                 </td>
             </tr>
 
@@ -154,63 +154,47 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import moment from &#x27;moment&#x27;
-import {
-    interfaces,
-    Types
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    interfaces
 } from &#x27;../../model&#x27;
 
 // helper
 import {
-    getOccasion
+    getMessageState,
+    getMessageGroup
 } from &#x27;../../helpers&#x27;
-import Occasion &#x3D; interfaces.Occasion
-import PayloadBuilder &#x3D; Occasion.Updated.PayloadBuilder
+import MessageAlert &#x3D; interfaces.MessageAlert
+import PayloadBuilder &#x3D; MessageAlert.Activated.PayloadBuilder
 
 export default class ParameterFactory {
     public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.Occasion.Updated&#x27;
-        const confirmationState: Types.ConfirmationState &#x3D; {
-            confirmationStatus: &#x27;CONFIRMED&#x27;
-        }
+        const eventName &#x3D; &#x27;AMAZON.MessageAlert.Activated&#x27;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const occasion: any &#x3D; {
-            broker: {
-                name: &#x27;localizedattribute:brokerName&#x27;
-            },
-            provider: {
-                name: &#x27;localizedattribute:providerName&#x27;
-            }
-        }
+        const state: any &#x3D; {}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const group: any &#x3D; {}
         return {
-            updateConfirmationStatus (status: Types.ConfirmationStatus) {
-                confirmationState.confirmationStatus &#x3D; status
+            setMessageCreator (name) {
+                const person &#x3D; {
+                    name
+                }
+                group.creator &#x3D; person
                 return this
             },
-            getConfirmationState (): Types.ConfirmationState {
-                return confirmationState
-            },
-            getConfirmationStatus (): Types.ConfirmationStatus {
-                return confirmationState.confirmationStatus
-            },
-            setOccasionType (type: Types.OccasionType) {
-                occasion.occasionType &#x3D; type
+            setMessageCount (count) {
+                group.count &#x3D; count
                 return this
             },
-            setSubject (subject: string) {
-                occasion.subject &#x3D; subject
+            setMessageUrgency (urgency &#x3D; &#x27;URGENT&#x27;) {
+                group.urgency &#x3D; urgency
                 return this
             },
-            setProviderName (name: string) {
-                occasion.provider.name &#x3D; name
+            setMessageFreshness (freshness) {
+                state.freshness &#x3D; freshness
                 return this
             },
-            setBookingTime (date: Date) {
-                occasion.bookingTime &#x3D; moment(date).toISOString()
-                return this
-            },
-            setBrokerName (name: string) {
-                occasion.broker.name &#x3D; name
+            setMessageStatus (messageStatus) {
+                state.status &#x3D; messageStatus
                 return this
             },
             getEventName () {
@@ -218,8 +202,8 @@ export default class ParameterFactory {
             },
             getPayload () {
                 return {
-                    state: confirmationState,
-                    occasion: getOccasion(occasion)
+                    state: getMessageState(state),
+                    messageGroup: getMessageGroup(group)
                 }
             },
             getParameter () {

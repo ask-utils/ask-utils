@@ -97,10 +97,10 @@
                             <a href="#execGenericTests" title="packages/proactive-event/__tests__/libs/helpers/index.test.ts"><b>execGenericTests</b>&nbsp;&nbsp;&nbsp;(packages/.../index.test.ts)</a>
                         </li>
                         <li>
-                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/dialog.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../dialog.test.ts)</a>
+                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/attributeManager.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../attributeManager.test.ts)</a>
                         </li>
                         <li>
-                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/attributeManager.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../attributeManager.test.ts)</a>
+                            <a href="#generateHandlerInput" title="packages/core/__tests__/libs/dialog.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../dialog.test.ts)</a>
                         </li>
                         <li>
                             <a href="#generateHandlerInput" title="packages/core/__tests__/libs/intentHandler.test.ts"><b>generateHandlerInput</b>&nbsp;&nbsp;&nbsp;(packages/.../intentHandler.test.ts)</a>
@@ -539,6 +539,9 @@
                         </li>
                         <li>
                             <a href="#SportsEvent" title="packages/proactive-event/libs/SportsEvent/index.ts"><b>SportsEvent</b>&nbsp;&nbsp;&nbsp;(packages/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ssml" title="packages/speech-script/libs/index.ts"><b>ssml</b>&nbsp;&nbsp;&nbsp;(packages/.../index.ts)</a>
                         </li>
                         <li>
                             <a href="#supportedLanguages" title="packages/core/libs/amznPolly.ts"><b>supportedLanguages</b>&nbsp;&nbsp;&nbsp;(packages/.../amznPolly.ts)</a>
@@ -1627,6 +1630,36 @@
             </tbody>
         </table>
 </section>
+    <h3>packages/core/__tests__/libs/attributeManager.test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="generateHandlerInput"></a>
+                        <span class="name">
+                            <b>
+                            generateHandlerInput</b>
+                            <a href="#generateHandlerInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(): HandlerInput &#x3D;&gt; {
+    const attributesManager: AttributesManager &#x3D; new MockAttributeManager()
+    const handlerInput &#x3D; {
+        attributesManager
+    } as HandlerInput
+    return handlerInput
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
     <h3>packages/core/__tests__/libs/dialog.test.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -1648,36 +1681,6 @@
         requestEnvelope: {
             request: request
         }
-    } as HandlerInput
-    return handlerInput
-}</code>
-                        </td>
-                    </tr>
-
-
-            </tbody>
-        </table>
-</section>
-    <h3>packages/core/__tests__/libs/attributeManager.test.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="generateHandlerInput"></a>
-                        <span class="name">
-                            <b>
-                            generateHandlerInput</b>
-                            <a href="#generateHandlerInput"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>(): HandlerInput &#x3D;&gt; {
-    const attributesManager: AttributesManager &#x3D; new MockAttributeManager()
-    const handlerInput &#x3D; {
-        attributesManager
     } as HandlerInput
     return handlerInput
 }</code>
@@ -5649,6 +5652,30 @@
         PayloadBuilder: UpdatedPayloadFactory.init()
     }
 }</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>packages/speech-script/libs/index.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ssml"></a>
+                        <span class="name">
+                            <b>
+                            ssml</b>
+                            <a href="#ssml"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ssmlTsx</code>
                         </td>
                     </tr>
 

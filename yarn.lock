@@ -1769,10 +1769,24 @@ ask-sdk-core@^2.6.0, ask-sdk-core@^2.7.0:
   dependencies:
     ask-sdk-runtime "^2.7.0"
 
+ask-sdk-core@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-core/-/ask-sdk-core-2.8.0.tgz#a10be45df6cc60772f7a8fe0938ab003a88964f0"
+  integrity sha512-yW5D+5Z8sKOAm/vVySTZkj7f1+LemBsOAjTEZQTK4MdS8Lp8xteg3cmuqcvCp3M8405K2LYd7TknCoEAs82HEA==
+  dependencies:
+    ask-sdk-runtime "^2.8.0"
+
 ask-sdk-dynamodb-persistence-adapter@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.7.0.tgz#1c77a96422a40f765ff44ff4a820d97fd005fd13"
   integrity sha512-LbwdNLFaUXfy6Wt6Hs4wrZfeopbpZT90SuYT5oo+/g0m8JQNTVVH3Kn4R4K7PTwYFGdHuppvHC1bIu9emt5zZw==
+  dependencies:
+    aws-sdk "^2.163.0"
+
+ask-sdk-dynamodb-persistence-adapter@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-dynamodb-persistence-adapter/-/ask-sdk-dynamodb-persistence-adapter-2.8.0.tgz#df231fb2009d87ca398e622758ab11290f461e8c"
+  integrity sha512-A5o4nwVV4pr472zMVmW2soywMa6QMrZbf2BAQoMbhi6gsdUeWbFxkuqNNqHYtaq7Ku9lk1wCJc7Kade9VcWkOw==
   dependencies:
     aws-sdk "^2.163.0"
 
@@ -1781,10 +1795,10 @@ ask-sdk-model@^1.18.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.25.2.tgz#0e819d70bc8a5baf2851f4e7400f0f877ff362d9"
   integrity sha512-/jIobSufgEztAr5pku1V7qLgeCYLWivVatKjHRUddiLiD6ZjLjFBMT+s2/BYiHe9BL6w4IpSwZmP4JPRVQvoWw==
 
-ask-sdk-model@^1.26.0:
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.26.0.tgz#28dde85c887be2b7c355eab26d377cecbe0e0bad"
-  integrity sha512-Flkw4rowQtuaSdUON6/OLml85lZMJQRsac9AtF+pKcp06gmiNX0x8x4/u4WBbzBUd5PoFoYBs79i3VnmQ+Vn5w==
+ask-sdk-model@^1.28.0:
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-model/-/ask-sdk-model-1.28.0.tgz#7cb1e3aad2ed77bb8a5c2052eb788b1050e9c8e2"
+  integrity sha512-T4qz/hbXlQ8t6XvJBB7+tkYxpLe9/Ic+MEWNYGKgwbWnIOi5SKpfkXTEvV/mOEMpLMKj8WC84j+nRAyVc63NXQ==
 
 ask-sdk-model@^1.9.0:
   version "1.18.0"
@@ -1796,6 +1810,11 @@ ask-sdk-runtime@^2.4.0, ask-sdk-runtime@^2.7.0:
   resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.7.0.tgz#2905ed9921d9d961c8770ebd29116cb4c7236b39"
   integrity sha512-l2YxzibbTc8Ld5Rpy/Kg3oASiCGKHxgbZnKYrywZStlDPF5tEAGpRBhdtVd+yBSRikl/9fgcetb2wMewtoZF2g==
 
+ask-sdk-runtime@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk-runtime/-/ask-sdk-runtime-2.8.0.tgz#a958faad9de9c10b67d469900129dda81347cac2"
+  integrity sha512-hsVDcFKcbuj2H7MuAUlW0RBCTF8QOXfVCsrWSIgV2ABi8+PyI0zGUe8TdkQOGsPrDAv1PIzOS42QYqxWwPsp2g==
+
 ask-sdk-s3-persistence-adapter@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/ask-sdk-s3-persistence-adapter/-/ask-sdk-s3-persistence-adapter-2.7.0.tgz#889b4283d6738c614186ff48efbbe4114914547c"
@@ -1803,13 +1822,22 @@ ask-sdk-s3-persistence-adapter@^2.7.0:
   dependencies:
     aws-sdk "^2.163.0"
 
-ask-sdk@^2.6.0, ask-sdk@^2.7.0:
+ask-sdk@^2.6.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.7.0.tgz#041a1371408a5fa1801eade547a6bc94d529d357"
   integrity sha512-BMCD810Y7E/DlHmqQ8Ginvobrs69pgEzCWSyCDUhaLnDUIduf+BmqZpxc0zQ/8ABBOjNtzhJ8/mV7USQijk6iw==
   dependencies:
     ask-sdk-core "^2.7.0"
     ask-sdk-dynamodb-persistence-adapter "^2.7.0"
+    ask-sdk-model "^1.9.0"
+
+ask-sdk@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/ask-sdk/-/ask-sdk-2.8.0.tgz#0f5c9f909a831fbe1ffe916015707bded0ab7e5b"
+  integrity sha512-E/H0MC4of2tSSkSWTNv8s2ydoTftN5WVjt5g4tJjx7T3Ly6ZgrMG/LlUOaJQ/47Vaqn2cYW3WyynaC81ew/kUA==
+  dependencies:
+    ask-sdk-core "^2.8.0"
+    ask-sdk-dynamodb-persistence-adapter "^2.8.0"
     ask-sdk-model "^1.9.0"
 
 ask-utils@^2.3.2:
@@ -8544,6 +8572,11 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
+
+ssml-tsx@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/ssml-tsx/-/ssml-tsx-1.0.9.tgz#2ee7c5c46de70b114a4a51a01418e983d8202f30"
+  integrity sha512-Ky4vK905GoUNBI6EbJWfOsdfP0aC6y/k6RISGCQ/p/qxXE6NjznxGo9d7cHvJNHGFYtqSFYVAU6XT1jkaMW2NA==
 
 ssri@^6.0.0, ssri@^6.0.1:
   version "6.0.1"

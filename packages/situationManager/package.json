@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@ask-utils/core": "^3.3.5",
-    "ask-sdk": "^2.7.0",
-    "ask-sdk-core": "^2.7.0",
-    "ask-sdk-model": "^1.26.0",
-    "ask-sdk-runtime": "^2.7.0",
+    "ask-sdk": "^2.8.0",
+    "ask-sdk-core": "^2.8.0",
+    "ask-sdk-model": "^1.28.0",
+    "ask-sdk-runtime": "^2.8.0",
     "tslib": "^1.10.0"
   },
   "bugs": {

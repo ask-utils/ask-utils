@@ -7,7 +7,7 @@ import {
     SpeechScriptJSX
 } from '../../libs/index'
 import { IntentRequest } from "ask-sdk-model";
-import { HandlerInput } from "ask-sdk";
+import { HandlerInput } from "ask-sdk-core";
 
 describe('SpeechScriptJSX', () => {
     let handlerInput: HandlerInput

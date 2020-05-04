@@ -1,11 +1,11 @@
 /** @jsx ssml */
-import ssml from "ssml-tsx";
 import {
     createIntentRequestHandlerInput
 } from "@ask-utils/test"
 import {
+    ssml,
     SpeechScriptJSX
-} from '../../libs/jsx'
+} from '../../libs/index'
 import { IntentRequest } from "ask-sdk-model";
 import { HandlerInput } from "ask-sdk";
 

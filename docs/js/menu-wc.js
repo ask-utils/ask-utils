@@ -240,6 +240,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/AlexaSpeechComponentProps.html" data-type="entity-link">AlexaSpeechComponentProps</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/AttributeType.html" data-type="entity-link">AttributeType</a>
                             </li>
                             <li class="link">
@@ -393,6 +396,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Person.html" data-type="entity-link">Person</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ProgressiveResponse.html" data-type="entity-link">ProgressiveResponse</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Props.html" data-type="entity-link">Props</a>
                             </li>
                             <li class="link">
@@ -445,6 +451,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/Soccer.html" data-type="entity-link">Soccer</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/SpeechScriptResponse.html" data-type="entity-link">SpeechScriptResponse</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/SportsEvent.html" data-type="entity-link">SportsEvent</a>

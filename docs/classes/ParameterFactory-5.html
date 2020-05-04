@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/SportsEvent/Updated/PayloadFactory.ts</code>
+            <code>packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts</code>
         </p>
 
 
@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">packages/proactive-event/libs/SportsEvent/Updated/PayloadFactory.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">packages/proactive-event/libs/OrderStatus/Updated/PayloadFactory.ts:15</a></div>
                 </td>
             </tr>
 
@@ -154,76 +154,58 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import moment from &#x27;moment&#x27;
+import {
     interfaces,
-    Types,
-    event
+    Types
 } from &#x27;../../model&#x27;
 
 // helper
-import SportsEvent &#x3D; interfaces.SportsEvent
-import PayloadBuilder &#x3D; SportsEvent.Updated.PayloadBuilder
+import {
+    getOrderState
+} from &#x27;../../helpers&#x27;
+import OrderStatus &#x3D; interfaces.OrderStatus
+import PayloadBuilder &#x3D; OrderStatus.Updated.PayloadBuilder
 
 export default class ParameterFactory {
     public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.SportsEvent.Updated&#x27;
+        const eventName &#x3D; &#x27;AMAZON.OrderStatus.Updated&#x27;
+
+        const order: Types.Order &#x3D; {
+            seller: {
+                name: &#x27;localizedattribute:sellerName&#x27;
+            }
+        }
+
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const eventLeague: Types.Soccer &#x3D; {
-            name: &#x27;localizedattribute:eventLeagueName&#x27;
-        }
-        const homeTeamStatistic: Types.GameStatistic &#x3D; {
-            team: {
-                name: &#x27;&#x27;
-            },
-            score: 0
-        }
-        const awayTeamStatistic: Types.GameStatistic &#x3D; {
-            team: {
-                name: &#x27;&#x27;
-            },
-            score: 0
-        }
-        let updated: Types.Goal | null &#x3D; null
+        const orderState: any &#x3D; {}
         return {
-            updateGoalData (teamName: string, score: number) {
-                if (updated &#x3D;&#x3D;&#x3D; null) {
-                    updated &#x3D; {
-                        scoreEarned: score,
-                        teamName
-                    }
+            setOrderStatus (status: Types.OrderStatus) {
+                orderState.status &#x3D; status
+                return this
+            },
+            setEnterTimestamp (date: Date) {
+                orderState.enterTimestamp &#x3D; moment(date).toISOString()
+                return this
+            },
+            setExpectedArrival (date: Date) {
+                orderState.deliveryDetails &#x3D; {
+                    expectedArrival: moment(date).toISOString()
                 }
-                updated.scoreEarned &#x3D; score
-                updated.teamName &#x3D; teamName
                 return this
             },
-            setEventLeagueName (name: string) {
-                eventLeague.name &#x3D; name
-                return this
-            },
-            setHomeTeamStatistic (teamName: string, score: number) {
-                homeTeamStatistic.team.name &#x3D; teamName
-                homeTeamStatistic.score &#x3D; score
-                return this
-            },
-            setAwayTeamStatistic (teamName: string, score: number) {
-                awayTeamStatistic.score &#x3D; score
-                awayTeamStatistic.team.name &#x3D; teamName
+            updateSellerName (name: string) {
+                order.seller.name &#x3D; name
                 return this
             },
             getEventName () {
                 return eventName
             },
             getPayload () {
-                const payload: event.SportsEvent.Updated.Payload &#x3D; {
-                    sportsEvent: {
-                        eventLeague,
-                        homeTeamStatistic,
-                        awayTeamStatistic
-                    }
+                return {
+                    state: getOrderState(orderState),
+                    order
                 }
-
-                if (updated !&#x3D;&#x3D; null &amp;&amp; updated.hasOwnProperty(&#x27;scoreEarned&#x27;) &amp;&amp; updated.hasOwnProperty(&#x27;teamName&#x27;)) payload.update &#x3D; updated
-                return payload
             },
             getParameter () {
                 return {

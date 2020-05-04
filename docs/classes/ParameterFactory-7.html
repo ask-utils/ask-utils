@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/WeatherAlert/Activated/PayloadFactory.ts</code>
+            <code>packages/proactive-event/libs/TrashCollectionAlert/Activated/PayloadFactory.ts</code>
         </p>
 
 
@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">packages/proactive-event/libs/WeatherAlert/Activated/PayloadFactory.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">packages/proactive-event/libs/TrashCollectionAlert/Activated/PayloadFactory.ts:10</a></div>
                 </td>
             </tr>
 
@@ -155,39 +155,48 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    interfaces
+    interfaces,
+    Types,
+    event
 } from &#x27;../../model&#x27;
-
-// helper
-import {
-    getWeatherAlert
-} from &#x27;../../helpers&#x27;
-import WeatherAlert &#x3D; interfaces.WeatherAlert
-import PayloadBuilder &#x3D; WeatherAlert.Activated.PayloadBuilder
+import TrashCollectionAlert &#x3D; interfaces.TrashCollectionAlert
+import PayloadBuilder &#x3D; TrashCollectionAlert.Activated.PayloadBuilder
 
 export default class ParameterFactory {
     public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.WeatherAlert.Activated&#x27;
+        const eventName &#x3D; &#x27;AMAZON.TrashCollectionAlert.Activated&#x27;
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const weatherAlert: any &#x3D; {}
+        let alert: any &#x3D; {}
         return {
-            setAlertSource (source: string &#x3D; &#x27;localizedattribute:source&#x27;) {
-                weatherAlert.source &#x3D; source
+            putAlert (alertItem: Types.TrashCollectionAlert): PayloadBuilder {
+                alert &#x3D; alertItem
                 return this
             },
-            setAlertType (type) {
-                weatherAlert.alertType &#x3D; type
+            putGarbageTypes (garbageTypes: Types.GarbageType[]): PayloadBuilder {
+                alert.garbageTypes &#x3D; garbageTypes
+                return this
+            },
+            addGarbageType (garbageType: Types.GarbageType): PayloadBuilder {
+                if (alert.garbageTypes &amp;&amp; alert.garbageTypes.length &gt; 0) {
+                    alert.garbageTypes.push(garbageType)
+                } else {
+                    alert.garbageTypes &#x3D; [garbageType]
+                }
+                return this
+            },
+            setCollectionDayOfWeek (collectionDayOfWeek: Types.DayOfWeek): PayloadBuilder {
+                alert.collectionDayOfWeek &#x3D; collectionDayOfWeek
                 return this
             },
             getEventName () {
                 return eventName
             },
-            getPayload () {
+            getPayload (): event.TrashCollectionAlert.Activated.Payload {
                 return {
-                    weatherAlert: getWeatherAlert(weatherAlert)
+                    alert
                 }
             },
-            getParameter () {
+            getParameter (): event.Props&lt;event.TrashCollectionAlert.EventName, event.TrashCollectionAlert.Activated.Payload&gt; {
                 return {
                     name: eventName,
                     payload: this.getPayload()

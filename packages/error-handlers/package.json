@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@sentry/node": "^5.5.0",
+    "@sentry/node": "^5.15.5",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",

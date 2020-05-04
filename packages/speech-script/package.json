@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/speech-script",
-  "version": "3.3.5",
+  "version": "1.0.0",
   "description": "Alexa Speech script (JSX)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

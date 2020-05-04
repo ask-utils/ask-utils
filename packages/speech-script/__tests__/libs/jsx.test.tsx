@@ -48,14 +48,14 @@ describe('SpeechScriptJSX', () => {
                 const { props } = this;
                 return (
                     <speak>
-                        {props.request.intent.name} is called
+                        <amazon-effect name="whispered">{props.request.intent.name} is called</amazon-effect>
                     </speak>
                 )
             }
         }
         const target = new Demo(handlerInput)
         expect(target.create()).toEqual({
-            reprompt: "<speak>HelloIntent is called</speak>",
+            reprompt: "<speak><amazon:effect name=\"whispered\">HelloIntent is called</amazon:effect></speak>",
             speech: "<speak>HelloIntent request</speak>"
         })
     })

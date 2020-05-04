@@ -5,7 +5,7 @@ import {
     Intent,
     IntentRequest,
     DialogState
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 
 export class InvalidIntentRequestException extends Error {
     public message = 'Invalid IntentRequest object'

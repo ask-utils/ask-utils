@@ -4,7 +4,7 @@ import {
     Device,
     Application
 
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import { v4 as uuid } from 'uuid'
 import System = interfaces.system.SystemState
 

@@ -1,6 +1,6 @@
 import {
     Application
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 export class ApplicationFactory {
     private readonly app: Application = {
         applicationId: ''

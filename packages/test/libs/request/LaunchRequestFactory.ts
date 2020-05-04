@@ -1,7 +1,7 @@
 import {
     RequestFactory
 } from './RequestFactory'
-import { LaunchRequest, Task } from 'ask-sdk-core/node_modules/ask-sdk-model'
+import { LaunchRequest, Task } from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 
 export class LaunchRequestFactory extends RequestFactory<LaunchRequest> {
     public constructor (locale: string = 'en-US') {

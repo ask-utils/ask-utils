@@ -3,7 +3,7 @@ import {
 } from 'ask-sdk-core'
 import {
     Intent
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import {
     RequestEnvelopeFactory
 } from '../RequestEnvelopeFactory'

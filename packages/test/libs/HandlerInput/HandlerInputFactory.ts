@@ -5,7 +5,7 @@ import {
 } from 'ask-sdk-core'
 import {
     services as coreService,
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' //'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import {
     RequestEnvelope
     // services

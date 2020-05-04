@@ -1,6 +1,6 @@
 import {
     Request
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model'// 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import { v4 as uuid } from 'uuid'
 
 export class RequestFactory<T extends Request = Request> {

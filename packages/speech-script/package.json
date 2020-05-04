@@ -1,0 +1,69 @@
+{
+  "name": "@ask-utils/speech-script",
+  "version": "3.3.5",
+  "description": "Alexa Speech script (JSX)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "rollup -c",
+    "tsc": "tsc",
+    "test": "jest",
+    "lint": "eslint 'libs/**/*.{ts,tsx}'",
+    "doc": "typedoc --out docs libs/",
+    "test:watch": "jest --watch",
+    "test:dev": "jest --watch --silent=false --verbose false --coverage"
+  },
+  "keywords": [],
+  "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "@ask-utils/test": "^3.3.5",
+    "rollup": "^1.16.7",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "^3.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ask-utils/core": "^3.3.5",
+    "@ask-utils/situation": "^3.3.5",
+    "ask-sdk": "^2.8.0",
+    "ask-sdk-core": "^2.8.0",
+    "ask-sdk-model": "^1.26.0",
+    "ask-sdk-runtime": "^2.7.0",
+    "ssml-tsx": "^1.0.9",
+    "tslib": "^1.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ask-utils/ask-utils/issues"
+  },
+  "directories": {
+    "lib": "libs",
+    "test": "__tests__"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*/*.+(ts|tsx|js)",
+      "**/__tests__/**/*.+(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ask-utils/ask-utils.git"
+  }
+}

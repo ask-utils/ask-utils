@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/isp",
-  "version": "3.3.5",
+  "version": "3.4.0",
   "description": "Alexa ISP utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -53,7 +53,7 @@
     ]
   },
   "dependencies": {
-    "@ask-utils/core": "^3.3.5",
+    "@ask-utils/core": "^3.4.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",

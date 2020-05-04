@@ -3,7 +3,7 @@ import { StateManager, State, InitialState } from '@ask-utils/situation'
 import { RequestHandler } from 'ask-sdk'
 import {
     Response
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import {
     RouteMatcher
 } from '../matcher'

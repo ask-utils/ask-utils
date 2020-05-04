@@ -1,6 +1,6 @@
 import { HandlerInput } from 'ask-sdk'
 import { Response, Request
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import { StateManager, State } from '@ask-utils/situation'
 
 /**

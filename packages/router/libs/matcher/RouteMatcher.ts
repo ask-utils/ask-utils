@@ -12,7 +12,7 @@ import {
 } from '@ask-utils/situation'
 import {
     Request
-} from 'ask-sdk-core/node_modules/ask-sdk-model'
+} from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 import {
     Router
 } from '../model'

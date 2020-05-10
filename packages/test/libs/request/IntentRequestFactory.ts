@@ -4,7 +4,9 @@ import {
 import {
     Intent,
     IntentRequest,
-    DialogState
+    DialogState,
+    Slot,
+    IntentConfirmationStatus
 } from 'ask-sdk-model' // 'ask-sdk-core/node_modules/ask-sdk-model'
 
 export class InvalidIntentRequestException extends Error {
@@ -32,5 +34,40 @@ export class IntentRequestFactory extends RequestFactory<IntentRequest> {
 
     protected validateRequest (): void {
         if (!this.request.intent) throw new InvalidIntentRequestException()
+    }
+}
+
+export type BuildInIntentName =
+| 'AMAZON.CancelIntent'
+| 'AMAZON.FallbackIntent'
+| 'AMAZON.HelpIntent'
+| 'AMAZON.LoopOffIntent'
+| 'AMAZON.LoopOnIntent'
+| 'AMAZON.NextIntent'
+| 'AMAZON.NoIntent'
+| 'AMAZON.PauseIntent'
+| 'AMAZON.PreviousIntent'
+| 'AMAZON.RepeatIntent'
+| 'AMAZON.ResumeIntent'
+| 'AMAZON.SelectIntent'
+| 'AMAZON.ShuffleOffIntent'
+| 'AMAZON.ShuffleOnIntent'
+| 'AMAZON.StartOverIntent'
+| 'AMAZON.StopIntent'
+| 'AMAZON.YesIntent'
+export interface BuildedInIntent {
+    name: BuildInIntentName;
+    slots?: {
+        [key: string]: Slot;
+    };
+    confirmationStatus: IntentConfirmationStatus;
+}
+
+export class AmazonIntentRequestFactory extends IntentRequestFactory {
+    public setBuildInIntent (intent: BuildedInIntent): this {
+        this.updateRequest({
+            intent
+        })
+        return this
     }
 }

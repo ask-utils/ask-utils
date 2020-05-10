@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>packages/proactive-event/libs/MediaContent/Available/PayloadFactory.ts</code>
+            <code>packages/proactive-event/libs/Occasion/Updated/PayloadFactory.ts</code>
         </p>
 
 
@@ -127,8 +127,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">packages/proactive-event/libs/MediaContent/Available/PayloadFactory.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">packages/proactive-event/libs/Occasion/Updated/PayloadFactory.ts:15</a></div>
                 </td>
             </tr>
 
@@ -157,57 +157,69 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import moment from &#x27;moment&#x27;
 import {
     interfaces,
-    Types,
-    event
+    Types
 } from &#x27;../../model&#x27;
 
 // helper
 import {
-    getCreativeWork,
-    getAvailability
+    getOccasion
 } from &#x27;../../helpers&#x27;
-import MediaContent &#x3D; interfaces.MediaContent
-import PayloadBuilder &#x3D; MediaContent.Available.PayloadBuilder
+import Occasion &#x3D; interfaces.Occasion
+import PayloadBuilder &#x3D; Occasion.Updated.PayloadBuilder
 
 export default class ParameterFactory {
     public static init (): PayloadBuilder {
-        const eventName &#x3D; &#x27;AMAZON.MediaContent.Available&#x27;
+        const eventName &#x3D; &#x27;AMAZON.Occasion.Updated&#x27;
+        const confirmationState: Types.ConfirmationState &#x3D; {
+            confirmationStatus: &#x27;CONFIRMED&#x27;
+        }
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const availability: any &#x3D; {}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const content: any &#x3D; {
-            name: &#x27;localizedattribute:contentName&#x27;
+        const occasion: any &#x3D; {
+            broker: {
+                name: &#x27;localizedattribute:brokerName&#x27;
+            },
+            provider: {
+                name: &#x27;localizedattribute:providerName&#x27;
+            }
         }
         return {
-            setContentName (name: string) {
-                content.name &#x3D; name
+            updateConfirmationStatus (status: Types.ConfirmationStatus) {
+                confirmationState.confirmationStatus &#x3D; status
                 return this
             },
-            setMediaType (type: Types.MediaType) {
-                content.contentType &#x3D; type
+            getConfirmationState (): Types.ConfirmationState {
+                return confirmationState
+            },
+            getConfirmationStatus (): Types.ConfirmationStatus {
+                return confirmationState.confirmationStatus
+            },
+            setOccasionType (type: Types.OccasionType) {
+                occasion.occasionType &#x3D; type
                 return this
             },
-            setStartTime (date: Date): PayloadBuilder {
-                availability.startTime &#x3D; moment(date).toISOString()
+            setSubject (subject: string) {
+                occasion.subject &#x3D; subject
                 return this
             },
-            setDistributionMethod (method: Types.DistributionMethod): PayloadBuilder {
-                availability.method &#x3D; method
+            setProviderName (name: string) {
+                occasion.provider.name &#x3D; name
                 return this
             },
-            setProvider (providerName: string &#x3D; &#x27;localizedattribute:providerName&#x27;): PayloadBuilder {
-                availability.provider &#x3D; {
-                    name: providerName
-                }
+            setBookingTime (date: Date) {
+                occasion.bookingTime &#x3D; moment(date).toISOString()
                 return this
             },
-            getEventName (): event.MediaContent.EventName {
+            setBrokerName (name: string) {
+                occasion.broker.name &#x3D; name
+                return this
+            },
+            getEventName () {
                 return eventName
             },
-            getPayload (): event.MediaContent.Available.Payload {
+            getPayload () {
                 return {
-                    availability: getAvailability(availability),
-                    content: getCreativeWork(content)
+                    state: confirmationState,
+                    occasion: getOccasion(occasion)
                 }
             },
             getParameter () {

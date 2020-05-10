@@ -63,5 +63,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ask-utils/ask-utils.git"
-  }
+  },
+  "gitHead": "b59efe76b5c4ccf9e4bf16acd0a5226b9775c430"
 }

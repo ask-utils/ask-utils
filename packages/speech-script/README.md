@@ -87,3 +87,48 @@ export const handler = StandardSkillFactory.init()
     }
 }).lambda()
 ```
+
+## [Advanced] pass optional props from handler
+We can pass additional properties from handler to JSX element.
+
+```typescript
+/** @jsx ssml */
+import {
+    StandardSkillFactory
+} from 'ask-sdk'
+import {
+    ssml,
+    SpeechScriptJSX
+} from '../dist/index'
+import { LaunchRequest } from 'ask-sdk-model'
+
+/**
+ * SSML component like React
+ **/
+class LaunchRequestScript extends SpeechScriptJSX<LaunchRequest, {name: string}> {
+    speech() {
+        const name = this.options ? `${this.options.name}-san` : ''
+        return (
+            <speak>
+                Hello {name}! <break time="0.5s"/>How are you?
+            </speak>
+        )
+    }
+}
+
+/**
+ * Use the SSML component in your RequestHandler
+ **/
+export const handler = StandardSkillFactory.init()
+.addRequestHandlers({
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'LaunchRequest'
+    },
+    handle(handlerInput) {
+        const Speech = new LaunchRequestScript(handlerInput, {
+            name: 'John'
+        })
+        return Speech.createResponse()
+    }
+}).lambda()
+```

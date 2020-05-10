@@ -86,4 +86,17 @@ describe('SpeechScriptJSX', () => {
             },
         })
     })
+    it('should use optional props', () => {
+        class Demo extends SpeechScriptJSX<IntentRequest, {name: string}> {
+            speech() {
+                const name = this.options ? this.options.name : ''
+                return (
+                    <speak>Hello {name}-san.</speak>
+                )
+            }
+        }
+        expect(new Demo(handlerInput, {name: 'john'}).create()).toMatchObject({
+            speech: "<speak>Hello john-san.</speak>"
+        })
+    })
 })

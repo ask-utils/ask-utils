@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/speech-script",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Alexa Speech script (JSX)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
-    "@ask-utils/test": "^3.5.0",
+    "@ask-utils/test": "^3.6.0",
     "rollup": "^1.16.7",
     "rollup-plugin-typescript2": "^0.21.2",
     "typescript": "^3.5.3"
@@ -27,8 +27,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.5.0",
-    "@ask-utils/situation": "^3.5.0",
+    "@ask-utils/core": "^3.6.0",
+    "@ask-utils/situation": "^3.6.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",

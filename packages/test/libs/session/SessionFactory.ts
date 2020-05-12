@@ -6,6 +6,7 @@ import {
 import { v4 as uuid } from 'uuid'
 
 export interface SessionAttribute {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }
 

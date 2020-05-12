@@ -1,7 +1,8 @@
 import {
     HandlerInputFactory,
     RequestEnvelopeFactory,
-    LaunchRequestFactory
+    LaunchRequestFactory,
+    MockPersistenceAdapter
 } from '../../../libs/index'
 
 describe('HandlerInputFactory', () => {
@@ -27,6 +28,34 @@ describe('HandlerInputFactory', () => {
         expect(handlerInput.attributesManager.getSessionAttributes()).toEqual({
             name: 'hello',
             label: 123
+        })
+    })
+    it('should failed to access persistence attributes by default', async () => {
+        const HandlerInput = new HandlerInputFactory(
+            new RequestEnvelopeFactory(
+                new LaunchRequestFactory()
+            )
+        )
+        const handlerInput = HandlerInput.create()
+        expect(() => {
+            handlerInput.attributesManager.setPersistentAttributes({
+                test: 'true'
+            })
+        }).toThrow('Cannot set PersistentAttributes without persistence adapter!')
+    })
+    it('should set and get persistence attributes when using MockPersistanceAdapter', async () => {
+        const HandlerInput = new HandlerInputFactory(
+            new RequestEnvelopeFactory(
+                new LaunchRequestFactory()
+            )
+        ).setPersistanceAdapter(new MockPersistenceAdapter())
+        const handlerInput = HandlerInput.create()
+        await handlerInput.attributesManager.setPersistentAttributes({
+            test: 'true'
+        })
+        await handlerInput.attributesManager.savePersistentAttributes()
+        expect(handlerInput.attributesManager.getPersistentAttributes()).resolves.toEqual({
+            test: 'true'
         })
     })
 })

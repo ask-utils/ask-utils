@@ -2,6 +2,7 @@ import { HandlerInput, isNewSession } from 'ask-sdk-core'
 import { RequestInterceptor } from 'ask-sdk-runtime'
 import {
     isSkillEvent,
+    isAudioPlayerRequest,
     getPersistentAttributes,
     updateSessionAttributes
 } from 'ask-utils'
@@ -9,7 +10,7 @@ import moment from 'moment'
 
 export const SetLaunchCountInterceptor: RequestInterceptor<HandlerInput> = {
     async process (input: HandlerInput) {
-        if (isSkillEvent(input.requestEnvelope)) return
+        if (isSkillEvent(input.requestEnvelope) || isAudioPlayerRequest(input.requestEnvelope)) return
         if (!isNewSession(input.requestEnvelope)) return
         const defaultState = {
             launchCount: 0,

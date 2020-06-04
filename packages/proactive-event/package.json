@@ -60,7 +60,7 @@
     "ask-sdk-model": "^1.28.0",
     "ask-sdk-runtime": "^2.8.0",
     "axios": "^0.19.0",
-    "tslib": "^1.10.0",
+    "tslib": "^2.0.0",
     "uuid": "^3.3.2"
   },
   "bugs": {

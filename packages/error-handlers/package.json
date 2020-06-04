@@ -31,7 +31,7 @@
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",
     "ask-sdk-runtime": "^2.8.0",
-    "tslib": "^1.10.0"
+    "tslib": "^2.0.0"
   },
   "bugs": {
     "url": "https://github.com/ask-utils/ask-utils/issues"

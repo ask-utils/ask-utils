@@ -20,3 +20,7 @@ export const mergeHandler = (cloneTarget: RequestHandler, mergeObject: MergeObje
 export const isSkillEvent = (requestEnvelope: RequestEnvelope): boolean => {
     return /^AlexaSkillEvent/.test(requestEnvelope.request.type)
 }
+
+export const isAudioPlayerRequest = (requestEnvelope: RequestEnvelope): boolean => {
+    return /^AudioPlayer/.test(requestEnvelope.request.type)
+}

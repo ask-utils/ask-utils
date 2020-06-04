@@ -26,7 +26,7 @@
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
-    "@types/uuid": "3.4.5",
+    "@types/uuid": "3.4.9",
     "rollup": "1.32.1",
     "rollup-plugin-typescript2": "0.21.2",
     "typescript": "3.5.3"

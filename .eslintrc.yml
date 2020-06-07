@@ -21,3 +21,4 @@ globals:
   afterAll: false
   jasmine: false
   expect: false
+  jest: false

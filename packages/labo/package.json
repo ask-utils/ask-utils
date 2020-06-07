@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@ask-utils/core": "^3.8.0",
-    "@ask-utils/situation": "^3.8.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",
@@ -44,22 +43,25 @@
   },
   "jest": {
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
+      "js",
+      "json",
+      "ts"
     ],
+    "rootDir": "libs",
+    "testRegex": ".spec.ts$",
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
     "globals": {
       "ts-jest": {
         "tsConfig": "tsconfig.json"
       }
-    },
-    "testMatch": [
-      "**/__tests__/*/*.+(ts|tsx|js)",
-      "**/__tests__/**/*.+(ts|tsx|js)"
-    ]
+    }
   },
   "repository": {
     "type": "git",

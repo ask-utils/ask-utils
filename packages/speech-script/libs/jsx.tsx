@@ -4,7 +4,7 @@ import { AlexaSpeechComponentProps, ProgressiveResponse } from './model';
 
 type SpeechOptions = any
 
-export abstract class SpeechScriptJSX<T extends Request = Request, U = SpeechOptions>  {
+export class SpeechScriptJSX<T extends Request = Request, U = SpeechOptions>  {
     /**
      * Props from Request
      */

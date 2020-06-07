@@ -2,10 +2,12 @@ import { HandlerInput, isNewSession } from 'ask-sdk-core'
 import { RequestInterceptor } from 'ask-sdk-runtime'
 import {
     isSkillEvent,
-    isAudioPlayerRequest,
     getPersistentAttributes,
     updateSessionAttributes
 } from 'ask-utils'
+import {
+    isAudioPlayerRequest
+} from '@ask-utils/core'
 import moment from 'moment'
 
 export const SetLaunchCountInterceptor: RequestInterceptor<HandlerInput> = {

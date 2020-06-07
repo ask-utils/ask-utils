@@ -1,4 +1,4 @@
-# Router
+# ASK Utils Labo
 [![npm version](https://badge.fury.io/js/%40ask-utils%2Frouter.svg)](https://badge.fury.io/js/%40ask-utils%2Frouter)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c17851759423ce151b9e/maintainability)](https://codeclimate.com/github/ask-utils/ask-utils/maintainability)
@@ -8,76 +8,72 @@
 
 https://ask-utils.dev
 
-Simple skill handler routing libs.
+Experimental modules of ask-utils
+
 
 ## Getting started
 
 ```
-$ npm i -S @ask-utils/router
+$ npm i -S @ask-utils/labo
 ```
 
-## Basic Usage
+## Features
+
+### PersistentAttributesManager
+
+Wrapper class of PersistentAttributesManager to handle the props more easily.
+
+#### Usage
 
 ```typescript
-
-import {
-    RequestHandlerFactory
-} from '@ask-utils/router'
-const router = new RequestHandlerFactory()
-router.addRoutes({
-    requestType: 'LaunchRequest',
-    handler: (input) => {
-        return input.responseBuilder
-            .speak('hello world').getResponse()
-    }
-}, {
-    requestType: 'IntentRequest',
-    intentName: 'HelloIntent',
-    handler: (input, helpers) => {
-        helpers.stateManager.setState('step1')
-        return input.responseBuilder
-        .speak('Go to step 1').reprompt('will you go?').getResponse()
-    }
-}, {
-    requestType: 'IntentRequest',
-    intentName: 'Step1Intent',
-    situation: {
-        state: {
-            current: 'step1',
-            next: 'step2'
-        }
-    },
-    handler: (input) => {
-        return input.responseBuilder
-        .speak('Go to step 2').reprompt('will you go?').getResponse()
-    }
-}, {
-    requestType: 'IntentRequest',
-    intentName: 'Step2Intent',
-    situation: {
-        state: {
-            current: 'step2',
-            next: 'end'
-        }
-    },
-    handler: (input) => {
-        return input.responseBuilder
-        .speak('Finnaly').reprompt('will you go?').getResponse()
-    }
-}, {
-    requestType: 'IntentRequest',
-    intentName: 'AMAZON.StopIntent',
-    situation: {
-        shouldEndSession: true
-    },
-    handler: (input) => {
-        return input.responseBuilder
-        .speak('Bye!').getResponse()
-    }
+const persistentAttributesManager = PersistanteAttributesManager.getInstance(handlerInput.attributesManager)
+await persistentAttributesManager.updatePersistentAttributes({
+    name: 'John'
 })
+await persistentAttributesManager.save()
+```
 
-export const handler = CustomSkillFactory.init()
-    .addRequestHandlers(
-        ...router.createHandlers()
-    ).lambda()
+#### Auto merge the props
+
+```typescript
+await persistentAttributesManager.updatePersistentAttributes({
+    name: 'John',
+    count: 1,
+})
+await persistentAttributesManager.save()
+
+
+await persistentAttributesManager.updatePersistentAttributes({
+    message: 'hello',
+    count: 2,
+})
+await persistentAttributesManager.save()
+
+console.log(await persistentAttributesManager.getPersistentAttributes())
+
+{
+    name: 'John',
+    count: 2,
+    message: 'hello',
+}
+```
+
+#### Detect should call AWS APIs
+
+If no property has been updated, it will not call AWS API.
+
+```typescript
+const persistentAttributesManager = PersistanteAttributesManager.getInstance(handlerInput.attributesManager)
+
+// NOTHING TO DO
+await persistentAttributesManager.save()
+
+await persistentAttributesManager.updatePersistentAttributes({
+    name: 'John'
+})
+// CALL attributeManager.savePersistentAttributes to save the update
+await persistentAttributesManager.save()
+
+// NOTHING TO DO
+await persistentAttributesManager.save()
 ```

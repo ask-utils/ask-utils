@@ -29,7 +29,7 @@
     "@types/uuid": "8.0.0",
     "rollup": "1.32.1",
     "rollup-plugin-typescript2": "0.21.2",
-    "typescript": "3.5.3"
+    "typescript": "3.9.5"
   },
   "directories": {
     "lib": "libs",

@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/router",
-  "version": "3.7.1",
+  "version": "3.8.0",
   "description": "Skill Routing library for ask-sdk v2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "devDependencies": {
-    "@ask-utils/test": "3.7.1",
+    "@ask-utils/test": "^3.8.0",
     "rollup": "1.32.1",
     "rollup-plugin-typescript2": "0.21.2",
     "typescript": "3.8.3"
@@ -27,8 +27,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.6.0",
-    "@ask-utils/situation": "^3.7.1",
+    "@ask-utils/core": "^3.8.0",
+    "@ask-utils/situation": "^3.8.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",

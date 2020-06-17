@@ -21,6 +21,11 @@ describe('RequestEnvelopeFactory', () => {
                     },
                     'user': {
                         'userId': expect.any(String)
+                    },
+                    'device': {
+                        'supportedInterfaces': {
+                            'AudioPlayer': {}
+                        }
                     }
                 }
             },

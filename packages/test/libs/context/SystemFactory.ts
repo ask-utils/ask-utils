@@ -24,6 +24,12 @@ export class SystemFactory {
             user: {
                 userId: userId || 'amzn1.ask.account.' + uuid()
             },
+            device: {
+                deviceId: '',
+                supportedInterfaces: {
+                    'AudioPlayer': {}
+                }
+            },
             apiEndpoint: 'https://api.amazonalexa.com'
         }
     }

@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/test",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "description": "Skill Routing library for ask-sdk v2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,7 @@
     "ask-sdk-model": "^1.9.0"
   },
   "dependencies": {
-    "@ask-utils/core": "^3.8.0",
+    "@ask-utils/core": "^3.9.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-runtime": "^2.8.0",

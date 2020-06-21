@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/labo",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "description": "Experimental features of ask-util. Don't recommend to use it for production.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

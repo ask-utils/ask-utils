@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/router",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "description": "Skill Routing library for ask-sdk v2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

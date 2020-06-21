@@ -24,7 +24,7 @@ export type RouterHandler<T extends State = State> = (handlerInput: HandlerInput
 
 export interface Router<T extends State = State> {
     requestType: Request['type'];
-    intentName?: string;
+    intentName?: string | string[];
     situation?: Situation;
     handler: RouterHandler<T>;
 }

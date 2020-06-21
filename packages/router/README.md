@@ -66,7 +66,7 @@ router.addRoutes({
     }
 }, {
     requestType: 'IntentRequest',
-    intentName: 'AMAZON.StopIntent',
+    intentName: ['AMAZON.StopIntent', 'AMAZON.CancelIntent'],
     situation: {
         shouldEndSession: true
     },

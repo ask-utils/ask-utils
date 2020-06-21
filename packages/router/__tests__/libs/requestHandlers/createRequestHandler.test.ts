@@ -54,6 +54,35 @@ describe('requestHandler', () => {
                 })
                 expect(await requestHandler.canHandle(handlerInput)).toEqual(false)
             })
+            it('should return false when given route includes matched intent name in Array', async () => {
+                const requestHandler = RequestHandlerFactory.create({
+                    requestType: 'IntentRequest',
+                    intentName: ['AMAZON.StopIntent', 'AMAZON.CancelIntent'],
+                    handler: (input) => input.responseBuilder.getResponse()
+                })
+                const handlerInput = createIntentRequestHandlerInput({
+                    name: 'AMAZON.StopIntent',
+                    confirmationStatus: 'NONE'
+                })
+                expect(await requestHandler.canHandle(handlerInput)).toEqual(true)
+                const handlerInput2 = createIntentRequestHandlerInput({
+                    name: 'AMAZON.CancelIntent',
+                    confirmationStatus: 'NONE'
+                })
+                expect(await requestHandler.canHandle(handlerInput2)).toEqual(true)
+            })
+            it('should return false when given unmatched intent name Array', async () => {
+                const requestHandler = RequestHandlerFactory.create({
+                    requestType: 'IntentRequest',
+                    intentName: ['AMAZON.StopIntent', 'AMAZON.CancelIntent'],
+                    handler: (input) => input.responseBuilder.getResponse()
+                })
+                const handlerInput = createIntentRequestHandlerInput({
+                    name: 'HelloIntent',
+                    confirmationStatus: 'NONE'
+                })
+                expect(await requestHandler.canHandle(handlerInput)).toEqual(false)
+            })
             it('should return true when match state', async () => {
                 type State = 'start' | 'step1' | 'help'
                 const requestHandler = RequestHandlerFactory.create<State>({

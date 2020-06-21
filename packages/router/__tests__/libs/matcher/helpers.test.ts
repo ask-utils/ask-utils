@@ -1,5 +1,6 @@
 import {
-    createIntentRequestHandlerInput
+    createIntentRequestHandlerInput,
+    LaunchRequestFactory
 } from '@ask-utils/test'
 import {
     shouldMatchRequestType,
@@ -42,6 +43,13 @@ describe('libs/matcher/helpers.ts', () => {
         })
     })
     describe('shouldMatchIntentRequest', () => {
+        it('should return false when given a not IntentRequest', () => {
+            const request = new LaunchRequestFactory().getRequest()
+            expect(shouldMatchIntentRequest(request, {
+                requestType: 'IntentRequest',
+                handler: ({ responseBuilder }) => responseBuilder.getResponse()
+            })).toEqual(false)
+        })
         it('should return true when match the intent name [HelloIntent]', () => {
             expect(shouldMatchIntentRequest(request, {
                 requestType: 'IntentRequest',
@@ -53,6 +61,20 @@ describe('libs/matcher/helpers.ts', () => {
             expect(shouldMatchIntentRequest(request, {
                 requestType: 'IntentRequest',
                 intentName: 'ByeIntent',
+                handler: ({ responseBuilder }) => responseBuilder.getResponse()
+            })).toEqual(false)
+        })
+        it('should return true when given intent name array has matched value [HelloIntent, ByeIntent]', () => {
+            expect(shouldMatchIntentRequest(request, {
+                requestType: 'IntentRequest',
+                intentName: ['HelloIntent', 'ByeIntent'],
+                handler: ({ responseBuilder }) => responseBuilder.getResponse()
+            })).toEqual(true)
+        })
+        it('should return true when given intent name array has no matched value [AMAZON.HelpIntent, ByeIntent]', () => {
+            expect(shouldMatchIntentRequest(request, {
+                requestType: 'IntentRequest',
+                intentName: ['AMAZON.HelpIntent', 'ByeIntent'],
                 handler: ({ responseBuilder }) => responseBuilder.getResponse()
             })).toEqual(false)
         })

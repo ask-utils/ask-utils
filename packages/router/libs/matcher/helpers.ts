@@ -22,5 +22,9 @@ export const shouldMatchIntentRequest = <T extends State = State>(request: Reque
      */
     if (route.requestType !== 'IntentRequest') return false
     if (!route.intentName) return true
-    return route.intentName === request.intent.name
+    if (typeof route.intentName === 'string') {
+        return route.intentName === request.intent.name
+    }
+    const matchedIntentName = route.intentName.find(name => name === request.intent.name)
+    return !!(matchedIntentName)
 }

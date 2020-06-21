@@ -17,6 +17,10 @@ export const shouldMatchRequestType = <T extends State = State>(request: Request
 }
 export const shouldMatchIntentRequest = <T extends State = State>(request: Request, route: Router<T>): boolean => {
     if (!isIntentRequestType(request)) return false
+    /**
+     * If the route handler expect to NOT IntentRequest, should return false
+     */
+    if (route.requestType !== 'IntentRequest') return false
     if (!route.intentName) return true
     return route.intentName === request.intent.name
 }

@@ -19,6 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "@ask-utils/test": "^3.9.0",
+    "@types/aws-lambda": "^8.10.56",
+    "jest-each": "^26.0.1",
     "rollup": "1.32.1",
     "rollup-plugin-typescript2": "0.21.2",
     "typescript": "3.9.5"
@@ -32,7 +34,8 @@
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",
     "ask-sdk-runtime": "^2.8.0",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "tslog": "^2.5.0"
   },
   "bugs": {
     "url": "https://github.com/ask-utils/ask-utils/issues"

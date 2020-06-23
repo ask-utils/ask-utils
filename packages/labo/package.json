@@ -34,6 +34,7 @@
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",
     "ask-sdk-runtime": "^2.8.0",
+    "moment": "^2.27.0",
     "tslib": "^2.0.0",
     "tslog": "^2.5.0"
   },

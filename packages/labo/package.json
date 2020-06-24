@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@ask-utils/core": "^3.9.0",
+    "@ask-utils/router": "^3.9.0",
     "ask-sdk": "^2.8.0",
     "ask-sdk-core": "^2.8.0",
     "ask-sdk-model": "^1.28.0",

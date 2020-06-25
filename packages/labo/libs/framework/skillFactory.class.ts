@@ -1,18 +1,18 @@
 
-import { CustomSkillBuilder, SkillBuilders, DefaultApiClient, RequestHandler, getRequest } from 'ask-sdk-core';
+import { CustomSkillBuilder, SkillBuilders, DefaultApiClient, RequestHandler, getRequest } from 'ask-sdk-core'
 import { DynamoDbPersistenceAdapter } from 'ask-sdk-dynamodb-persistence-adapter'
-import { S3PersistenceAdapter } from "ask-sdk-s3-persistence-adapter"
-import { TLogLevelName } from 'tslog';
+import { S3PersistenceAdapter } from 'ask-sdk-s3-persistence-adapter'
+import { TLogLevelName } from 'tslog'
 import { Router, RequestHandlerFactory } from '@ask-utils/router'
-import { LoggerService } from '../Logger';
+import { LoggerService } from '../Logger'
 import {
     TalkyJSDBonfig,
     TalkyJSAPIClientConfig,
     TalkyJSSkillConfig,
     SkillHandler,
-    SkillStage,
+    SkillStage
 } from './skillFactory.interface'
-import { IntentRequest } from 'ask-sdk-model';
+import { IntentRequest } from 'ask-sdk-model'
 
 // let cachedSkill: CustomSkillBuilder
 export class SkillFactory {
@@ -22,7 +22,7 @@ export class SkillFactory {
     public logLevel: TLogLevelName
     protected readonly stage: SkillStage;
 
-    public constructor(config: TalkyJSSkillConfig) {
+    public constructor (config: TalkyJSSkillConfig) {
         this.stage = config.stage || 'development'
         this.logLevel = config.logLevel || 'info'
         const skillId = config.skillId || null
@@ -35,7 +35,7 @@ export class SkillFactory {
      * Get factory instance
      * @param config
      */
-    public static launch(config: TalkyJSSkillConfig) {
+    public static launch (config: TalkyJSSkillConfig) {
         if (!this._instance) {
             this._instance = new SkillFactory(config)
         }
@@ -45,30 +45,30 @@ export class SkillFactory {
     /**
      * Add development helper handlers
      */
-    private _addDevelopmentHelpers(): this {
+    private _addDevelopmentHelpers (): this {
         if (this.stage === 'production') return this
         this.skillBuilders.addRequestHandlers({
-            canHandle(input) {
+            canHandle (input) {
                 return input.requestEnvelope.request.type === 'IntentRequest'
             },
-            handle(input) {
+            handle (input) {
                 const { logger } = LoggerService.getInstance()
                 logger.info('IntentReflector was called')
-                const intentName = getRequest<IntentRequest>(input.requestEnvelope).intent.name;
-                const speechText = `You just triggered ${intentName}`;
+                const intentName = getRequest<IntentRequest>(input.requestEnvelope).intent.name
+                const speechText = `You just triggered ${intentName}`
                 return input.responseBuilder
-                .speak(speechText)
-                .getResponse();
+                    .speak(speechText)
+                    .getResponse()
             }
         })
         return this
-    } 
+    }
 
     /**
      * Configure Skill API Client
-     * @param apiClient 
+     * @param apiClient
      */
-    private _configureAPIClients(apiClient?: TalkyJSAPIClientConfig): this {
+    private _configureAPIClients (apiClient?: TalkyJSAPIClientConfig): this {
         if (!apiClient) return this
         if (apiClient.useDefault) {
             this.skillBuilders.withApiClient(new DefaultApiClient())
@@ -80,15 +80,15 @@ export class SkillFactory {
 
     /**
      * Configure Skill PersistenceAdapter
-     * @param database 
+     * @param database
      */
-    private _configureDBClients(database?: TalkyJSDBonfig): this {
+    private _configureDBClients (database?: TalkyJSDBonfig): this {
         if (!database || database.type === 'none') return this
         if (database.type === 'dynamodb') {
             this.skillBuilders.withPersistenceAdapter(
                 new DynamoDbPersistenceAdapter({
                     tableName: database.tableName,
-                    createTable: database.withCreateTable || false,
+                    createTable: database.withCreateTable || false
                 })
             )
         } else if (database.type === 's3') {
@@ -104,9 +104,9 @@ export class SkillFactory {
 
     /**
      * Add Router handlers
-     * @param routers 
+     * @param routers
      */
-    public addRequestRouter(...routers: Router[]): this {
+    public addRequestRouter (...routers: Router[]): this {
         const handlers = this.router.addRoutes(...routers).createHandlers()
         this.addRequestHandlers(...handlers)
         return this
@@ -114,27 +114,26 @@ export class SkillFactory {
 
     /**
      * Add Router handlers
-     * @param routers 
+     * @param routers
      */
-    public addRequestRouters(routers: Router[]): this {
+    public addRequestRouters (routers: Router[]): this {
         this.addRequestRouter(...routers)
         return this
     }
 
     /**
      * Add native request handler
-     * @param handlres 
+     * @param handlres
      */
-    public addRequestHandlers(...handlres: RequestHandler[]): this {
+    public addRequestHandlers (...handlres: RequestHandler[]): this {
         this.skillBuilders.addRequestHandlers(...handlres)
         return this
     }
 
-
     /**
      * Create SKill
      */
-    public getSkill(): CustomSkillBuilder {
+    public getSkill (): CustomSkillBuilder {
         /**
          * Add dev helpers
          */
@@ -145,7 +144,7 @@ export class SkillFactory {
     /**
      * get lambda handler
      */
-    public createLambdaHandler(): SkillHandler {
+    public createLambdaHandler (): SkillHandler {
         return async (event, context) => {
             const { logger } = LoggerService.getInstance(event, {
                 minLevel: this.logLevel

@@ -32,13 +32,16 @@ export class StateManager {
             state
         })
     }
+
     public static getCurrentState<T = DefaultState> (attributeManager: AttributesManager): T {
         const att = attributeManager.getSessionAttributes()
         return att.state || ''
     }
+
     public static resetState (attributeManager: AttributesManager): void {
         this.updateState(attributeManager, '')
     }
+
     public static isMatchedState<T = DefaultState> (attributeManager: AttributesManager, state: T): boolean {
         return state === this.getCurrentState<T>(attributeManager)
     }

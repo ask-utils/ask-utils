@@ -13,17 +13,21 @@ export class ContentBuilder {
         this.locale = locale
         this.responseBuilder = responseBuilder
     }
+
     protected isJP (): boolean {
         return /^ja/.test(this.locale)
     }
+
     public putSpeechText (text: string): this {
         this.contents.speechText = text
         return this
     }
+
     public putRepromptText (text: string): this {
         this.contents.repromptText = text
         return this
     }
+
     public putDirectives (directives: Directive[]): this {
         if (!this.contents.directives) {
             this.contents.directives = directives
@@ -32,6 +36,7 @@ export class ContentBuilder {
         this.contents.directives = this.contents.directives.concat(directives)
         return this
     }
+
     public putDirective (directive: Directive): this {
         if (!this.contents.directives) {
             this.contents.directives = [directive]
@@ -40,6 +45,7 @@ export class ContentBuilder {
         this.contents.directives.push(directive)
         return this
     }
+
     public getResponse (): Response {
         const { speechText, repromptText, directives } = this.contents
         if (speechText) this.responseBuilder.speak(speechText)

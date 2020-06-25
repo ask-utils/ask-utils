@@ -52,13 +52,16 @@ export default class ProactiveClient {
         }
         return this
     }
+
     public getReferenceId (): string {
         return this.body.referenceId
     }
+
     public updateReferenceId (id: string): this{
         this.body.referenceId = id
         return this
     }
+
     public async getAccessToken (): Promise<client.AuthResponse> {
         const response = await axios({
             method: 'POST',
@@ -76,34 +79,42 @@ export default class ProactiveClient {
         if (!isAuthResponse(response.data)) throw new Error('failed to get access token')
         return response.data
     }
+
     public setReferenceId (id: string): this {
         this.body.referenceId = id
         return this
     }
+
     public setTimestamp (date: Date): this {
         this.body.timestamp = moment(date).toISOString()
         return this
     }
+
     public setExpiryTime (date: Date): this {
         this.body.expiryTime = moment(date).toISOString()
         return this
     }
+
     public setEvent (event: event.Props): this {
         this.body.event = event
         return this
     }
+
     public setPayload (payload: event.Payload): this {
         this.body.event.payload = payload
         return this
     }
+
     public setEventName (name: event.EventName): this {
         this.body.event.name = name
         return this
     }
+
     public setLocalizedAttributes (localizedAttributes: {}[]): this {
         this.body.localizedAttributes = localizedAttributes
         return this
     }
+
     public setRelevantAudience (type: client.AudienceType, payload?: client.AudiencePayload): this {
         const relevantAudience: client.RelevantAudience = {
             type
@@ -112,20 +123,23 @@ export default class ProactiveClient {
         this.body.relevantAudience = relevantAudience
         return this
     }
+
     public getBody (): client.RequstBody {
         return this.body
     }
+
     public getRequestParams (accessToken: string): AxiosRequestConfig {
         return {
             method: 'POST',
             url: this.apiEndpoint,
             headers: {
                 'Content-type': 'application/json',
-                'Authorization': `Bearer ${accessToken}`
+                Authorization: `Bearer ${accessToken}`
             },
             data: this.getBody()
         }
     }
+
     public async requestEvent (): Promise<client.Response> {
         const authResult = await this.getAccessToken()
         if (!authResult.access_token) throw new Error('missing access_token')

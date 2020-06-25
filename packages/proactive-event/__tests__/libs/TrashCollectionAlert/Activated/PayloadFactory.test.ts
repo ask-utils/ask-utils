@@ -18,11 +18,11 @@ describe('/libs/TrashCollectionAlert/Activated/PayloadFactory.ts', () => {
                 .addGarbageType('BOTTLES')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.TrashCollectionAlert.Activated',
-                'payload': {
-                    'alert': {
-                        'collectionDayOfWeek': 'FRIDAY',
-                        'garbageTypes': [
+                name: 'AMAZON.TrashCollectionAlert.Activated',
+                payload: {
+                    alert: {
+                        collectionDayOfWeek: 'FRIDAY',
+                        garbageTypes: [
                             'BOTTLES'
                         ]
                     }
@@ -37,11 +37,11 @@ describe('/libs/TrashCollectionAlert/Activated/PayloadFactory.ts', () => {
                 .addGarbageType('CANS')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.TrashCollectionAlert.Activated',
-                'payload': {
-                    'alert': {
-                        'collectionDayOfWeek': 'MONDAY',
-                        'garbageTypes': [
+                name: 'AMAZON.TrashCollectionAlert.Activated',
+                payload: {
+                    alert: {
+                        collectionDayOfWeek: 'MONDAY',
+                        garbageTypes: [
                             'BOTTLES',
                             'BULKY',
                             'CANS'

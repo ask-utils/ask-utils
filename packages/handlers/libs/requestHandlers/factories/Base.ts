@@ -9,27 +9,33 @@ export class HandlerBuilder implements HandlerBuilderInterface {
     public canHandle: CanHandle = (handlerInput): CanHandleResponse => {
         return this.canHandleFilter(handlerInput)
     }
+
     public handle: Handle = (handlerInput): HandleResponse => {
         return this.handlerFilter(handlerInput)
     }
+
     public setHandleCondition (condition: CanHandle): this {
         this.canHandleFilter = condition
         return this
     }
+
     public setHandle (handle: Handle): this {
         this.handlerFilter = handle
         return this
     }
+
     public updateHandler (condition: CanHandle, handle: Handle): this {
         this.setHandle(handle)
         this.setHandleCondition(condition)
         return this
     }
+
     public replaceHandler (handler: Partial<RequestHandler>): this {
         if (handler.canHandle) this.setHandleCondition(handler.canHandle)
         if (handler.handle) this.setHandle(handler.handle)
         return this
     }
+
     public getHandler (): RequestHandler {
         return {
             canHandle: this.canHandle,

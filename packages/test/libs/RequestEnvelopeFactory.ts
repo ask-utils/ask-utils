@@ -42,6 +42,7 @@ export class RequestEnvelopeFactory<T extends RequestFactory = RequestFactory> {
         this.session = session
         this.user = user
     }
+
     private putRequestAttributes (): this {
         const {
             requestId,

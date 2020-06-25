@@ -66,7 +66,7 @@ export default class ParameterFactory {
                     }
                 }
 
-                if (updated !== null && updated.hasOwnProperty('scoreEarned') && updated.hasOwnProperty('teamName')) payload.update = updated
+                if (updated !== null && Object.prototype.hasOwnProperty.call(updated, 'scoreEarned') && Object.prototype.hasOwnProperty.call(updated, 'teamName')) payload.update = updated
                 return payload
             },
             getParameter () {

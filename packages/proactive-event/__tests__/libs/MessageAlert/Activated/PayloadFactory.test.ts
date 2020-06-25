@@ -20,16 +20,16 @@ describe('/libs/MessageAlert/Activated/PayloadFactory.test.ts', () => {
                 .setMessageStatus('FLAGGED')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.MessageAlert.Activated',
-                'payload': {
-                    'messageGroup': {
-                        'count': 1,
-                        'creator': {
-                            'name': 'john'
+                name: 'AMAZON.MessageAlert.Activated',
+                payload: {
+                    messageGroup: {
+                        count: 1,
+                        creator: {
+                            name: 'john'
                         }
                     },
-                    'state': {
-                        'status': 'FLAGGED'
+                    state: {
+                        status: 'FLAGGED'
                     }
                 }
             })
@@ -43,18 +43,18 @@ describe('/libs/MessageAlert/Activated/PayloadFactory.test.ts', () => {
                 .setMessageFreshness('NEW')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.MessageAlert.Activated',
-                'payload': {
-                    'messageGroup': {
-                        'count': 1,
-                        'creator': {
-                            'name': 'john'
+                name: 'AMAZON.MessageAlert.Activated',
+                payload: {
+                    messageGroup: {
+                        count: 1,
+                        creator: {
+                            name: 'john'
                         },
-                        'urgency': 'URGENT'
+                        urgency: 'URGENT'
                     },
-                    'state': {
-                        'freshness': 'NEW',
-                        'status': 'FLAGGED'
+                    state: {
+                        freshness: 'NEW',
+                        status: 'FLAGGED'
                     }
                 }
             })

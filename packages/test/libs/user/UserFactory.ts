@@ -6,6 +6,7 @@ export class UserFactory {
     private user: User = {
         userId: ''
     }
+
     public putUserId (userId: string): this {
         this.user.userId = userId
         return this

@@ -55,7 +55,7 @@ export const NoProductResponse = (responseBuilder: ResponseBuilder, locale: stri
                 .getResponse()
         }
         return responseBuilder.speak([
-            `You already have all products..`,
+            'You already have all products..',
             'Qhat do you want?'
         ].join(' '))
             .reprompt('What do you want?')

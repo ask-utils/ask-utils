@@ -1,5 +1,5 @@
-import { RequestEnvelope, Context, ResponseEnvelope, services } from 'ask-sdk-model';
-import { TLogLevelName } from 'tslog';
+import { RequestEnvelope, Context, ResponseEnvelope, services } from 'ask-sdk-model'
+import { TLogLevelName } from 'tslog'
 
 /**
  * Skill working stage
@@ -9,8 +9,8 @@ export type SkillStage = 'development' | 'test' | 'production';
 /**
  * Database (PersistanceAdapter) configs
  */
-export type TalkyJSDBonfig = {
-    type: 'none' | 's3' | 'dynamodb'
+export interface TalkyJSDBonfig {
+    type: 'none' | 's3' | 'dynamodb';
     tableName: string;
     /**
      * DynamoDB options
@@ -25,7 +25,7 @@ export type TalkyJSDBonfig = {
 /**
  * API service client configurations
  */
-export type TalkyJSAPIClientConfig = {
+export interface TalkyJSAPIClientConfig {
     useDefault: boolean;
     client?: services.ApiClient;
 }
@@ -33,7 +33,7 @@ export type TalkyJSAPIClientConfig = {
 /**
  * Skill factory config
  */
-export type TalkyJSSkillConfig = {
+export interface TalkyJSSkillConfig {
     stage?: SkillStage;
     logLevel?: TLogLevelName;
     database?: TalkyJSDBonfig;

@@ -42,15 +42,15 @@ describe('/libs/MediaContent/Available/PayloadFactory.ts', () => {
                 .setDistributionMethod('AIR')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.MediaContent.Available',
-                'payload': {
-                    'availability': {
-                        'method': 'AIR',
-                        'startTime': '2019-03-11T10:05:58.561Z'
+                name: 'AMAZON.MediaContent.Available',
+                payload: {
+                    availability: {
+                        method: 'AIR',
+                        startTime: '2019-03-11T10:05:58.561Z'
                     },
-                    'content': {
-                        'contentType': 'ALBUM',
-                        'name': 'localizedattribute:contentName'
+                    content: {
+                        contentType: 'ALBUM',
+                        name: 'localizedattribute:contentName'
                     }
                 }
             })
@@ -63,16 +63,16 @@ describe('/libs/MediaContent/Available/PayloadFactory.ts', () => {
                 .setProvider('test provider')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.MediaContent.Available',
-                'payload': {
-                    'availability': {
-                        'method': 'AIR',
-                        'provider': { 'name': 'test provider' },
-                        'startTime': '2019-03-11T10:05:58.561Z'
+                name: 'AMAZON.MediaContent.Available',
+                payload: {
+                    availability: {
+                        method: 'AIR',
+                        provider: { name: 'test provider' },
+                        startTime: '2019-03-11T10:05:58.561Z'
                     },
-                    'content': {
-                        'contentType': 'ALBUM',
-                        'name': 'localizedattribute:contentName'
+                    content: {
+                        contentType: 'ALBUM',
+                        name: 'localizedattribute:contentName'
                     }
                 }
             })

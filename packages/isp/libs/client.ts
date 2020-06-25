@@ -16,11 +16,13 @@ export class APIClient {
         this.endpoint = requestEnvelope.context.System.apiEndpoint
         this.isDebug = isDebug
     }
+
     private getURL (productId?: string): string {
         const url = `${this.endpoint}/v1/users/~current/skills/~current/inSkillProducts`
         if (!productId) return url
         return `${url}/productId`
     }
+
     private createAxiosRequestObject (productId?: string): AxiosRequestConfig {
         return {
             method: 'GET',
@@ -28,10 +30,11 @@ export class APIClient {
             headers: {
                 'Content-type': 'application/json',
                 'Accept-Language': this.locale,
-                'Authorization': `Bearer ${this.token}`
+                Authorization: `Bearer ${this.token}`
             }
         }
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected async get (productId?: string): Promise<any> {
         const param = this.createAxiosRequestObject(productId)
@@ -40,9 +43,11 @@ export class APIClient {
         if (this.isDebug) console.log('[Get ISP product] %j', data)
         return data
     }
+
     public listProducts (): Promise<InSkillProductsResponse> {
         return this.get()
     }
+
     public getProduct (productId: string): Promise<InSkillProduct> {
         return this.get(productId)
     }
@@ -57,9 +62,11 @@ export class ISPProductClient extends APIClient {
         super(handlerInput.requestEnvelope, isDebug)
         this.attributeManager = handlerInput.attributesManager
     }
+
     public getCacheStatus (): 'enable' | 'disable' {
         return this.cacheUsage
     }
+
     /**
    * Disallow to use the session attributes item at first
    **/
@@ -67,6 +74,7 @@ export class ISPProductClient extends APIClient {
         this.cacheUsage = 'disable'
         return this
     }
+
     /**
    * Allow to use the session attributes item at first
    **/
@@ -74,6 +82,7 @@ export class ISPProductClient extends APIClient {
         this.cacheUsage = 'enable'
         return this
     }
+
     /**
    * Check product avaliable status
    * If products is empty, try to fetch at once
@@ -83,6 +92,7 @@ export class ISPProductClient extends APIClient {
         if (!this.products || this.products.length < 1) return false
         return true
     }
+
     /**
    * get product from session attributes
    */
@@ -93,6 +103,7 @@ export class ISPProductClient extends APIClient {
         }
         return this.products
     }
+
     /**
    * Fetch the ISP API.
    * If cacheUsage is enabled, it will return from session attributes at first
@@ -113,6 +124,7 @@ export class ISPProductClient extends APIClient {
             products
         })
     }
+
     /**
    * get product by product id
    * @param productId {string}
@@ -129,6 +141,7 @@ export class ISPProductClient extends APIClient {
         const product = await this.get(productId)
         return product
     }
+
     /**
    * get products
    */
@@ -136,6 +149,7 @@ export class ISPProductClient extends APIClient {
         await this.fetchLists()
         return this.products
     }
+
     /**
    * Find product by the list number
    * @param userInputNo {number} list number
@@ -145,6 +159,7 @@ export class ISPProductClient extends APIClient {
         const target = this.products[userInputNo]
         return target
     }
+
     /**
    * Find product by the specific id
    * @param productId {string} product id
@@ -156,6 +171,7 @@ export class ISPProductClient extends APIClient {
         if (!product) return null
         return product
     }
+
     /**
    * Find product by the product name
    * @param productName {string} product name
@@ -167,6 +183,7 @@ export class ISPProductClient extends APIClient {
         if (!product) return null
         return product
     }
+
     /**
    * Find product by several condition
    * @param condition {productName?: string, userInputNo?: number, productId?: string} search conditions

@@ -9,9 +9,11 @@ export class ProductListResponseContentBuilder extends ContentBuilder {
         this.listProducts = list
         return this
     }
+
     private getProductLists (): InSkillProduct[] {
         return this.listProducts
     }
+
     private getListProducts (): ResponseContent {
         const products = this.getProductLists()
         if (products.length === 1) {
@@ -54,6 +56,7 @@ export class ProductListResponseContentBuilder extends ContentBuilder {
             repromptText: 'What item will you buy?'
         }
     }
+
     public setListProducts (): this {
         this.contents = this.getListProducts()
         return this

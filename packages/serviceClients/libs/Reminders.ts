@@ -8,6 +8,7 @@ export class ReminderAPIClient extends Client {
     public async deleteReminder (alertId: string): Promise<void> {
         return this.delete(alertId)
     }
+
     /**
      *
      * @param {string} alertId
@@ -15,6 +16,7 @@ export class ReminderAPIClient extends Client {
     public async getReminder (alertId: string): Promise<reminderManagement.GetReminderResponse> {
         return this.get(alertId)
     }
+
     /**
      *
      * @param {string} alertId
@@ -23,12 +25,14 @@ export class ReminderAPIClient extends Client {
     public async updateReminder (alertId: string, reminderRequest: reminderManagement.ReminderRequest): Promise<reminderManagement.ReminderResponse> {
         return this.put(reminderRequest, alertId)
     }
+
     /**
      *
      */
     public async getReminders (): Promise<reminderManagement.GetRemindersResponse> {
         return this.get()
     }
+
     /**
      *
      * @param {reminderManagement.ReminderRequest} reminderRequest

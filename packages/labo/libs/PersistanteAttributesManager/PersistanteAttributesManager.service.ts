@@ -14,9 +14,11 @@ class DefaultLogger implements Logger {
     public debug (...args: any[]): void {
         console.debug(...args)
     }
+
     public info (...args: any[]): void {
         console.info(...args)
     }
+
     public error (...args: any[]): void {
         console.error(...args)
     }

@@ -17,10 +17,10 @@ describe('/libs/WeatherAlert/Activated/PayloadFactory.test.ts', () => {
                 .setAlertType('HURRICANE')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.WeatherAlert.Activated',
-                'payload': {
-                    'weatherAlert': {
-                        'alertType': 'HURRICANE'
+                name: 'AMAZON.WeatherAlert.Activated',
+                payload: {
+                    weatherAlert: {
+                        alertType: 'HURRICANE'
                     }
                 }
             })
@@ -31,11 +31,11 @@ describe('/libs/WeatherAlert/Activated/PayloadFactory.test.ts', () => {
                 .setAlertSource('example source')
                 .getParameter()
             expect(parameter).toEqual({
-                'name': 'AMAZON.WeatherAlert.Activated',
-                'payload': {
-                    'weatherAlert': {
-                        'source': 'example source',
-                        'alertType': 'HURRICANE'
+                name: 'AMAZON.WeatherAlert.Activated',
+                payload: {
+                    weatherAlert: {
+                        source: 'example source',
+                        alertType: 'HURRICANE'
                     }
                 }
             })

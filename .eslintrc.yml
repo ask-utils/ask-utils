@@ -5,6 +5,8 @@ plugins:
   - "@typescript-eslint"
 
 parser: "@typescript-eslint/parser"
+rules:
+  "@typescript-eslint/explicit-function-return-type": off
 env:
   es6: true
   node: true

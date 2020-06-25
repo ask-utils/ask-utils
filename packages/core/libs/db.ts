@@ -21,6 +21,7 @@ export class DBClient {
         this.primaryKey = config ? config.primaryKey || 'id' : 'id'
         this.tableName = tableName
     }
+
     public async get (id: string): Promise<DBItem> {
         const param: DocumentClient.GetItemInput = {
             TableName: this.tableName,
@@ -34,6 +35,7 @@ export class DBClient {
         if (!Item) return {}
         return Item
     }
+
     public async put (id: string, attributes: DBItem): Promise<DocumentClient.PutItemOutput> {
         const param: DocumentClient.PutItemInput = {
             TableName: this.tableName,

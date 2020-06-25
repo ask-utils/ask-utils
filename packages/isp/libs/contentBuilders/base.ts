@@ -17,9 +17,11 @@ export class ContentBuilder {
         this.locale = locale
         this.responseBuilder = responseBuilder
     }
+
     protected isJP (): boolean {
         return /^ja/.test(this.locale)
     }
+
     public getResponse (): Response {
         const { speechText, repromptText, directive } = this.contents
         if (speechText) this.responseBuilder.speak(speechText)
@@ -37,23 +39,28 @@ export class ISPContentBuilder extends ContentBuilder {
         if (productName) this.productName = productName
         if (product) this.product = product
     }
+
     public setProduct (product: InSkillProduct): this {
         this.product = product
         return this
     }
+
     protected getProduct (): InSkillProduct {
         const { product } = this
         if (!product) throw new Error('No products')
         return product
     }
+
     public setProductName (name: string): this {
         this.productName = name
         return this
     }
+
     protected getProductName (): string {
         if (!this.productName) throw new Error('No product name')
         return this.productName
     }
+
     /**
    * If the device or account does not supports ISP
    */
@@ -85,10 +92,12 @@ export class ISPContentBuilder extends ContentBuilder {
             ].join(' ')
         }
     }
+
     public setUnSupportedISPResponse (): this {
         this.contents = this.getUnSupportedISPResponse()
         return this
     }
+
     /**
    * Product does not found response
    */
@@ -96,21 +105,23 @@ export class ISPContentBuilder extends ContentBuilder {
         if (this.isJP()) {
             return {
                 speechText: [
-                    `すみません。商品が見つかりませんでした。`,
+                    'すみません。商品が見つかりませんでした。',
                     '他に何をしますか？'
                 ].join(' '),
                 repromptText: '他に何をしますか？'
             }
         }
         return {
-            speechText: `I can't find any products you can buy. What do you want to do next?`,
-            repromptText: `What do you want to do next?`
+            speechText: 'I can\'t find any products you can buy. What do you want to do next?',
+            repromptText: 'What do you want to do next?'
         }
     }
+
     public setProductsNotFoundResponse (): this {
         this.contents = this.getProductsNotFoundResponse()
         return this
     }
+
     /**
    * Product does not found response
    */
@@ -136,10 +147,12 @@ export class ISPContentBuilder extends ContentBuilder {
             return this.getProductsNotFoundResponse()
         }
     }
+
     public setProductNotFoundResponse (): this {
         this.contents = this.getProductNotFoundResponse()
         return this
     }
+
     /**
    * If product not found
    */
@@ -155,10 +168,12 @@ export class ISPContentBuilder extends ContentBuilder {
             repromptText: "I didn't catch that. Can you try again?"
         }
     }
+
     public setCanNotBuyTheProductResponse (): this {
         this.contents = this.getCanNotBuyTheProductResponse()
         return this
     }
+
     /**
    * If product already purchased
    */
@@ -174,6 +189,7 @@ export class ISPContentBuilder extends ContentBuilder {
             repromptText: 'What will you do for next?'
         }
     }
+
     public setEntitledProductResponse (): this {
         this.contents = this.getEntitledProductResponse()
         return this

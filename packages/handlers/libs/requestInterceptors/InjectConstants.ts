@@ -2,6 +2,7 @@ import { HandlerInput } from 'ask-sdk-core'
 import { RequestInterceptor } from 'ask-sdk-runtime'
 
 export interface SkillConstants {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }
 export class ConstantsInterceptorFactory {

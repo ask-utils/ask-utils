@@ -30,6 +30,7 @@ export class BuyIntentHandlerBuilder extends HandlerBuilder {
     public canHandle: CanHandle = (handlerInput) => {
         return this.canHandleFilter(handlerInput)
     }
+
     public static create () {
 
     }

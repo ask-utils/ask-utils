@@ -23,6 +23,7 @@ export class ProductDetailResponseContentBuilder extends ContentBuilder {
             repromptText: 'Will you buy the product?'
         }
     }
+
     public setProductDetail (): this {
         this.contents = this.getProductDetail()
         return this

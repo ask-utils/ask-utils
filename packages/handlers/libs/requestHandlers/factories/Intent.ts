@@ -9,6 +9,7 @@ export class IntentHandlerBuilder extends HandlerBuilder {
         super()
         this.intentName = intentName
     }
+
     protected intentName: string
     public canHandle: CanHandle = (handlerInput): CanHandleResponse => {
         if (!isMatchedIntent(handlerInput, this.intentName)) return false

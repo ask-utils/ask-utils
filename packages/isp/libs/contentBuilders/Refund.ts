@@ -28,10 +28,12 @@ export class RefundContentBuilder extends ContentBuilder {
             repromptText: 'What will you do for next?'
         }
     }
+
     public setNoEntitledProductResponse (): this {
         this.contents = this.getNoEntitledProductResponse()
         return this
     }
+
     public setCancelDirective (productId: string): this {
         this.contents.directive = getCancelProductDirective(productId)
         return this

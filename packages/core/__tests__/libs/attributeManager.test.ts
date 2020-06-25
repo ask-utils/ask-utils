@@ -11,21 +11,27 @@ class MockAttributeManager implements AttributesManager {
     public getRequestAttributes () {
         return this.request
     }
+
     public getSessionAttributes () {
         return this.session
     }
+
     public getPersistentAttributes () {
         return Promise.resolve(this.db)
     }
+
     public setRequestAttributes (attribute: AttributeType) {
         this.request = attribute
     }
+
     public setSessionAttributes (attribute: AttributeType) {
         this.session = attribute
     }
+
     public setPersistentAttributes (attribute: AttributeType) {
         this.persistent = attribute
     }
+
     public savePersistentAttributes () {
         this.db = this.persistent
         return Promise.resolve()

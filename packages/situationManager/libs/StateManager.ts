@@ -23,10 +23,12 @@ export class StateManager<T extends State = State> {
             next: initialState && initialState.next ? [initialState.next] : []
         }
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private isState (state: any): state is SkillState<T> {
         return state && state.current
     }
+
     private mergeSessionAttributes (): this {
         const { state, stateKey, attributeManager } = this
         const attributes = {
@@ -36,6 +38,7 @@ export class StateManager<T extends State = State> {
         attributeManager.setSessionAttributes(attributes)
         return this
     }
+
     public setState (current: T, next?: T[], before?: T[]): this {
         this.state = {
             current,
@@ -83,9 +86,11 @@ export class StateManager<T extends State = State> {
     public matchedCurrentState (state: T): boolean {
         return this.getCurrentState() === state
     }
+
     public includesNextState (state: T): boolean {
         return this.getNextState().includes(state)
     }
+
     public includesBeforeState (state: T): boolean {
         return this.getBeforeState().includes(state)
     }

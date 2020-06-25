@@ -6,6 +6,7 @@ export class DeviceAPIClient extends Client {
     public async getCountryAndPostalCode (deviceId: string): Promise<services.deviceAddress.ShortAddress> {
         return this.get(`${deviceId}/settings/address/countryAndPostalCode`)
     }
+
     public async getFullAddress (deviceId: string): Promise<services.deviceAddress.Address> {
         return this.get(`${deviceId}/settings/address`)
     }

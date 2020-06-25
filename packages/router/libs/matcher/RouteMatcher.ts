@@ -33,10 +33,12 @@ export class RouteMatcher <T extends State = State> {
         this.stateManager = new StateManager<T>(input.attributesManager)
         this.targetRoute = targetRoute
     }
+
     private async executeCustomSituation (): Promise<void> {
         if (!this.targetRoute.situation || !this.targetRoute.situation.custom) return
         this.canHandle = await this.targetRoute.situation.custom(this.input)
     }
+
     public async match (): Promise<void> {
         const {
             request, targetRoute
@@ -74,6 +76,7 @@ export class RouteMatcher <T extends State = State> {
          */
         await this.executeCustomSituation()
     }
+
     public getMatchResult (): boolean {
         return this.canHandle
     }

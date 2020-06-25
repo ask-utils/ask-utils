@@ -31,6 +31,7 @@ export class SessionFactory {
         this.session.sessionId = sessionId
         return this
     }
+
     public putUser (user: User): this {
         this.session.user = user
         return this
@@ -50,6 +51,7 @@ export class SessionFactory {
         this.session = session
         return this
     }
+
     public getSession (): Session {
         return this.session
     }

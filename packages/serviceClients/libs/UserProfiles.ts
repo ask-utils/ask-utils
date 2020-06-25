@@ -6,12 +6,15 @@ export class UserProfileAPIClient extends Client {
     public async getProfileName (): Promise<string> {
         return this.get('Profile.name')
     }
+
     public async getGivenName (): Promise<string> {
         return this.get('Profile.givenName')
     }
+
     public async getEmail (): Promise<string> {
         return this.get('Profile.email')
     }
+
     public async getMobileNumber (): Promise<services.ups.PhoneNumber> {
         return this.get('Profile.mobileNumber')
     }

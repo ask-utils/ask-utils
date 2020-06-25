@@ -24,10 +24,12 @@ export class BuyResponseContentBuilder extends ContentBuilder {
             repromptText: 'What will you do for next?'
         }
     }
+
     public setDeclinedPurchaseResult (): this {
         this.contents = this.getDeclinedPurchaseResult()
         return this
     }
+
     // purchaseResult === 'ACCEPTED'
     private getAcceptedPurchaseResult (): ResponseContent {
         const product = this.getProduct()
@@ -48,10 +50,12 @@ export class BuyResponseContentBuilder extends ContentBuilder {
             repromptText: 'What will you do for next?'
         }
     }
+
     public setAcceptedPurchaseResult (): this {
         this.contents = this.getAcceptedPurchaseResult()
         return this
     }
+
     private getFailedPurchaseResult (): ResponseContent {
         if (this.isJP()) {
             return {
@@ -68,6 +72,7 @@ export class BuyResponseContentBuilder extends ContentBuilder {
             ].join(' ')
         }
     }
+
     public setFailedPurchaseResult (): this {
         this.contents = this.getFailedPurchaseResult()
         return this

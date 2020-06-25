@@ -1,10 +1,9 @@
 import { RequestEnvelope } from 'ask-sdk-model'
 import { RequestEnvelopeFactory, LaunchRequestFactory, IntentRequestFactory } from '@ask-utils/test'
 import {
-    SkillFactory,
+    SkillFactory
 } from '../index'
 import { TalkyJSDBonfig } from '../skillFactory.interface'
-
 
 describe('SkillFactoryr', () => {
     let requestEnvelope: RequestEnvelope = new RequestEnvelopeFactory(new LaunchRequestFactory()).getRequest()
@@ -16,14 +15,14 @@ describe('SkillFactoryr', () => {
                 tableName: 'dummy'
             }
             return new SkillFactory({
-                database: dbConf                
+                database: dbConf
             }).addRequestHandlers({
-                canHandle() {
+                canHandle () {
                     return true
                 },
-                async handle(input) {
+                async handle (input) {
                     const data = await input.attributesManager.getPersistentAttributes()
-                    return input.responseBuilder.speak(`db data can get it!`)
+                    return input.responseBuilder.speak('db data can get it!')
                         .withSimpleCard('db data', JSON.stringify(data))
                         .getResponse()
                 }
@@ -32,7 +31,7 @@ describe('SkillFactoryr', () => {
         beforeEach(() => {
             requestEnvelope = new RequestEnvelopeFactory(new LaunchRequestFactory()).getRequest()
         })
-        it.each([undefined, 'none'])("should reject using persistenceAdapter without %p db type", async (type) => {
+        it.each([undefined, 'none'])('should reject using persistenceAdapter without %p db type', async (type) => {
             skill = createSkillWithDB(type)
             await expect(skill.createLambdaHandler()(requestEnvelope))
                 .rejects.toThrowError('Cannot get PersistentAttributes without PersistenceManager')
@@ -40,7 +39,7 @@ describe('SkillFactoryr', () => {
         /**
          * @TODO Should mock
          */
-        it.skip.each(['s3', 'dynamodb'])("should resolve using persistenceAdapter without %p db type", async (type) => {
+        it.skip.each(['s3', 'dynamodb'])('should resolve using persistenceAdapter without %p db type', async (type) => {
             skill = createSkillWithDB(type)
             await expect(skill.createLambdaHandler()(requestEnvelope))
                 .rejects.toThrowError('Cannot get PersistentAttributes without PersistenceManager')
@@ -59,8 +58,8 @@ describe('SkillFactoryr', () => {
                 await expect(skill.createLambdaHandler()(requestEnvelope)).resolves.toMatchObject({
                     response: {
                         outputSpeech: {
-                            ssml: "<speak>You just triggered dummy</speak>",
-                            type: "SSML"
+                            ssml: '<speak>You just triggered dummy</speak>',
+                            type: 'SSML'
                         }
                     },
                     sessionAttributes: {},
@@ -85,23 +84,23 @@ describe('SkillFactoryr', () => {
         beforeEach(() => {
             requestEnvelope = new RequestEnvelopeFactory(new LaunchRequestFactory()).getRequest()
             skill = new SkillFactory({
-    
+
             })
         })
         it('should execute the skill', async () => {
             skill.addRequestHandlers({
-                canHandle(input) {
+                canHandle (input) {
                     return input.requestEnvelope.request.type === 'LaunchRequest'
                 },
-                handle(input) {
+                handle (input) {
                     return input.responseBuilder.speak('hello').getResponse()
                 }
             })
             await expect(skill.createLambdaHandler()(requestEnvelope)).resolves.toMatchObject({
                 response: {
                     outputSpeech: {
-                        ssml: "<speak>hello</speak>",
-                        type: "SSML"
+                        ssml: '<speak>hello</speak>',
+                        type: 'SSML'
                     }
                 },
                 sessionAttributes: {},

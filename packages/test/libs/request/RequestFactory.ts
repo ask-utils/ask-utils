@@ -18,6 +18,7 @@ export class RequestFactory<T extends Request = Request> {
         this.requestType = type
         return this
     }
+
     private getRequestType (): string {
         return this.requestType
     }
@@ -26,6 +27,7 @@ export class RequestFactory<T extends Request = Request> {
         this.requestID = id
         return this
     }
+
     private getRequestId (): string {
         if (this.requestID) return this.requestID
         return 'amzn1.echo-external.request.' + uuid()
@@ -35,6 +37,7 @@ export class RequestFactory<T extends Request = Request> {
         this.date = date
         return this
     }
+
     private getTimestamp (): string {
         const timestamp = this.date.toISOString()
         return timestamp.substring(0, 19) + 'Z'
@@ -44,6 +47,7 @@ export class RequestFactory<T extends Request = Request> {
         this.locale = locale
         return this
     }
+
     private getLocale (): string {
         return this.locale
     }
@@ -52,6 +56,7 @@ export class RequestFactory<T extends Request = Request> {
         this.request = request
         return this
     }
+
     protected updateRequest (param?: Partial<T>): this {
         this.request = {
             ...this.request,
@@ -63,12 +68,14 @@ export class RequestFactory<T extends Request = Request> {
         }
         return this
     }
+
     /**
      * IF the request type has several required value, should overwrite it to test them.
      */
     protected validateRequest (): void {
         if (!this.request) throw new Error('No request item')
     }
+
     public getRequest (): Request {
         this.updateRequest()
         this.validateRequest()

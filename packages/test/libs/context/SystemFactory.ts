@@ -27,7 +27,7 @@ export class SystemFactory {
             device: {
                 deviceId: '',
                 supportedInterfaces: {
-                    'AudioPlayer': {}
+                    AudioPlayer: {}
                 }
             },
             apiEndpoint: 'https://api.amazonalexa.com'

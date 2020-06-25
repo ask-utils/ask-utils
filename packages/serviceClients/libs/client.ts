@@ -14,11 +14,13 @@ export abstract class APIClient {
         this.endpoint = requestEnvelope.context.System.apiEndpoint
         this.isDebug = isDebug
     }
+
     protected getURL (path?: string): string {
         const p = `/${this.path}${path ? `/${path}` : ''}`
         const url = `${this.endpoint}${p.replace(/\/\//g, '/')}`
         return url
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected createAxiosRequestObject (method: Method, path?: string, data?: any): AxiosRequestConfig {
         const conf: AxiosRequestConfig = {
@@ -27,12 +29,13 @@ export abstract class APIClient {
             headers: {
                 'Content-type': 'application/json',
                 'Accept-Language': this.locale,
-                'Authorization': `Bearer ${this.token}`
+                Authorization: `Bearer ${this.token}`
             }
         }
         if (data) conf.data = data
         return conf
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected async delete (path?: string): Promise<any> {
         const param = this.createAxiosRequestObject('DELETE', path)
@@ -41,6 +44,7 @@ export abstract class APIClient {
         if (this.isDebug) console.log('[Response] %j', data)
         return data
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected async get (path?: string): Promise<any> {
         const param = this.createAxiosRequestObject('GET', path)
@@ -49,6 +53,7 @@ export abstract class APIClient {
         if (this.isDebug) console.log('[Response] %j', data)
         return data
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected async post (body?: any, path?: string): Promise<any> {
         const param = this.createAxiosRequestObject('POST', path, body)
@@ -57,6 +62,7 @@ export abstract class APIClient {
         if (this.isDebug) console.log('[Response] %j', data)
         return data
     }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected async put (body?: any, path?: string): Promise<any> {
         const param = this.createAxiosRequestObject('PUT', path, body)

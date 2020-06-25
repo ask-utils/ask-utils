@@ -12,40 +12,40 @@ describe('RequestEnvelopeFactory', () => {
             new RequestFactory('LaunchRequest')
         )
         expect(factory.getRequest()).toMatchObject({
-            'context': {
-                'System': {
-                    'apiAccessToken': 'token',
-                    'apiEndpoint': 'https://api.amazonalexa.com',
-                    'application': {
-                        'applicationId': expect.any(String)
+            context: {
+                System: {
+                    apiAccessToken: 'token',
+                    apiEndpoint: 'https://api.amazonalexa.com',
+                    application: {
+                        applicationId: expect.any(String)
                     },
-                    'user': {
-                        'userId': expect.any(String)
+                    user: {
+                        userId: expect.any(String)
                     },
-                    'device': {
-                        'supportedInterfaces': {
-                            'AudioPlayer': {}
+                    device: {
+                        supportedInterfaces: {
+                            AudioPlayer: {}
                         }
                     }
                 }
             },
-            'request': {
-                'locale': 'en-US',
-                'requestId': expect.any(String),
-                'timestamp': expect.any(String),
-                'type': 'LaunchRequest'
+            request: {
+                locale: 'en-US',
+                requestId: expect.any(String),
+                timestamp: expect.any(String),
+                type: 'LaunchRequest'
             },
-            'session': {
-                'application': {
-                    'applicationId': expect.any(String)
+            session: {
+                application: {
+                    applicationId: expect.any(String)
                 },
-                'new': true,
-                'sessionId': expect.any(String),
-                'user': {
-                    'userId': expect.any(String)
+                new: true,
+                sessionId: expect.any(String),
+                user: {
+                    userId: expect.any(String)
                 }
             },
-            'version': '1.0'
+            version: '1.0'
         })
     })
     it('should create update attribute updator directry', () => {
@@ -58,35 +58,35 @@ describe('RequestEnvelopeFactory', () => {
         factory.requestId = 'request.ID'
         factory.requestDate = new Date(2020, 0, 1, 15, 22, 30)
         expect(factory.getRequest()).toMatchObject({
-            'context': {
-                'System': {
-                    'apiAccessToken': 'token',
-                    'apiEndpoint': 'https://api.amazonalexa.com',
-                    'application': {
-                        'applicationId': 'application.ID'
+            context: {
+                System: {
+                    apiAccessToken: 'token',
+                    apiEndpoint: 'https://api.amazonalexa.com',
+                    application: {
+                        applicationId: 'application.ID'
                     },
-                    'user': {
-                        'userId': 'user.ID'
+                    user: {
+                        userId: 'user.ID'
                     }
                 }
             },
-            'request': {
-                'locale': 'en-US',
-                'requestId': 'request.ID',
-                'timestamp': '2020-01-01T06:22:30Z',
-                'type': 'Reminders.ReminderCreated'
+            request: {
+                locale: 'en-US',
+                requestId: 'request.ID',
+                timestamp: '2020-01-01T06:22:30Z',
+                type: 'Reminders.ReminderCreated'
             },
-            'session': {
-                'application': {
-                    'applicationId': 'application.ID'
+            session: {
+                application: {
+                    applicationId: 'application.ID'
                 },
-                'new': true,
-                'sessionId': 'session.ID',
-                'user': {
-                    'userId': 'user.ID'
+                new: true,
+                sessionId: 'session.ID',
+                user: {
+                    userId: 'user.ID'
                 }
             },
-            'version': '1.0'
+            version: '1.0'
         })
     })
     it('should import createt factories', () => {
@@ -113,23 +113,23 @@ describe('RequestEnvelopeFactory', () => {
         const factory = new RequestEnvelopeFactory(request, context, session)
 
         expect(factory.getRequest()).toMatchObject({
-            'context': {
-                'System': {
-                    'apiAccessToken': 'token',
-                    'apiEndpoint': 'https://api.amazonalexa.com',
-                    'application': {
-                        'applicationId': expect.any(String)
+            context: {
+                System: {
+                    apiAccessToken: 'token',
+                    apiEndpoint: 'https://api.amazonalexa.com',
+                    application: {
+                        applicationId: expect.any(String)
                     },
-                    'user': {
-                        'userId': expect.any(String)
+                    user: {
+                        userId: expect.any(String)
                     }
                 }
             },
-            'request': {
-                'locale': 'ja-JP',
-                'requestId': expect.any(String),
-                'timestamp': expect.any(String),
-                'type': 'IntentRequest',
+            request: {
+                locale: 'ja-JP',
+                requestId: expect.any(String),
+                timestamp: expect.any(String),
+                type: 'IntentRequest',
                 intent: {
                     name: 'HelloIntent',
                     slots: {
@@ -142,20 +142,20 @@ describe('RequestEnvelopeFactory', () => {
                     confirmationStatus: 'NONE'
                 }
             },
-            'session': {
-                'application': {
-                    'applicationId': expect.any(String)
+            session: {
+                application: {
+                    applicationId: expect.any(String)
                 },
-                'attributes': {
-                    'name': 'hello'
+                attributes: {
+                    name: 'hello'
                 },
-                'new': false,
-                'sessionId': expect.any(String),
-                'user': {
-                    'userId': expect.any(String)
+                new: false,
+                sessionId: expect.any(String),
+                user: {
+                    userId: expect.any(String)
                 }
             },
-            'version': '1.0'
+            version: '1.0'
         })
     })
     it('should create custom attributes request', () => {
@@ -182,23 +182,23 @@ describe('RequestEnvelopeFactory', () => {
         })
 
         expect(factory.getRequest()).toMatchObject({
-            'context': {
-                'System': {
-                    'apiAccessToken': 'token',
-                    'apiEndpoint': 'https://api.amazonalexa.com',
-                    'application': {
-                        'applicationId': expect.any(String)
+            context: {
+                System: {
+                    apiAccessToken: 'token',
+                    apiEndpoint: 'https://api.amazonalexa.com',
+                    application: {
+                        applicationId: expect.any(String)
                     },
-                    'user': {
-                        'userId': expect.any(String)
+                    user: {
+                        userId: expect.any(String)
                     }
                 }
             },
-            'request': {
-                'locale': 'ja-JP',
-                'requestId': expect.any(String),
-                'timestamp': expect.any(String),
-                'type': 'IntentRequest',
+            request: {
+                locale: 'ja-JP',
+                requestId: expect.any(String),
+                timestamp: expect.any(String),
+                type: 'IntentRequest',
                 intent: {
                     name: 'HelloIntent',
                     slots: {
@@ -211,20 +211,20 @@ describe('RequestEnvelopeFactory', () => {
                     confirmationStatus: 'NONE'
                 }
             },
-            'session': {
-                'application': {
-                    'applicationId': expect.any(String)
+            session: {
+                application: {
+                    applicationId: expect.any(String)
                 },
-                'attributes': {
-                    'name': 'hello'
+                attributes: {
+                    name: 'hello'
                 },
-                'new': false,
-                'sessionId': expect.any(String),
-                'user': {
-                    'userId': expect.any(String)
+                new: false,
+                sessionId: expect.any(String),
+                user: {
+                    userId: expect.any(String)
                 }
             },
-            'version': '1.0'
+            version: '1.0'
         })
     })
 })

@@ -16,22 +16,24 @@ export class RefundResponseContentBuilder extends ContentBuilder {
         }
         return {
             speechText: [
-                `Ok.`,
+                'Ok.',
                 'What will you do for next?'
             ].join(' '),
             repromptText: 'What will you do for next?'
         }
     }
+
     public setDeclinedRefundResult (): this {
         this.contents = this.getDeclinedRefundResult()
         return this
     }
+
     // purchaseResult === 'ACCEPTED'
     private getAcceptedRefundResult (): ResponseContent {
         if (this.isJP()) {
             return {
                 speechText: [
-                    `お使いいただいてありがとうございました。`,
+                    'お使いいただいてありがとうございました。',
                     '次は何をしますか？'
                 ].join(' '),
                 repromptText: '次は何をしますか？'
@@ -45,10 +47,12 @@ export class RefundResponseContentBuilder extends ContentBuilder {
             repromptText: 'What will you do for next?'
         }
     }
+
     public setAcceptedRefundResult (): this {
         this.contents = this.getAcceptedRefundResult()
         return this
     }
+
     private getFailedRefundResult (): ResponseContent {
         if (this.isJP()) {
             return {
@@ -65,6 +69,7 @@ export class RefundResponseContentBuilder extends ContentBuilder {
             ].join(' ')
         }
     }
+
     public setFailedRefundResult (): this {
         this.contents = this.getFailedRefundResult()
         return this

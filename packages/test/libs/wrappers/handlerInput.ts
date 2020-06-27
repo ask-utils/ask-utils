@@ -15,18 +15,33 @@ import {
 } from '../request'
 import { SessionEndedRequestFactory } from '../request/SessionEndRequest'
 import { SessionResumedRequestFactory } from '../request/SessionResumedRequest'
+import { MockPersistenceAdapter } from '../adaptors'
 
 export class HandlerInputCreator {
     private locale: string
+    private _enablePersistenceAdapter: boolean = false
+
     public constructor (locale: string = 'en-US') {
         this.locale = locale
+    }
+
+    public withPersistenceAdapterMock (enable: boolean = true) {
+        this._enablePersistenceAdapter = enable
+        return this
+    }
+
+    private _setPersistenceAdapter (factory: HandlerInputFactory): HandlerInputFactory {
+        if (this._enablePersistenceAdapter === true) {
+            factory.setPersistanceAdapter(new MockPersistenceAdapter())
+        }
+        return factory
     }
 
     private create<T extends RequestFactory = RequestFactory> (request: T): HandlerInput {
         const factory = new HandlerInputFactory(
             new RequestEnvelopeFactory<T>(request)
         )
-        return factory.create()
+        return this._setPersistenceAdapter(factory).create()
     }
 
     public changeLocale (locale: string): this {

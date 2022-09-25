@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@ask-utils/test": "^3.11.0",
-    "@types/aws-lambda": "^8.10.56",
+    "@types/aws-lambda": "8.10.106",
     "jest-each": "^26.0.1",
     "rollup": "1.32.1",
     "rollup-plugin-typescript2": "0.21.2",

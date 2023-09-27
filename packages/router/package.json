@@ -20,7 +20,7 @@
   "devDependencies": {
     "@ask-utils/test": "^3.11.0",
     "rollup": "1.32.1",
-    "rollup-plugin-typescript2": "0.21.2",
+    "rollup-plugin-typescript2": "0.36.0",
     "typescript": "3.9.5"
   },
   "publishConfig": {
